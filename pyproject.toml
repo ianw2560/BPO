@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "bpo"
+version = "0.1.0"
+description = ""
+authors = ["Ian Wallace <ian.wallace2560@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.3"
+pyarrow = "^17.0.0"
+fsspec = "^2024.9.0"
+huggingface-hub = "^0.25.1"
+numpy = "^2.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
