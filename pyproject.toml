@@ -12,6 +12,7 @@ pyarrow = "^17.0.0"
 fsspec = "^2024.9.0"
 huggingface-hub = "^0.25.1"
 numpy = "^2.1.1"
+datasets = "^3.0.1"
 
 
 [build-system]
