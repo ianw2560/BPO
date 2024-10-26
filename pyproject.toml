@@ -14,6 +14,7 @@ huggingface-hub = "^0.25.1"
 datasets = "^3.0.1"
 fsspec = "^2024.9.0"
 numpy = "^2.1.1"
+tiktoken = "^0.8.0"
 
 
 [build-system]
