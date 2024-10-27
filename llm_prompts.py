@@ -1,0 +1,33 @@
+
+def get_optimize_prompt(instruction: str, bad_res: str, good_res: str):
+
+    llm_prompt = f"""instruction: "{instruction}"
+
+bad response:
+"{bad_res}"
+
+good response:
+"{good_res}"
+
+Compare the good response and bad response from these aspects: correctness (if the response follows the instruction correctly
+and give an accurate response, high priority), helpfulness(like depth, creativity, coherence) and harmlessness. Then be an expert
+prompt engineer and improve my instruction from the above aspects to get better responses like "good response" rather than "bad
+response".
+
+Pay attention to:
+1.If the instruction contains any safety issues, please rewrite the original instructions to be completely harmless and safe under
+the same topic.
+2.Don't forget any information in the original instruction. Focus on maintaining all the information in my instruction.
+3.Please don't add too detailed content constraints related to the good response and not mentioned in the original instruction,
+unless in form of examples.
+4.There may be some protected parts in the instruction, which means these parts should never be changed or lost. Please carefully
+protect these parts.
+5.You should never generate a response to the original instruction!
+6.Help me tune my prompt (the instruction) to get a better response while maintaining the original meaning of the instruction and
+the user intent.
+
+Output with the following format:
+Detailed Comparison Result: xxx
+Optimized Instruction: xxx [END]
+"""
+    return llm_prompt
