@@ -7,10 +7,10 @@
 #SBATCH --time=1:59:59
 
 #SBATCH -c 12
-#SBATCH --mem=150G
+#SBATCH --mem=100G
 #SBATCH --constraint="gpu32"
 
-#SBATCH --output=slurm_logs/%j.txt
+#SBATCH --output=../../slurm_logs/%j.txt
 #SBATCH --job-name=SYNGEN
 
 #SBATCH --mail-type=BEGIN,END,FAIL

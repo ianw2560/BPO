@@ -25,6 +25,16 @@ class OptimizedDataset(Dataset):
     def __getitem__(self, idx):
         return self.opt[idx], self.org[idx]
 
+class TokenizedDataset(Dataset):
+    def __init__(self, tokenized_data):
+        self.data = tokenized_data
+        
+    def __len__(self):
+        return len(self.data["input_ids"])
+
+    def __getitem__(self, idx):
+        return {key: tensor[idx] for key, tensor in self.data.items()}
+
 # # """Quick Test Dataset"""
 # if __name__ == '__main__':
 #     prompt_file = "/home/cap6614.student1/Rafeeq/BPO_/prompt_pairs.json"
