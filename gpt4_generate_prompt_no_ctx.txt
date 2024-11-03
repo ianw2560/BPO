@@ -1,7 +1,4 @@
-
-def get_optimize_prompt(instruction: str, bad_res: str, good_res: str):
-
-    llm_prompt = f"""instruction: "{instruction}"
+instruction: "{instruction}"
 
 bad response:
 "{bad_res}"
@@ -29,5 +26,3 @@ the user intent.
 Output with the following format:
 Detailed Comparison Result: xxx
 Optimized Instruction: xxx [END]
-"""
-    return llm_prompt

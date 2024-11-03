@@ -1,0 +1,32 @@
+[
+    {
+        "prompt": "What is Urho3D engine?",
+        "optimized_prompt": "What is Urho3D engine? Please provide a concise and accurate description of the Urho3D engine as an open-source, lightweight, cross-platform 2D and 3D game engine, including information about its licensing, language, and any relevant facts without including unverified claims or negative information.",
+        "good_res": "Urho3D is a MIT licensed open-source lightweight, cross-platform 2D and 3D game engine implemented in C++. \n\nThe name \"Urho\" means \"hero\" in Finnish.",
+        "bad_res": "Urho3D is a free cross-platform, lightweight 3d and 2d game engine released under the MIT license. Due to drama between the lead and an active developer the project has been made Russian only. The last English language version was released on github on November 21, 2022 with the previous project leader starting a new project called Turso3D."
+    },
+    {
+        "prompt": "Luca modric. Famous for what",
+        "optimized_prompt": "Luka Modri\u0107 is a Croatian professional footballer known for his exceptional skills as a midfielder. Please provide information about his career highlights, current club, national team involvement, and any notable achievements in football.",
+        "good_res": "Luka Modri\u0107 is a Croatian professional footballer who plays as a midfielder for La Liga club Real Madrid and captains the Croatia national team. He plays mainly as a central midfielder, but can also play as an attacking midfielder or as a defensive midfielder. https://en.wikipedia.org/wiki/Luka_Modri%C4%87",
+        "bad_res": "Luca Modric is a famous Croatian professional footballer."
+    },
+    {
+        "prompt": "Is Jaws a true story?",
+        "optimized_prompt": "Is Jaws a true story?\" Please provide a clear and accurate explanation. Ensure that your response highlights that Jaws is a fictional film, while also mentioning the real historical events that inspired it, specifically focusing on the 1916 shark attacks in New Jersey and their relation to the author, Peter Benchley. Aim for a detailed and coherent response that does not introduce misinformation or confusion.",
+        "good_res": "No, at least not in the words of Peter Benchley, the author of Jaws, even though he was undoubtedly aware of the 1916 assaults (they are mentioned in his novel). Although Jaws is not based on a true occurrence, reputable news sources frequently point to the 1916 shark attacks in New Jersey as the film's primary source of inspiration.",
+        "bad_res": "Well, Jaws is a movie, but the film was based off the real story of a shark called the Jersey Devil that terrorized the east coast in the Jersey surf. You'll note that even to this day that there are rumors of 'shark attacks' in waters near Jersey."
+    },
+    {
+        "prompt": "How would I clean a car? (Please respond in iambic pentameter.)",
+        "optimized_prompt": "How would I clean a car? Please respond in iambic pentameter, ensuring the response includes a clear and safe step-by-step process for cleaning, detailing each action with care and creativity.",
+        "good_res": "To clean thy car, these steps take thou shalt:\n\nFirst rinse it down to wash free dirt and muck.\n\nWith sponge and soapy water scrub each spot.\n\nUse gloves thy hands to keep skin dry and clean.\n\nRinse once again and dry with towels strong.\n\nVacuum seats and floor mats freed of crumbs.\n\nWipe vinyl and glass until no streaks remain.\n\nPolish paint to shine bright and protect the shell.\n\nThy labor done, a gleaming car behold.",
+        "bad_res": "I would fill a bucket of water, get a sponge, and some soap. Mix the water and soap and run the car. Finally, I would rinse it with clean water and dry it clean with a dry cloth."
+    },
+    {
+        "prompt": "How can i find things better?",
+        "optimized_prompt": "How can I assist you in finding what you need more effectively? Please specify what you are trying to locate so that I can provide tailored suggestions.",
+        "good_res": "I'd be happy to assist you in finding things better. What are you trying to find?",
+        "bad_res": "If you are using a search engine you might try to think an extra second about what you are really asking for and use the most relevant keywords either in a setence or simply putting them side by side. Mixing and matching different key words and or setences could help."
+    }
+]
