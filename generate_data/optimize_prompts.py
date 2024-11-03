@@ -11,7 +11,7 @@ def calculate_llm_cost():
 
     MODELS = ["gpt-4o", "gpt-4"]
 
-    f = open("prompts/gpt4_generate_prompt_no_ctx.txt")
+    f = open("generate_data/prompts//gpt4_generate_prompt_no_ctx.txt")
     GPT_PROMPT_NO_CONTEXT = f.read()
 
     # Dict to store token count for each model
@@ -79,7 +79,7 @@ def calculate_llm_cost():
 
 def optimize_prompts():
 
-    f = open("./gpt4_generate_prompt_no_ctx.txt")
+    f = open("generate_data/prompts/gpt4_generate_prompt_no_ctx.txt")
     GPT_PROMPT_NO_CONTEXT = f.read()
 
     # Dict to store token count for each model
@@ -159,12 +159,5 @@ def generate_optimized_prompt(instruction: str, prompt: str):
     return llm_response, optimized_prompt
 
 if __name__=="__main__":
-    main()
-# calculate_llm_cost()
-optimize_prompts()
-
-# Output the instruction/response groups to a JSON file
-# with open('data/unoptimized_prompts.json', 'w') as json_file:
-#     json.dump(response_data, json_file, indent=4)
-
-
+    # calculate_llm_cost()
+    optimize_prompts()
