@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from datasets import load_dataset
 import json
 import tiktoken
@@ -9,7 +11,7 @@ def calculate_llm_cost():
 
     MODELS = ["gpt-4o", "gpt-4"]
 
-    f = open("./gpt4_generate_prompt_no_ctx.txt")
+    f = open("prompts/gpt4_generate_prompt_no_ctx.txt")
     GPT_PROMPT_NO_CONTEXT = f.read()
 
     # Dict to store token count for each model
@@ -47,7 +49,8 @@ def calculate_llm_cost():
 
         print("Prompt", i, end=' ')
         for model in MODELS:
-
+            
+            # Encode the input using the tokenizer for the given LLM
             enc = tiktoken.encoding_for_model(model)
 
             num_input_tokens = len(enc.encode(llm_prompt))
@@ -123,7 +126,7 @@ def optimize_prompts():
         optimized_prompts_training_data.append(output_data)
         raw_llm_output.append(raw_output)
 
-    #Output the instruction/response groups to a JSON file
+    # Output the instruction/response groups to a JSON file
     with open('data/gpt4o_optimized_prompts.json', 'w') as json_file:
         json.dump(optimized_prompts_training_data, json_file, indent=4)
 
@@ -155,7 +158,8 @@ def generate_optimized_prompt(instruction: str, prompt: str):
 
     return llm_response, optimized_prompt
 
-
+if __name__=="__main__":
+    main()
 # calculate_llm_cost()
 optimize_prompts()
 
