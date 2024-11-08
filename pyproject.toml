@@ -11,7 +11,10 @@ pandas = "^2.2.3"
 pyarrow = "^17.0.0"
 fsspec = "^2024.9.0"
 huggingface-hub = "^0.25.1"
+datasets = "^3.0.1"
 numpy = "^2.1.1"
+tiktoken = "^0.8.0"
+openai = "^1.52.2"
 
 
 [build-system]
