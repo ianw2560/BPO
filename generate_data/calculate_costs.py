@@ -1,14 +1,39 @@
 from datasets import load_dataset
 import json
 import tiktoken
+import os
 
 from openai import OpenAI
+
+def avg_output_tokens(model: str) -> int:
+
+    # Read in the test set of optimized prompts to get an idea of how large the outputs are
+    with open('data/raw_llm_output/optimized_prompts.json', 'r') as file:
+        llm_responses = json.load(file)
+
+    enc = tiktoken.encoding_for_model(model)
+
+    output_tokens = []
+    for response in llm_responses:
+        token_num = enc.encode(response['llm_response'])
+        print(token_num)
+        output_tokens.append(token_num)
+
+    print(output_tokens)
+
+
+    avg_token_num = sum(output_tokens) / len(output_tokens)
+
+    print(avg_token_num)
+
+    return avg_token_num
+
 
 def calculate_llm_costs():
 
     MODELS = ["gpt-4o", "gpt-4"]
 
-    f = open("generate_data/prompts//gpt4_generate_prompt_no_ctx.txt")
+    f = open("generate_data/prompts/gpt4_generate_prompt_no_ctx.txt")
     GPT_PROMPT_NO_CONTEXT = f.read()
 
     # Dict to store token count for each model
@@ -52,12 +77,12 @@ def calculate_llm_costs():
 
             num_input_tokens = len(enc.encode(llm_prompt))
 
-            # Estimate the number of output tokens to be the same as the original instruction
-            # Add an additional 100 tokens for the explanation
-            num_output_tokens = len(enc.encode(instruction)) + 100
+            # Estimate the number of output tokens by taking the average number of output tokens
+            # in a sample of generated responses
+            num_output_tokens = avg_output_tokens(model)
 
             model_tokens[model]['input'] += num_input_tokens
-            model_tokens[model]['output'] += num_output_tokens
+            model_tokens[model]['output'] += avg_output_tokens
 
             print(f"{model} input tokens: {model_tokens[model]['input']} {model} output tokens: {model_tokens[model]['output']}", end=' ')
         print()
@@ -75,4 +100,5 @@ def calculate_llm_costs():
         print(f"Output token cost: ${output_token_cost}")
 
 if __name__=="__main__":
+    
     calculate_llm_costs()

@@ -3,6 +3,7 @@
 from datasets import load_dataset
 import json
 import tiktoken
+import os
 
 from openai import OpenAI
 
@@ -21,8 +22,7 @@ def optimize_prompts():
     optimized_prompts_training_data = []
     raw_llm_output = []
 
-    # num_prompts = len(train_ds)
-    num_prompts = 5
+    num_prompts = 10
 
     print(f"Begin optimizing {num_prompts} prompts...")
     for i in range(num_prompts):
@@ -61,6 +61,7 @@ def optimize_prompts():
         json.dump(optimized_prompts_training_data, json_file, indent=4)
 
     # Output the entire raw LLM response
+    os.makedirs("data/raw_llm_output", exist_ok=True)
     with open("data/raw_llm_output/optimized_prompts.json", "w") as json_file:
         json.dump(raw_llm_output, json_file, indent=4)
 
@@ -89,5 +90,4 @@ def generate_optimized_prompt(instruction: str, prompt: str):
     return llm_response, optimized_prompt
 
 if __name__=="__main__":
-    # calculate_llm_cost()
     optimize_prompts()

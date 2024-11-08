@@ -1,32 +1,62 @@
 [
     {
         "prompt": "What is Urho3D engine?",
-        "optimized_prompt": "What is Urho3D engine? Please provide a concise and accurate description of the Urho3D engine as an open-source, lightweight, cross-platform 2D and 3D game engine, including information about its licensing, language, and any relevant facts without including unverified claims or negative information.",
+        "optimized_prompt": "Provide an accurate and informative description of the Urho3D engine. Include details such as its licensing, functionality, and any notable features, focusing on the game engine's merits without introducing any controversies or questionable claims.",
         "good_res": "Urho3D is a MIT licensed open-source lightweight, cross-platform 2D and 3D game engine implemented in C++. \n\nThe name \"Urho\" means \"hero\" in Finnish.",
         "bad_res": "Urho3D is a free cross-platform, lightweight 3d and 2d game engine released under the MIT license. Due to drama between the lead and an active developer the project has been made Russian only. The last English language version was released on github on November 21, 2022 with the previous project leader starting a new project called Turso3D."
     },
     {
         "prompt": "Luca modric. Famous for what",
-        "optimized_prompt": "Luka Modri\u0107 is a Croatian professional footballer known for his exceptional skills as a midfielder. Please provide information about his career highlights, current club, national team involvement, and any notable achievements in football.",
+        "optimized_prompt": "Luka Modri\u0107 is a famous Croatian professional footballer known for his exceptional skills as a midfielder, particularly with La Liga club Real Madrid and as the captain of the Croatia national team. Focus on explaining why he is renowned in the football world, including his playing style and key achievements. You may include a link to related resources for further information.",
         "good_res": "Luka Modri\u0107 is a Croatian professional footballer who plays as a midfielder for La Liga club Real Madrid and captains the Croatia national team. He plays mainly as a central midfielder, but can also play as an attacking midfielder or as a defensive midfielder. https://en.wikipedia.org/wiki/Luka_Modri%C4%87",
         "bad_res": "Luca Modric is a famous Croatian professional footballer."
     },
     {
         "prompt": "Is Jaws a true story?",
-        "optimized_prompt": "Is Jaws a true story?\" Please provide a clear and accurate explanation. Ensure that your response highlights that Jaws is a fictional film, while also mentioning the real historical events that inspired it, specifically focusing on the 1916 shark attacks in New Jersey and their relation to the author, Peter Benchley. Aim for a detailed and coherent response that does not introduce misinformation or confusion.",
+        "optimized_prompt": "Is Jaws a true story? Please provide an accurate and clear response that explains the origins of the movie Jaws, mentioning any real-life events or inspirations without introducing unrelated myths or inaccuracies.",
         "good_res": "No, at least not in the words of Peter Benchley, the author of Jaws, even though he was undoubtedly aware of the 1916 assaults (they are mentioned in his novel). Although Jaws is not based on a true occurrence, reputable news sources frequently point to the 1916 shark attacks in New Jersey as the film's primary source of inspiration.",
         "bad_res": "Well, Jaws is a movie, but the film was based off the real story of a shark called the Jersey Devil that terrorized the east coast in the Jersey surf. You'll note that even to this day that there are rumors of 'shark attacks' in waters near Jersey."
     },
     {
         "prompt": "How would I clean a car? (Please respond in iambic pentameter.)",
-        "optimized_prompt": "How would I clean a car? Please respond in iambic pentameter, ensuring the response includes a clear and safe step-by-step process for cleaning, detailing each action with care and creativity.",
+        "optimized_prompt": "Please describe how to clean a car using iambic pentameter. Ensure your response includes steps such as rinsing, scrubbing, and drying, while also emphasizing safety precautions like wearing gloves. Aim for creativity and coherence in your poetic structure.",
         "good_res": "To clean thy car, these steps take thou shalt:\n\nFirst rinse it down to wash free dirt and muck.\n\nWith sponge and soapy water scrub each spot.\n\nUse gloves thy hands to keep skin dry and clean.\n\nRinse once again and dry with towels strong.\n\nVacuum seats and floor mats freed of crumbs.\n\nWipe vinyl and glass until no streaks remain.\n\nPolish paint to shine bright and protect the shell.\n\nThy labor done, a gleaming car behold.",
         "bad_res": "I would fill a bucket of water, get a sponge, and some soap. Mix the water and soap and run the car. Finally, I would rinse it with clean water and dry it clean with a dry cloth."
     },
     {
         "prompt": "How can i find things better?",
-        "optimized_prompt": "How can I assist you in finding what you need more effectively? Please specify what you are trying to locate so that I can provide tailored suggestions.",
+        "optimized_prompt": "How can I improve my ability to find information more effectively? I'd appreciate straightforward advice that invites me to specify my needs.",
         "good_res": "I'd be happy to assist you in finding things better. What are you trying to find?",
         "bad_res": "If you are using a search engine you might try to think an extra second about what you are really asking for and use the most relevant keywords either in a setence or simply putting them side by side. Mixing and matching different key words and or setences could help."
+    },
+    {
+        "prompt": "What is LuaJIT?",
+        "optimized_prompt": "What is LuaJIT? Please provide a detailed explanation that includes its role as a Just-In-Time (JIT) compiler for the Lua programming language. Additionally, consider explaining the general concept of JIT compilation to provide context. Feel free to invite further questions or specify if any aspect requires more clarification.",
+        "good_res": "LuaJIT is a Just-In-Time (JIT) compiler for the programming language Lua. \n\nIn computing, just-in-time (JIT) compilation (also dynamic translation or run-time compilations) is a way of executing computer code that involves compilation during execution of a program (at run time) rather than before execution. \n\nIs there something specific you would like to know about LuaJIT or Lua?",
+        "bad_res": "LuaJIT is a tracing just in time compiler for the Lua programming language."
+    },
+    {
+        "prompt": "Who lives in a pineapple under the sea?",
+        "optimized_prompt": "Who lives in a pineapple under the sea? Please respond succinctly with the character's name.",
+        "good_res": "Spongebob Squarepants!",
+        "bad_res": "SpongeBob SquarePants lives in a pineapple under the sea."
+    },
+    {
+        "prompt": "What was the capital of Poland in 1640?",
+        "optimized_prompt": "What was the capital of Poland in 1640? Please provide the answer along with any relevant historical context or details that contribute to understanding the significance of the capital at that time.",
+        "good_res": "Warsaw.\n\nIt became the capital of Poland-Lithuania Commonwealth in 1596.\n\nIt was chosen as the capital because it was the mid-point between the then Polish capital Cracow, and Lithuanian capital Vilnius.",
+        "bad_res": "In 1640, the capital of Poland was Krakow. Krakow was the historical capital of Poland from the 11th century until the late 16th century, when the capital was moved to Warsaw. However, Krakow remained an important cultural and political center, and was still considered one of the main capitals of Poland during the 17th century. Today, Krakow is a major city in Poland, renowned for its rich history, beautiful architecture, and cultural heritage."
+    },
+    {
+        "prompt": "What is your favorite water Pokemon?",
+        "optimized_prompt": "What is your favorite water Pok\u00e9mon? Please provide your own opinion if you have a favorite, or alternatively, list some popular water Pok\u00e9mon along with their characteristics if you don't have a personal preference.",
+        "good_res": "As a large language model, I do not have favorites. \nGameRant lists some of the popular water-type pok\u00e9mon as being (in no particular order): \n- Vaporeon\n- Squirtle / Wartortle / Blastoise\n- Gyarados\n- Primarina\n- Starmie\n- Milotic\n- Lapras\n- Wailord",
+        "bad_res": "I don't have a favourite, but these are popular:\n\nBlastoise: for its combination of power and defense, Blastoise is a fan favorite and has been a staple of the Pok\u00e9mon franchise since its inception.\n\nVaporeon: This evolved form of Eevee is also a favorite among fans due to its high stats and unique design.\n\nLapras: A giant sea monster with a gentle personality, Lapras has been featured in many Pok\u00e9mon games and is well-loved for its adorable appearance and useful abilities in battle.\n\nGyarados: Originally a weak Pok\u00e9mon, Gyarados evolves into a fearsome dragon with a powerful Water/Flying typing and is often considered a top pick for competitive battling."
+    },
+    {
+        "prompt": "How come people are lazy?",
+        "optimized_prompt": "Why do people exhibit lazy behavior? Please provide a detailed and thoughtful response that explores various factors influencing laziness, including physical, psychological, and environmental elements. Aim for depth and clarity, incorporating specific examples where relevant, while ensuring the response is informative and considerate.",
+        "good_res": "People are lazy for a variety of reasons. Often, it is a combination of fatigue factors  and a lack of care or concern for doing something with enthusiasm.\n\nFatigue factors include things like poor sleep hygiene, poor diet and nutritional deficiencies, disengagement from normal circadian rhythm patterns, excessive screen time, an excess stress.\n\nIt's harder to pinpoint the cause of carelessness, but often it relates to a lack of perceived consequences or accountability in a given situational context. For example, a lazy person may not return their shopping cart to the proper place because they perceive there will be no consequences for just leaving it in the parking lot.",
+        "bad_res": "It is believed that laziness is an evolutionary adaptation meant to disincentivize animals, including humans, from wasting energy performing tasks which are perceived as unnecessary for survival."
     }
 ]
