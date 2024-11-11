@@ -16,8 +16,8 @@ class OptimizedDataset(Dataset):
         self.prompts = data
 
         for entry in tqdm(self.prompts):
-            self.opt.append(entry['good_res'])
-            self.org.append(entry['bad_res'])
+            self.opt.append(entry['optimized_prompt'])
+            self.org.append(entry['prompt'])
 
     def __len__(self):
         return len(self.prompts)

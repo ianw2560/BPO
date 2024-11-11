@@ -1,3 +1,6 @@
 __pycache__/
 poetry.lock
 __pycache__/
+train/__pycache__/preprocess.cpython-38.pyc
+train.json
+val.json
