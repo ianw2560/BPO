@@ -16,15 +16,9 @@ lora_dropout = 0.1
 
 
 def tokenizeInputs(tokenizer, dataset):    
-    # opt_tokens = tokenizer(dataset.opt, padding=True, truncation=True, return_tensors="pt")#) #, padding=True, truncation=True)
-    # org_tokens = tokenizer(dataset.org, padding=True, truncation=True, return_tensors="pt")#, return_tensors="pt")
-    # org_tokens['labels'] = opt_tokens['input_ids']
-    # breakpoint() 
 
     # Concatenate each original prompt with its corresponding optimized prompt.
     concatenated_prompts = [f"{org} {tokenizer.eos_token} {opt}" for org, opt in zip(dataset.org, dataset.opt)]
-
-    # breakpoint() 
 
     # Tokenize and pad the concatenated sequences to ensure consistent length.
     tokenized_data = tokenizer(concatenated_prompts, padding=True, truncation=True, return_tensors="pt")
@@ -32,21 +26,16 @@ def tokenizeInputs(tokenizer, dataset):
     # Shift the labels for causal language modeling by masking input prompt tokens (original) from labels.
     labels = tokenized_data["input_ids"].clone()
     prompt_lengths = [len(tokenizer(org)["input_ids"]) for org in dataset.org]
-    # breakpoint()
-
-    opt_prompt_len = [len(tokenizer(opt)["input_ids"]) for opt in dataset.opt]
 
     for i, prompt_len in enumerate(prompt_lengths):
         labels[i, :prompt_len] = -100  # Mask original tokens in the labels with -100 to ignore them in loss calculation.
-        #breakpoint()
 
         # Mask the optimized prompt in `input_ids` to prevent it from being "seen" by the model during training.
-        tokenized_data["input_ids"][i, prompt_len:] = 2
-        # breakpoint()
+        tokenized_data["input_ids"][i, prompt_len:] = 2 #<EOS>
 
     tokenized_data["labels"] = labels
 
-    return tokenized_data #org_tokens
+    return tokenized_data
 
 def main():
     ##############################################
@@ -77,7 +66,6 @@ def main():
     # Load tokenizer and model with QLoRA configuration
     compute_dtype = getattr(torch, bnb_4bit_compute_dtype)
     
-
     bnb_config = BitsAndBytesConfig(
     load_in_4bit=use_4bit,
     bnb_4bit_quant_type=bnb_4bit_quant_type,
@@ -104,8 +92,6 @@ def main():
         task_type="CAUSAL_LM",
     )
 
-    
-
     ################################################################
     # Pre-process tokenizer to set the data for the Llama-2-7b model
     ################################################################
@@ -117,7 +103,6 @@ def main():
 
     val_tokenized_data = tokenizeInputs(textTokenizer, val_dataset)
     tokenized_val_dataset = TokenizedDataset(val_tokenized_data)
-
 
     # print(type(org_tokenized_data))
     # print(type(tokenized_train_dataset))
@@ -149,7 +134,6 @@ def main():
                                     # bf16=True,
                                     # torch_compile=True,
                                     # fp16=True,
-                                    
                                     )
 
     ################################################################
