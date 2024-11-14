@@ -26,7 +26,7 @@ def generate_response_gpt4o(prompt: str):
 
     return llm_response
 
-def generate_response_claude_instant(prompt: str):
+def generate_response_claude_haiku(prompt: str):
     client = anthropic.Anthropic()
 
     message = client.messages.create(
@@ -100,9 +100,9 @@ def generate_responses(dataset: str, model: str):
         elif model == "gpt_3.5_turbo":
             original_response = generate_response_gpt3_5_turbo(original_prompt)
             optimized_response = generate_response_gpt3_5_turbo(optimized_prompt)
-        elif model == "claude_instant":
-            original_response = generate_response_claude_instant(original_prompt)
-            optimized_response = generate_response_claude_instant(optimized_prompt)
+        elif model == "claude_haiku":
+            original_response = generate_response_claude_haiku(original_prompt)
+            optimized_response = generate_response_claude_haiku(optimized_prompt)
         elif model == "claude2":
             original_response = generate_response_claude2(original_prompt)
             optimized_response = generate_response_claude2(optimized_prompt)
@@ -139,7 +139,7 @@ def generate_responses(dataset: str, model: str):
 def main():
 
     datasets = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    models = ["claude_instant"]
+    models = ["claude_haiku"]
 
     # TODO: Add for loop to loop through all datasets and models
 
