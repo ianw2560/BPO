@@ -5,6 +5,10 @@ import pandas
 
 from openai import OpenAI
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+import anthropic
+
+from openai import OpenAI
+#from clarifai.client.model import Model
 
 def generate_response_gpt3_5_turbo(prompt: str):
 
@@ -47,7 +51,24 @@ def generate_response_gpt4o(prompt: str):
     return response
 
 def generate_response_claude_instant(prompt: str):
-    pass
+    client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-3-haiku-20240307",
+        max_tokens=1000,
+        temperature=0,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+
+    print(message.content)
+    llm_response = message.choices[0].message.content
+
+    return llm_response
 
 def generate_response_claude2(prompt: str):
     pass
@@ -228,7 +249,7 @@ def main():
 
     # Specify datasets
     dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    model_options = ["gpt_4o"]
+    model_options = ["gpt_4o", "claude_instant"]
 
     parser = argparse.ArgumentParser()
 
