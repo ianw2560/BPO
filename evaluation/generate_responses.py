@@ -1,6 +1,8 @@
 import json
+import anthropic
 
 from openai import OpenAI
+#from clarifai.client.model import Model
 
 def generate_response_gpt3_5_turbo(prompt: str):
     pass
@@ -25,7 +27,24 @@ def generate_response_gpt4o(prompt: str):
     return llm_response
 
 def generate_response_claude_instant(prompt: str):
-    pass
+    client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-3-haiku-20240307",
+        max_tokens=1000,
+        temperature=0,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+
+    print(message.content)
+    llm_response = message.choices[0].message.content
+
+    return llm_response
 
 def generate_response_claude2(prompt: str):
     pass
@@ -120,11 +139,11 @@ def generate_responses(dataset: str, model: str):
 def main():
 
     datasets = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    models = ["gpt-4o"]
+    models = ["claude_instant"]
 
     # TODO: Add for loop to loop through all datasets and models
 
-    generate_responses("dolly", "gpt_4o")
+    generate_responses("dolly", "claude_instant")
 
 if __name__ == "__main__":
     main()
