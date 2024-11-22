@@ -17,4 +17,4 @@
 #SBATCH --mail-user ra578108@ucf.edu
 
 
-python train.py
+python inference.py #train.py
