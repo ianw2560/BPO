@@ -3,7 +3,24 @@ import json
 from openai import OpenAI
 
 def generate_response_gpt3_5_turbo(prompt: str):
-    pass
+
+    model = "gpt-3.5-turbo"
+
+    client = OpenAI()
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+
+    response = response.choices[0].message.content
+
+    return response
+
 
 def generate_response_gpt4o(prompt: str):
 
@@ -20,9 +37,9 @@ def generate_response_gpt4o(prompt: str):
         ]
     )
 
-    llm_response = response.choices[0].message.content
+    response = response.choices[0].message.content
 
-    return llm_response
+    return response
 
 def generate_response_claude_instant(prompt: str):
     pass
