@@ -1,3 +1,4 @@
+import argparse
 import os
 import random
 import json
@@ -8,8 +9,8 @@ from openai import OpenAI
 
 class Evaluation():
 
-    datasets = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    models = ["gpt_4o"]
+    dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
+    model_options = ["gpt_4o"]
 
     def __init__(self):
 
@@ -17,9 +18,9 @@ class Evaluation():
 
         # Initialize evaluation scores
         self.scores = {}
-        for model in Evaluation.models:
+        for model in Evaluation.model_options:
             self.scores[model] = {}
-            for ds in Evaluation.datasets:
+            for ds in Evaluation.dataset_options:
                 self.scores[model][ds] = {"ori":0, "bpo":0 ,"tie":0}
 
 
@@ -45,11 +46,14 @@ class Evaluation():
         user_message = user_message.replace("{answer_a}", resp_A[0])
         user_message = user_message.replace("{answer_b}", resp_B[0])
 
+        # print("USER MESSAGE:")
+        # print(user_message)
+
         # Perform evaluation with GPT-4o
         client = OpenAI()
         response = client.chat.completions.create(
             model="gpt-4o-mini",
-            temperature=0.1,
+            temperature=0.0,
             messages=[
                 {
                     "role": "system",
@@ -64,8 +68,8 @@ class Evaluation():
 
         llm_response = response.choices[0].message.content
 
-        # print("LLM Response:")
-        # print(llm_response)
+        print("LLM Response:")
+        print(llm_response)
 
         if "[[A]]" in llm_response:
             method = resp_A[1]
@@ -86,13 +90,13 @@ class Evaluation():
         and outputs the preferred response scoring.
         """
 
-        with open(f"evaluation/{dataset}_{model}_opt_responses.json", "r") as file:
+        with open(f"data/evaluation/{dataset}_{model}_opt_responses.json", "r") as file:
             opt_responses = json.load(file)
 
         for i, resp in enumerate(opt_responses):
 
             instruction = resp["original_prompt"]
-            original_response = resp["optimized_prompt"]
+            original_response = resp["original_response"]
             bpo_response = resp["optimized_response"]
 
             print(f"Evaluating Response {i+1}") 
@@ -100,13 +104,13 @@ class Evaluation():
 
     def print_scores(self):
 
-        for model in self.models:
+        for model in self.model_options:
             print("Model:", model)
             print("===================")
 
             df = pd.DataFrame(columns=["Orig.", "Tie", "BPO"])
 
-            for ds in self.datasets:
+            for ds in self.dataset_options:
                 original = self.scores[model][ds]["ori"]
                 tie = self.scores[model][ds]["tie"]
                 bpo = self.scores[model][ds]["bpo"]
@@ -118,5 +122,18 @@ class Evaluation():
 if __name__ == "__main__":
 
     e = Evaluation()
-    e.evaluate("dolly", "gpt_4o")
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-d', '--datasets', choices=e.dataset_options, nargs="*", default="dolly", dest="datasets")
+    parser.add_argument('-m', '--models', choices=e.model_options, nargs="*", default="gpt_4o", dest="models")
+    args = parser.parse_args()
+
+    print(args.datasets)
+    print(args.models)
+
+    for ds in args.datasets:
+        for model in args.models:
+            e.evaluate(ds, model)
+
     e.print_scores()
