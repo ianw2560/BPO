@@ -1,4 +1,6 @@
+import argparse
 import json
+import torch
 
 from openai import OpenAI
 
@@ -50,21 +52,21 @@ def generate_response_claude2(prompt: str):
 def generate_response_textbison(prompt: str):
     pass
 
-def generate_optimized_prompt_seq2seq(prompt: str):
+def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
+
+    model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
+    output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
+    resp = tokenizer.decode(output[0], skip_special_tokens=True)
 
     return prompt + "THIS IS OPTIMIZED FROM SEQ2SEQ"
 
-
-def generate_responses(dataset: str, model: str):
-    """Generate the responses for the original and optimized versions of the same prompt from the evaluation dataset.
-        The optimized prompt is generated using our Seq2Seq model.
-    """
+def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
     with open(f"data/eval_datasets/{dataset}_eval.json", "r") as file:
         eval_prompts = json.load(file)
 
-    optimized_responses = []
+    bpo_opt_prompts = []
     for i, data in enumerate(eval_prompts):
 
         if dataset == "dolly":
@@ -82,14 +84,65 @@ def generate_responses(dataset: str, model: str):
         # Remove leading whitespace
         original_prompt = prompt.strip()
 
+        print("Original Prompt:")
+        print(original_prompt)
+
+        print(f"Generating optimized prompt for prompt {i}...")
+        optimized_prompt = generate_optimized_prompt_bpo(original_prompt, device, tokenizer, bpo_model)
+
+        print("Optimized Prompt:")
+        print(optimized_prompt)
+
+        current_output = {}
+
+        # Build output JSON
+        current_output["original_prompt"] = original_prompt
+        current_output["optimized_prompt"] = optimized_prompt
+
+        bpo_opt_prompts.append(current_output)
+
+    with open(f"evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
+        json.dump(optimized_responses, json_file, indent=4)
+
+def generate_responses(dataset: str, model: str, device, tokenizer, bpo_model):
+    """Generate the responses for the original and optimized versions of the same prompt from the evaluation dataset.
+        The optimized prompt is generated using our Seq2Seq model.
+    """
+
+    with open(f"bpo_optimized_prompts_{dataset}.json", "r") as file:
+        eval_prompts = json.load(file)
+
+    optimized_responses = []
+    for i, data in enumerate(eval_prompts):
+
+        # if dataset == "dolly":
+        #     prompt = data['instruction'] + "\n" + data['context']
+        # elif dataset == "self_instruct":
+        #     prompt = data['instruction'] + "\n" + data['context']
+        # elif dataset == "vicuna":
+        #     pass
+        # elif dataset == "bpo_test":
+        #     prompt = data['prompt']
+        # else:
+        #     print("Invalid dataset specified!")
+        #     exit(1)
+
+        # # Remove leading whitespace
+        # original_prompt = prompt.strip()
+
         # print("Original Prompt:")
         # print(original_prompt)
 
-        print(f"Generating optimized prompt for prompt {i}...")
-        optimized_prompt = generate_optimized_prompt_seq2seq(original_prompt)
+        # print(f"Generating optimized prompt for prompt {i}...")
+        # optimized_prompt = generate_optimized_prompt_bpo(original_prompt, device, tokenizer, bpo_model)
 
-        # print("Optimized Prompt:")
-        # print(optimized_prompt)
+        
+
+        print("Original Prompt:")
+        print(original_prompt)
+
+        print("Optimized Prompt:")
+        print(optimized_prompt)
 
         print(f"Generating original and optimized responses for prompt {i}...")
         if model == "gpt_4o":
@@ -136,12 +189,45 @@ def generate_responses(dataset: str, model: str):
 
 def main():
 
-    datasets = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    models = ["gpt-4o"]
+    # Specify datasets
+    dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
+    model_options = ["gpt-4o"]
 
-    # TODO: Add for loop to loop through all datasets and models
+    parser = argparse.ArgumentParser()
 
-    generate_responses("dolly", "gpt_4o")
+    parser.add_argument('mode', choices=["opt", "eval"])
+    parser.add_argument('-d', '--datasets', choices=dataset_options)
+    parser.add_argument('-m', '--models', choices=model_options)
+
+    args = parser.parse_args()
+
+    if args.mode == "opt":
+
+        # Check for GPU
+        if torch.cuda.is_available():
+            device = torch.device('cuda')
+            print("GPU with cuda support detected!")
+        else:
+            device = torch.device('cpu')
+            print("No GPU detected. Falling back to using CPU!")
+
+        # Load pretrained BPO model
+        model_checkpoint = "./infer/bpo_model/"
+        llama_checkpoint = "meta-llama/Llama-2-7b-chat-hf"
+        bpo_model = AutoModelForCausalLM.from_pretrained(model_checkpoint).half().eval().to(device)
+        text_tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
+
+        # Loop through all datasets and models
+        for ds in args.datasets:
+            generate_bpo_optimized_prompts(ds, device, text_tokenizer, bpo_model)
+
+    elif args.mode == "eval":
+        for ds in args.datasets:
+            for model in args.models:
+                generate_responses(ds, model)
+    else:
+        print("Invalid mode selected!")
+        exit(1)
 
 if __name__ == "__main__":
     main()
