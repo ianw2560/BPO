@@ -3,6 +3,7 @@ import json
 import torch
 
 from openai import OpenAI
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 def generate_response_gpt3_5_turbo(prompt: str):
 
