@@ -35,20 +35,19 @@ def main():
     ##############################################
     if torch.cuda.is_available():
         device = torch.device('cuda')
+        print("GPU with cuda support detected!")
     else:
         device = torch.device('cpu')
-
-    print(f"Device:         {device}")
-    print("")
+        print("No GPU detected. Falling back to using CPU!")
 
     prompt_template = "[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response:\n{} [/INST]"
 
     ############################
     # Load pretrained BPO model
     ############################
-    modelCheckpoint = "/home/cap6614.student1/Rafeeq/test_trainer/checkpoint-4170"
+    modelCheckpoint = "./infer/bpo_model/"
     llamaCheckpoint = "meta-llama/Llama-2-7b-chat-hf"
-    BPOmodel = AutoModelForCausalLM.from_pretrained(modelCheckpoint,
+    bpo_model = AutoModelForCausalLM.from_pretrained(modelCheckpoint,
                                                 # quantization_config=bnb_config,
                                                 # load_in_4bit=True,
                                                 # device_map="auto"
@@ -60,17 +59,17 @@ def main():
     text = 'Tell me about Harry Potter?'
 
     # Stable optimization, this will sometimes maintain the original prompt
-    response = promptOptimize(device, text, prompt_template, textTokenizer, BPOmodel)
+    response = promptOptimize(device, text, prompt_template, textTokenizer, bpo_model)
     print(" PRINTING BPO SIMPLE RESPONSE::::: \n\n\n")
     print(response)
 
     # Agressive optimization, this will refine the original prompt with a higher possibility
     # but there may be inappropriate changes
-    aggResp = aggPromptOptimize(device, text, prompt_template, textTokenizer, BPOmodel)
+    aggResp = aggPromptOptimize(device, text, prompt_template, textTokenizer, bpo_model)
     print(" PRINTING BPO AGG RESPONSE::::: \n\n\n")
     print(aggResp)
 
-    del(BPOmodel)
+    del(bpo_model)
 
     llamaModel = AutoModelForCausalLM.from_pretrained(llamaCheckpoint).half().eval().to(device)
     llamaResponse = promptOptimize(device, text, prompt_template, textTokenizer, llamaModel)

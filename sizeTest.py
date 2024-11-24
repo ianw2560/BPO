@@ -12,7 +12,7 @@ else:
 print(f"Device:         {device}")
 print("")
 
-modelCheckpoint = "/home/cap6614.student1/Rafeeq/test_trainer/checkpoint-4170"
+modelCheckpoint = ".infer/bpo_model/"
 
 BPOmodel = AutoModelForCausalLM.from_pretrained(modelCheckpoint).half().eval().to(device)
 print("parameters for model is::", BPOmodel.num_parameters())
@@ -32,6 +32,6 @@ def get_layer_sizes(model):
 layer_sizes, total_size = get_layer_sizes(BPOmodel)
 
 for name, size in layer_sizes.items():
-    #print(f"Layer: {name}; Number of parameters: {size[0]:,} ({size[2]}); Size: {size[1] / (1024 ** 2):.2f} MiB")
+    print(f"Layer: {name}; Number of parameters: {size[0]:,} ({size[2]}); Size: {size[1] / (1024 ** 2):.2f} MiB")
 
 print(f"Total Model Size: {total_size / (1024 ** 2):.2f} MiB")
