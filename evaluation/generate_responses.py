@@ -192,15 +192,17 @@ def main():
 
     # Specify datasets
     dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    model_options = ["gpt-4o"]
+    model_options = ["gpt_4o"]
 
     parser = argparse.ArgumentParser()
 
     parser.add_argument('mode', choices=["opt", "eval"])
-    parser.add_argument('-d', '--datasets', choices=dataset_options)
-    parser.add_argument('-m', '--models', choices=model_options)
-
+    parser.add_argument('-d', '--datasets', choices=dataset_options, nargs="*", default="dolly", dest="datasets")
+    parser.add_argument('-m', '--models', choices=model_options, nargs="*", default="gpt_4o", dest="models")
     args = parser.parse_args()
+
+    print(args.datasets)
+    print(args.models)
 
     if args.mode == "opt":
 
