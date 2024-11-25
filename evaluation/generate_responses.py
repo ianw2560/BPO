@@ -104,11 +104,11 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         bpo_opt_prompts.append(current_output)
 
-        if i == 10:
+        if i == 5:
             break
 
     with open(f"evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
-        json.dump(optimized_responses, json_file, indent=4)
+        json.dump(bpo_opt_prompts, json_file, indent=4)
 
 def generate_responses(dataset: str, model: str, device, tokenizer, bpo_model):
     """Generate the responses for the original and optimized versions of the same prompt from the evaluation dataset.
