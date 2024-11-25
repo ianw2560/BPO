@@ -56,7 +56,7 @@ def generate_response_textbison(prompt: str):
 def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
 
-    prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response: Output the improved prompt while strictly adhering to the following format: **PROMPT** the improved prompt goes here **PROMPT**\n\n Here is the prompt to improve:\n{prompt} [/INST]"
+    prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response: Output the improved prompt while strictly adhering to the following format, making sure to surround your improved response with \"**PROMPT**\": **PROMPT** the improved prompt goes here **PROMPT**\n\n Here is the prompt to improve:\n{prompt} [/INST]"
 
     print("MODEL INPUT")
     print(prompt)
