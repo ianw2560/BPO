@@ -55,16 +55,19 @@ def generate_response_textbison(prompt: str):
 
 def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
-
-    prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response:\n{prompt} [/INST]"
+output your final verdict by strictly following this format
+    prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt with the following format: [[PROMPT]]\nxxx\n[[PROMPT]]. Here is the prompt to improve:\n{prompt} [/INST]"
 
     model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
     output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
-    optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip().split("\"")[1].strip()
+    optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
 
+    print("RAW RESPONSE")
     print(optimized_prompt)
+    print("STRIPPED RESPONSE")
+    print(optimized_prompt.split("[[PROMPT]]")[1].strip())
 
-    return optimized_prompt[1]
+    return optimized_prompt
 
 def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
@@ -109,19 +112,19 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         if i == 5:
             break
 
-    with open(f"evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
+    with open(f"data/evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
         json.dump(bpo_opt_prompts, json_file, indent=4)
 
-def generate_responses(dataset: str, model: str, device, tokenizer, bpo_model):
+def generate_responses(dataset: str, model: str):
     """Generate the responses for the original and optimized versions of the same prompt from the evaluation dataset.
         The optimized prompt is generated using our Seq2Seq model.
     """
 
-    with open(f"bpo_optimized_prompts_{dataset}.json", "r") as file:
-        eval_prompts = json.load(file)
+    with open(f"data/evaluation/bpo_optimized_prompts_{dataset}.json", "r") as file:
+        bpo_optimized_prompts = json.load(file)
 
     optimized_responses = []
-    for i, data in enumerate(eval_prompts):
+    for i, data in enumerate(bpo_optimized_prompts):
 
         # if dataset == "dolly":
         #     prompt = data['instruction'] + "\n" + data['context']
@@ -144,7 +147,8 @@ def generate_responses(dataset: str, model: str, device, tokenizer, bpo_model):
         # print(f"Generating optimized prompt for prompt {i}...")
         # optimized_prompt = generate_optimized_prompt_bpo(original_prompt, device, tokenizer, bpo_model)
 
-        
+        original_prompt = data["original_prompt"]
+        optimized_prompt = data["optimized_prompt"]
 
         print("Original Prompt:")
         print(original_prompt)
@@ -189,10 +193,7 @@ def generate_responses(dataset: str, model: str, device, tokenizer, bpo_model):
 
         optimized_responses.append(current_output)
 
-        if i == 10:
-            break
-
-    with open(f"evaluation/{dataset}_{model}_opt_responses.json", "w") as json_file:
+    with open(f"data/evaluation/{dataset}_{model}_opt_responses.json", "w") as json_file:
         json.dump(optimized_responses, json_file, indent=4)
 
 def main():
