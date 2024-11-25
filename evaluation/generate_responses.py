@@ -58,9 +58,9 @@ def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
 
     model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
     output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
-    resp = tokenizer.decode(output[0], skip_special_tokens=True)
+    optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True)
 
-    return prompt + "THIS IS OPTIMIZED FROM SEQ2SEQ"
+    return optimized_prompt
 
 def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
@@ -101,6 +101,9 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         current_output["optimized_prompt"] = optimized_prompt
 
         bpo_opt_prompts.append(current_output)
+
+        if i == 10:
+            break
 
     with open(f"evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
         json.dump(optimized_responses, json_file, indent=4)
