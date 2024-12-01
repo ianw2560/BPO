@@ -1,6 +1,7 @@
 import argparse
 import json
 import torch
+import pandas
 
 from openai import OpenAI
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
@@ -32,6 +33,7 @@ def generate_response_gpt4o(prompt: str):
     client = OpenAI()
     response = client.chat.completions.create(
         model=model,
+        temperature=0.0,
         messages=[
             {
                 "role": "user",
@@ -60,21 +62,15 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     optimize_prompt_template = optimize_prompt_template.read()
 
     prompt = optimize_prompt_template.replace("{prompt}", prompt).replace("{context}", context)
-
     # prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt by surround it with [BEGIN] and [END] tags.\n\n Here is the prompt to improve:\n{prompt} [/INST]"
-
-    # print("MODEL INPUT")
-    # print(prompt)
 
     model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
     output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
     optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
 
-    print("RAW RESPONSE")
+    print("Raw Model Output:")
     print(optimized_prompt)
     print()
-    # print("STRIPPED RESPONSE")
-    # print(optimized_prompt.split("Optimized Prompt:")[1].strip())
 
     optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip()
 
@@ -82,8 +78,14 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
 
 def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
-    with open(f"data/eval_datasets/{dataset}_eval.json", "r") as file:
-        eval_prompts = json.load(file)
+    if dataset != "vicuna":
+        with open(f"data/eval_datasets/{dataset}_eval.json", "r") as file:
+            eval_prompts = json.load(file)
+    else:
+        eval_prompts = []
+        with open(f"data/eval_datasets/{dataset}_eval.jsonl", "r") as file:
+            for line in file:
+                eval_prompts.append(json.loads(line))
 
     bpo_opt_prompts = []
     for i, data in enumerate(eval_prompts):
@@ -95,7 +97,8 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
             prompt = data['instruction'] #+ "\n" + data['context']
             context = data['context']
         elif dataset == "vicuna":
-            pass
+            prompt = data['text']
+            context = ""
         elif dataset == "bpo_test":
             prompt = data['prompt']
             context = ""
@@ -148,33 +151,12 @@ def generate_responses(dataset: str, model: str):
     optimized_responses = []
     for i, data in enumerate(bpo_optimized_prompts):
 
-        # if dataset == "dolly":
-        #     prompt = data['instruction'] + "\n" + data['context']
-        # elif dataset == "self_instruct":
-        #     prompt = data['instruction'] + "\n" + data['context']
-        # elif dataset == "vicuna":
-        #     pass
-        # elif dataset == "bpo_test":
-        #     prompt = data['prompt']
-        # else:
-        #     print("Invalid dataset specified!")
-        #     exit(1)
-
-        # # Remove leading whitespace
-        # original_prompt = prompt.strip()
-
-        # print("Original Prompt:")
-        # print(original_prompt)
-
-        # print(f"Generating optimized prompt for prompt {i}...")
-        # optimized_prompt = generate_optimized_prompt_bpo(original_prompt, device, tokenizer, bpo_model)
-
         original_prompt = data["original_prompt"]
         optimized_prompt = data["optimized_prompt"]
 
         print("Original Prompt:")
         print(original_prompt)
-
+        print()
         print("Optimized Prompt:")
         print(optimized_prompt)
 
@@ -198,12 +180,12 @@ def generate_responses(dataset: str, model: str):
             print("Invalid LLM model specified!")
             exit(1)
 
-        # print("Original Response:")
-        # print(original_response)
-        # print()
-        # print("Optimized Response:")
-        # print(optimized_response)
-        # print()
+        print("Original Response:")
+        print(original_response[:70] + "...")
+        print()
+        print("Optimized Response:")
+        print(optimized_response[:70] + "...")
+        print("======================================================================")
 
         current_output = {}
 
