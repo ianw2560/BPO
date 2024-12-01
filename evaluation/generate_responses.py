@@ -111,7 +111,13 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         print()
 
         # print(f"Generating optimized prompt for prompt {i}...")
-        optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
+        num_attempts = 5
+        for i in range(num_attempts):
+            try:
+                optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
+                break
+            except:
+                print("Regenerate and try again...")
 
         print("Optimized Prompt:")
         print(optimized_prompt)
@@ -125,8 +131,8 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         bpo_opt_prompts.append(current_output)
 
-        if i == 50:
-            break
+        # if i == 50:
+        #     break
 
     with open(f"data/evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
         json.dump(bpo_opt_prompts, json_file, indent=4)
@@ -170,7 +176,7 @@ def generate_responses(dataset: str, model: str):
         print(original_prompt)
 
         print("Optimized Prompt:")
-        print(optimized_prompt.split("[BEGIN]")[1].split("[END]").strip())
+        print(optimized_prompt)
 
         print(f"Generating original and optimized responses for prompt {i}...")
         if model == "gpt_4o":
