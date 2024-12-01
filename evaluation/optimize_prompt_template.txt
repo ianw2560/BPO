@@ -10,5 +10,5 @@ Please pay attention to the following:
 3.Do not provide any additional text or explanations about your answer besides the optimized prompt itself.
 
 Output with the following format:
-Optimized Prompt: xxx [END]
+Optimized Prompt: xxx
 [/INST]
