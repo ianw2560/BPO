@@ -67,7 +67,7 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     # print(prompt)
 
     model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.0, num_beams=1)
+    output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.3, num_beams=1)
     optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
 
     print("RAW RESPONSE")
@@ -125,7 +125,7 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         bpo_opt_prompts.append(current_output)
 
-        if i == 5:
+        if i == 50:
             break
 
     with open(f"data/evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
