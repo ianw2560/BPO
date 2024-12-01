@@ -6,9 +6,10 @@ import pandas
 from openai import OpenAI
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 import anthropic
+import vertexai
 
 from openai import OpenAI
-#from clarifai.client.model import Model
+from vertexai.generative_models import GenerativeModel
 
 def generate_response_gpt3_5_turbo(prompt: str):
 
@@ -71,7 +72,7 @@ def generate_response_claude_haiku(prompt: str):
     return llm_response
 
 def generate_response_claude2(prompt: str):
-        client = anthropic.Anthropic()
+    client = anthropic.Anthropic()
 
     message = client.messages.create(
         model="claude-3-5-haiku-20241022",
@@ -91,7 +92,16 @@ def generate_response_claude2(prompt: str):
     return llm_response
 
 def generate_response_textbison(prompt: str):
-    pass
+    vertexai.init(project='bpo111', location="us-central1")
+
+    model = GenerativeModel("gemini-1.5-flash-002")
+
+    response = model.generate_content(prompt)
+
+    print(response.text)
+    llm_response = response.text
+
+    return llm_response
 
 def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
