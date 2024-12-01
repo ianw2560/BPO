@@ -4,6 +4,11 @@ prompt:
 
 You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response.
 
+Please pay attention to the following:
+1.Do not add any extra text after you output the optimized prompt.
+2.Once you output "Optimized Prompt:" in your response, no text except for the optimized prompt itself should follow.
+3.Do not provide any additional text or explanations about your answer besides the optimized prompt itself.
+
 Output with the following format:
 Optimized Prompt: xxx [END]
 [/INST]
