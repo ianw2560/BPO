@@ -89,7 +89,7 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
     for i, data in enumerate(eval_prompts):
 
         if dataset == "dolly":
-            prompt = data['instruction'] + "\n" + data['context']
+            prompt = data['instruction'] # + "\n" + data['context']
         elif dataset == "self_instruct":
             prompt = data['instruction'] + "\n" + data['context']
         elif dataset == "vicuna":
