@@ -73,7 +73,7 @@ def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     print("RAW RESPONSE")
     print(optimized_prompt)
     print("STRIPPED RESPONSE")
-    print(optimized_prompt.split("Optimized Prompt:")[1].split("[END]")[1].strip())
+    print(optimized_prompt.split("Optimized Prompt:")[1].strip())
 
     return optimized_prompt
 
