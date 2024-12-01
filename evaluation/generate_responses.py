@@ -70,8 +70,9 @@ def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
     optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
 
-    # print("RAW RESPONSE")
-    # print(optimized_prompt)
+    print("RAW RESPONSE")
+    print(optimized_prompt)
+    print()
     # print("STRIPPED RESPONSE")
     # print(optimized_prompt.split("Optimized Prompt:")[1].strip())
 
