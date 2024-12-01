@@ -1,0 +1,7 @@
+prompt:
+"{prompt}"
+
+You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response.
+
+Output with the following format:
+Optimized Instruction: xxx [END]

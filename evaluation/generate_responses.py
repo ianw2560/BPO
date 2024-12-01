@@ -56,7 +56,12 @@ def generate_response_textbison(prompt: str):
 def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
 
-    prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response: Output the improved prompt while strictly adhering to the following format, making sure to surround your improved response with \"**PROMPT**\": **PROMPT** the improved prompt goes here **PROMPT**\n\n Here is the prompt to improve:\n{prompt} [/INST]"
+    optimize_prompt_template = open("evaluation/optimize_prompt_template.txt")
+    optimize_prompt_template = optimize_prompt_template.read()
+
+    prompt = optimize_prompt_template.replace("{prompt}", prompt)
+
+    # prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt by surround it with [BEGIN] and [END] tags.\n\n Here is the prompt to improve:\n{prompt} [/INST]"
 
     print("MODEL INPUT")
     print(prompt)
@@ -68,7 +73,7 @@ def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     print("RAW RESPONSE")
     print(optimized_prompt)
     print("STRIPPED RESPONSE")
-    print(optimized_prompt.split("**PROMPT**")[1].strip())
+    print(optimized_prompt.split("[BEGIN]")[1].split("[END]").strip())
 
     return optimized_prompt
 
@@ -157,7 +162,7 @@ def generate_responses(dataset: str, model: str):
         print(original_prompt)
 
         print("Optimized Prompt:")
-        print(optimized_prompt)
+        print(optimized_prompt.split("[BEGIN]")[1].split("[END]").strip())
 
         print(f"Generating original and optimized responses for prompt {i}...")
         if model == "gpt_4o":
