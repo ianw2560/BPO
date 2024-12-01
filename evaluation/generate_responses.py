@@ -111,7 +111,7 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         print("Optimized Prompt:")
         print(optimized_prompt)
-        print("========================================================")]
+        print("========================================================")
 
         current_output = {}
 
