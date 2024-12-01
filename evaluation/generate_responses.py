@@ -53,13 +53,13 @@ def generate_response_claude2(prompt: str):
 def generate_response_textbison(prompt: str):
     pass
 
-def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
+def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
 
     optimize_prompt_template = open("evaluation/optimize_prompt_template.txt")
     optimize_prompt_template = optimize_prompt_template.read()
 
-    prompt = optimize_prompt_template.replace("{prompt}", prompt)
+    prompt = optimize_prompt_template.replace("{prompt}", prompt).replace("{context}", context)
 
     # prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt by surround it with [BEGIN] and [END] tags.\n\n Here is the prompt to improve:\n{prompt} [/INST]"
 
@@ -67,7 +67,7 @@ def generate_optimized_prompt_bpo(prompt: str, device, tokenizer, model):
     # print(prompt)
 
     model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
+    output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.0, num_beams=1)
     optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
 
     print("RAW RESPONSE")
@@ -90,12 +90,15 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         if dataset == "dolly":
             prompt = data['instruction'] # + "\n" + data['context']
+            context = data['context']
         elif dataset == "self_instruct":
-            prompt = data['instruction'] + "\n" + data['context']
+            prompt = data['instruction'] #+ "\n" + data['context']
+            context = data['context']
         elif dataset == "vicuna":
             pass
         elif dataset == "bpo_test":
             prompt = data['prompt']
+            context = ""
         else:
             print("Invalid dataset specified!")
             exit(1)
@@ -108,7 +111,7 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         print()
 
         # print(f"Generating optimized prompt for prompt {i}...")
-        optimized_prompt = generate_optimized_prompt_bpo(original_prompt, device, tokenizer, bpo_model)
+        optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
 
         print("Optimized Prompt:")
         print(optimized_prompt)
