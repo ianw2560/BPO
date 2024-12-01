@@ -71,7 +71,24 @@ def generate_response_claude_haiku(prompt: str):
     return llm_response
 
 def generate_response_claude2(prompt: str):
-    pass
+        client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-3-5-haiku-20241022",
+        max_tokens=1000,
+        temperature=0,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+
+    print(message.content)
+    llm_response = message.choices[0].message.content
+
+    return llm_response
 
 def generate_response_textbison(prompt: str):
     pass
