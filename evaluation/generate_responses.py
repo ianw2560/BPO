@@ -72,10 +72,12 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     print(optimized_prompt)
     print()
 
-    if ("Optimized Prompt:" not in optimized_prompt) or ("[END]" not in optimized_prompt):
-        raise Exception
+    # if ("Optimized Prompt:" not in optimized_prompt) or ("[END]" not in optimized_prompt):
+    #     raise Exception
 
-    optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
+    # optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
+
+    optimized_prompt = optimized_prompt.strip()
 
     return optimized_prompt
 

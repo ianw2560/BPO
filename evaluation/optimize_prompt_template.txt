@@ -1,6 +1,3 @@
-[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response:
+[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Do not respond with any text other than the improved prompt. Here is the prompt to improve:
 {prompt}
-
-Output with the following format:
-Optimized Prompt: xxx [END]
 [/INST]
