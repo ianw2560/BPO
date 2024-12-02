@@ -28,7 +28,7 @@ def generate_response_gpt3_5_turbo(prompt: str):
 
 def generate_response_gpt4o(prompt: str):
 
-    model = "gpt-4o-mini"
+    model = "gpt-4o"
 
     client = OpenAI()
     response = client.chat.completions.create(
@@ -134,8 +134,8 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         bpo_opt_prompts.append(current_output)
 
-        if i == 20:
-            break
+        # if i == 20:
+        #     break
 
     with open(f"data/evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
         json.dump(bpo_opt_prompts, json_file, indent=4)
@@ -197,8 +197,8 @@ def generate_responses(dataset: str, model: str):
 
         optimized_responses.append(current_output)
 
-        if i == 20:
-            break
+        # if i == 20:
+        #     break
 
     with open(f"data/evaluation/{dataset}_{model}_opt_responses.json", "w") as json_file:
         json.dump(optimized_responses, json_file, indent=4)

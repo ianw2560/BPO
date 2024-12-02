@@ -52,7 +52,7 @@ class Evaluation():
         # Perform evaluation with GPT-4o
         client = OpenAI()
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             temperature=0.0,
             messages=[
                 {
@@ -129,9 +129,7 @@ if __name__ == "__main__":
     parser.add_argument('-m', '--models', choices=e.model_options, nargs="*", default="gpt_4o", dest="models")
     args = parser.parse_args()
 
-    print(args.datasets)
-    print(args.models)
-
+    # Loop through all specified datasets and models
     for ds in args.datasets:
         for model in args.models:
             e.evaluate(ds, model)
