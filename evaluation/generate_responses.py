@@ -134,8 +134,8 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         bpo_opt_prompts.append(current_output)
 
-        # if i == 50:
-        #     break
+        if i == 20:
+            break
 
     with open(f"data/evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
         json.dump(bpo_opt_prompts, json_file, indent=4)
@@ -154,13 +154,13 @@ def generate_responses(dataset: str, model: str):
         original_prompt = data["original_prompt"]
         optimized_prompt = data["optimized_prompt"]
 
+        print(f"GENERATING RESPONSES - {dataset.upper()} DATASET - PROMPT {i+1}")
         print("Original Prompt:")
         print(original_prompt)
         print()
         print("Optimized Prompt:")
         print(optimized_prompt)
 
-        print(f"Generating original and optimized responses for prompt {i}...")
         if model == "gpt_4o":
             original_response = generate_response_gpt4o(original_prompt)
             optimized_response = generate_response_gpt4o(optimized_prompt)
@@ -185,7 +185,7 @@ def generate_responses(dataset: str, model: str):
         print()
         print("Optimized Response:")
         print(optimized_response[:70] + "...")
-        print("======================================================================")
+        print("=========================================================================")
 
         current_output = {}
 
@@ -196,6 +196,9 @@ def generate_responses(dataset: str, model: str):
         current_output["optimized_response"] = optimized_response
 
         optimized_responses.append(current_output)
+
+        if i == 20:
+            break
 
     with open(f"data/evaluation/{dataset}_{model}_opt_responses.json", "w") as json_file:
         json.dump(optimized_responses, json_file, indent=4)

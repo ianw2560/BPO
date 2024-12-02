@@ -99,7 +99,7 @@ class Evaluation():
             original_response = resp["original_response"]
             bpo_response = resp["optimized_response"]
 
-            print(f"Evaluating Response {i+1}") 
+            print(f"EVALUATING {model.upper()} RESPONSES FOR {dataset.upper()} DATASET - PROMPT {i+1}")
             self.evaluate_response(dataset, model, instruction, original_response, bpo_response)
 
     def print_scores(self):
