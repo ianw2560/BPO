@@ -1,11 +1,11 @@
 [
     {
         "original_prompt": "The sentence you are given might be too wordy, complicated, or unclear. Rewrite the sentence and make your writing clearer by keeping it concise. Whenever possible, break complex sentences into multiple sentences and eliminate unnecessary words.",
-        "optimized_prompt": "If you have any questions about my rate or need to adjust the scope of this project, please let me know."
+        "optimized_prompt": "\"Please let me know if you have any questions about my rate or if you need to increase or decrease the scope of this project.\""
     },
     {
         "original_prompt": "Analyze the word choice, phrasing, punctuation, and capitalization in the given email. How may the writer of this email sound to the reader? These tones include Disheartening, Accusatory, Worried, Curious, Surprised, Disapproving, Unassuming, Formal, Assertive, Confident, Appreciative, Concerned, Sad, Informal, Regretful, Encouraging, Egocentric, Joyful, Optimistic, and Excited.",
-        "optimized_prompt": "\"Analyze the language choices, sentence structure, punctuation, and capitalization in the given email. How does the writer convey their tone to the reader? Consider tones such as disheartened, accusatory, worried, curious, surprised, disapproving, unassuming, formal, assertive, confident, appreciative, concerned, sad, informal, regretful, encouraging, egocentric, joyful, optimistic, and excited.\""
+        "optimized_prompt": "Can you analyze the word choice, phrasing, punctuation, and capitalization in the given email? How does the writer of this email sound to the reader?"
     },
     {
         "original_prompt": "Rewrite the given text and correct grammar, spelling, and punctuation errors.",
@@ -13,75 +13,75 @@
     },
     {
         "original_prompt": "You are given a paper citation, convert it to the requested citation style.",
-        "optimized_prompt": "Attention Is All You Need. arXiv (2017). 10.48550/arXiv.1706.03762."
+        "optimized_prompt": "Please provide the citation in the requested citation style for the paper \"Attention Is All You Need.\" arXiv, (2017). <https://doi.org/10.48550/arXiv.1706.03762>"
     },
     {
         "original_prompt": "Desk jobs require writing a lot of emails, so it isn't surprising we get tired of repeating ourselves. Come up with several synonyms for the given word.",
-        "optimized_prompt": "Come up with several synonyms for the word \"sincerely\" that are commonly used in professional emails."
+        "optimized_prompt": "\"Desk jobs often involve writing numerous emails, which can lead to fatigue in repetitive language use. Generate several alternatives for the term 'sincerely'.\""
     },
     {
         "original_prompt": "If you could help me write an email to my friends inviting them to dinner on Friday, it would be greatly appreciated.",
-        "optimized_prompt": "If you could help me write an email to my friends inviting them to dinner on Friday, it would be greatly appreciated. Please include the details of the dinner, such as the time, location, and any specific dishes you would like to share."
+        "optimized_prompt": "Please help me craft an email to my friends inviting them to dinner on Friday."
     },
     {
         "original_prompt": "The tone of the email should be changed and rewritten in a more professional manner.",
-        "optimized_prompt": "Subject: Request for Vacation Time\n\nDear [Employer],\n\nI hope this email finds you well. I am writing to request a day off on [date]. I have ensured that my work responsibilities for that day are completed and will be available to address any questions or concerns you may have.\n\nThank you for your time and consideration.\n\nSincerely,\n[Your Name]"
+        "optimized_prompt": "Subject: Request for Vacation Time\n\nDear [Employer],\n\nI hope this email finds you well. I am writing to request a day off on [date]. I have ensured that all of my work responsibilities for that day have been completed, and I am available to address any questions or concerns you may have.\n\nThank you for your time and consideration.\n\nSincerely,\n[Your Name]"
     },
     {
         "original_prompt": "Write a social media post about the call for collaboration on a crowdsourcing project in a persuasive way.",
-        "optimized_prompt": "\ud83d\ude80 Collaborate with us on a groundbreaking project! \ud83e\udd1d We're seeking diverse perspectives to help us solve a complex challenge. Join our community and contribute your ideas to make a meaningful impact. \ud83d\udca1 #crowdsourcing #collaboration #innovation"
+        "optimized_prompt": "Calling all creatives and problem solvers! Join our crowdsourcing project and help us tackle a complex challenge in a fun and collaborative way. Share your ideas, skills, and expertise to make a real impact and earn rewards. Don't miss out on this opportunity to be a part of something meaningful and exciting. Let's work together to create something amazing! \ud83d\ude80"
     },
     {
         "original_prompt": "My favorite witty review of The Rings of Power series is this:",
-        "optimized_prompt": "Can you share a witty review of The Rings of Power series?"
+        "optimized_prompt": "Can you provide a witty review of The Rings of Power series that is both helpful and harmless?"
     },
     {
         "original_prompt": "A helpful writing exercise is writing a story without using adjectives or adverbs. This will help you learn to use other words and phrases to describe what you are trying to say. Here are some examples:",
-        "optimized_prompt": "A helpful writing exercise is writing a story without using adjectives or adverbs. This will help you learn to use other words and phrases to describe what you are trying to say."
+        "optimized_prompt": "Write a story without using adjectives or adverbs."
     },
     {
         "original_prompt": "Come up with some search queries on google about coding stuff.",
-        "optimized_prompt": "\"Explore various coding topics, such as programming languages, software development, algorithms, data structures, and more. Please provide specific and relevant search queries that a beginner or intermediate programmer might use on Google.\""
+        "optimized_prompt": "Come up with some search queries on Google about coding topics, including but not limited to programming languages, coding techniques, software development, and more."
     },
     {
         "original_prompt": "Discover the most relevant StackOverflow questions for your search term. And output a list of their URLs.",
-        "optimized_prompt": "\"Find the most relevant Stack Overflow questions related to 'remove item from array' and list their URLs.\""
+        "optimized_prompt": "Remove item from array"
     },
     {
         "original_prompt": "You are given an algorithm or a search query about coding. Look for a code snippet related to the search query.",
-        "optimized_prompt": "Please provide a Python loop that solves the problem described in your search query."
+        "optimized_prompt": "Please provide a Python loop that can be used to iterate through a list of numbers and perform a specific action for each number."
     },
     {
         "original_prompt": "You are provided with a description of the code, specifications, or prompts. Your help is needed in automating code generation to speed up the development process.",
-        "optimized_prompt": "Please provide the Python code for a function that determines whether a given number is prime."
+        "optimized_prompt": "Please provide a Python function to determine whether a number is prime, including any necessary inputs and outputs, and any relevant documentation or comments."
     },
     {
         "original_prompt": "When you're stuck on a coding problem, the best place to look for help is in the documentation. Read the docs carefully and see if there's a section that covers your specific issue. Often, the answer will be right there in front of you. If not, try searching for key terms related to your problem. Come up with the useful links about the given search term.",
-        "optimized_prompt": "When you're stuck on a coding problem related to finding duplicate values in SQL, the best place to look for help is in the documentation. Read the relevant sections carefully and see if there's a section that covers your specific issue. If not, try searching for key terms related to your problem, such as \"SQL duplicate values\" or \"SQL unique values\". Come up with useful links about the given search term."
+        "optimized_prompt": "\"When you're stuck on a coding problem related to SQL and duplicate values, the best place to look for help is in the documentation. Read the relevant sections carefully and see if there's a subtopic that covers your specific issue. Use keywords related to your problem to search the documentation for relevant information. Come up with useful links about the given search term.\""
     },
     {
         "original_prompt": "We have entered the home supplies budget in the following table. Calculate the last column with the given function and rewrite the completed table.\nNote that, columns in a row are separated using a comma, and rows are separated using a \"|\".",
-        "optimized_prompt": "\"We have entered the home supplies budget in the following table. Calculate the last column with the given function and rewrite the completed table.\nNote that, columns in a row are separated using a comma, and rows are separated using a \"|\".\n\nContext:\n\"Item, Qty, Price, Subtotal | mango, 5, 500, ? | apple, 4, 150, ? | oil, 2, 1500, ?\n\nFunction: column2 * column3\""
+        "optimized_prompt": "\"We have entered the home supplies budget in the following table. Calculate the last column with the given function and rewrite the completed table.\nNote that, columns in a row are separated using a comma, and rows are separated using a \"|\".\n\nContext:\n\"Item, Qty, Price, Subtotal | mango, 5, 500, ? | apple, 4, 150, ? | oil, 2, 1500, ?\n\nFunction: column2 * column 3\""
     },
     {
         "original_prompt": "Please write the Excel function name associated with each description.",
-        "optimized_prompt": "Please provide the Excel function name associated with each description:\n\n1. Returns the number of days between two dates\n2. Returns the starting position of a text string within another text string\n3. Returns the number in the middle of the set of given numbers"
+        "optimized_prompt": "* `DATEDIF` for the function that returns the number of days between two dates\n* `FIND` for the function that returns the starting position of a text string within another text string\n* `RANK.AVG` for the function that returns the number in the middle of the set of given numbers"
     },
     {
         "original_prompt": "What are the steps to using random (yet coherent) text as filler content within your Word document?",
-        "optimized_prompt": "To use random yet coherent text as filler content within your Word document, follow these steps:\n\n1. Identify the purpose of the filler content and the desired tone or style.\n2. Use a random word or phrase generator to create a list of coherent words or phrases that align with the purpose and tone.\n3. Select a random word or phrase from the list and insert it into your Word document as filler content.\n4. Repeat steps 2-3 as needed to fill the entire document or to maintain a consistent level of filler content throughout.\n\nBy following these steps, you can effectively use random yet coherent text as filler content within your Word document."
+        "optimized_prompt": "How can you use random yet coherent text as filler content within your Word document?"
     },
     {
         "original_prompt": "Design a soothing pastel color palette for your slides. Pastel colors generally come across as pretty and delicate, so you\u2019ll want to make sure your presentation calls for a similar mood. Choose up to five colors or color codes.",
-        "optimized_prompt": "\"Design a soothing pastel color palette for your slides that evokes a sense of calmness and serenity. Choose up to five colors or color codes that align with the desired mood and aesthetic. Consider incorporating shades of blue, green, and yellow to create a soothing and natural palette.\""
+        "optimized_prompt": "\"Design a soothing pastel color palette for your slides that evokes a sense of calmness and serenity. Choose up to five colors or color codes that are soft, muted, and inviting, and that will help create a peaceful atmosphere in your presentation. Consider the mood and tone you want to convey, and select colors that will help you achieve that. Provide the color codes or names of the colors you choose, and explain why you selected them.\""
     },
     {
         "original_prompt": "I bought two shirts from the store and each one cost me $10. I also bought a pair of pants and they cost me $20. Then, I bought a dress and it cost me $30. Also,  I bought a pair of shoes and they cost me $40. Lastly, I bought a jacket and it cost me $50.\n\nMake a table chart showing items, the number, and the price of these items. Separate columns with \"|\".",
-        "optimized_prompt": "| Item | Number | Price |\n| --- | --- | --- |\n| Shirt 1 | 2 | $10 |\n| Shirt 2 | 2 | $10 |\n| Pants | 1 | $20 |\n| Dress | 1 | $30 |\n| Shoes | 1 | $40 |\n| Jacket | 1 | $50 |"
+        "optimized_prompt": "I bought two shirts from the store and each one cost me $10 | | I bought a pair of pants and they cost me $20 | | I bought a dress and it cost me $30 | | Also, I bought a pair of shoes and they cost me $40 | | Lastly, I bought a jacket and it cost me $50."
     },
     {
         "original_prompt": "Find sentences from reliable sources such as the Guardian or Forbes that contain the exact match for the given sentence or phrase. Also, mention the source of each sentence.",
-        "optimized_prompt": "Find sentences from reliable sources such as The Guardian or Forbes that contain the phrase \"great options.\""
+        "optimized_prompt": "Find sentences from reliable sources such as The Guardian or Forbes that contain the exact match for the given sentence or phrase."
     },
     {
         "original_prompt": "During writing, we added an asterisk for the word that did not come to mind. You will need to provide several examples to demonstrate all the words that can be used in the sentence instead of the asterisk.",
@@ -89,71 +89,71 @@
     },
     {
         "original_prompt": "Think of alternatives and paraphrases for the underlined word.",
-        "optimized_prompt": "What alternatives and paraphrases can you think of for the underlined word?"
+        "optimized_prompt": "Consider alternatives and paraphrases for the underlined word in the context of \"what we have expected.\""
     },
     {
         "original_prompt": "Design a skill assessment\u00a0questioner for R (Programming Language).",
-        "optimized_prompt": "Please provide a comprehensive assessment of a user's proficiency in R programming language, including their ability to:\n\n1. Write clear and concise code\n2. Use R functions and packages effectively\n3. Manipulate and analyze data\n4. Create informative visualizations\n5. Work with various data structures (e.g. vectors, matrices, data frames)\n6. Use R for statistical analysis and modeling\n7. Optimize code for efficiency and readability\n8. Troubleshoot and debug errors\n\nPlease provide specific examples of the user's skills in each of these areas, and explain why you believe they are proficient or not."
+        "optimized_prompt": "Please provide a comprehensive list of skills and knowledge areas that you believe are essential for a beginner to intermediate R programmer. Include both technical skills (e.g., data manipulation, statistical analysis, data visualization) and non-technical skills (e.g., problem-solving, critical thinking, communication)."
     },
     {
         "original_prompt": "Write a template for First-Person LinkedIn profile summary.",
-        "optimized_prompt": "Write a concise and compelling summary of your professional brand, highlighting your unique strengths, skills, and achievements. Consider including a personal statement, professional goals, and any relevant experience or accomplishments that showcase your expertise and value as a professional."
+        "optimized_prompt": "Write a compelling and concise summary of your professional brand, highlighting your unique strengths, skills, and achievements. Use specific examples and language to demonstrate your expertise and showcase your value proposition."
     },
     {
         "original_prompt": "Write a LinkedIn post to announce that you have accepted a new job offer.",
-        "optimized_prompt": "\ud83d\ude80 Exciting News! \ud83c\udf89 I'm thrilled to announce that I've accepted a new job offer and will be joining a fantastic team! \ud83d\udcbc Stay tuned for updates on my new role and how I'm making a positive impact in my new position. \ud83d\udcaa #NewJob #CareerGrowth #ProfessionalMilestone"
+        "optimized_prompt": "\ud83d\ude80 Exciting news! I'm thrilled to share that I've accepted a new job offer. Stay tuned for more details on my new role and the amazing opportunities ahead! \ud83d\udcbc #NewJob #CareerGrowth #ProfessionalMilestone"
     },
     {
         "original_prompt": "Make a list of desirable Skills for software engineers to add to LinkedIn.",
-        "optimized_prompt": "\"Make a list of desirable skills for software engineers to add to their LinkedIn profiles, taking into account the current job market and industry trends.\""
+        "optimized_prompt": "\"Make a list of desirable skills for software engineers to add to their LinkedIn profiles, taking into account the latest industry trends and job requirements.\""
     },
     {
         "original_prompt": "You will be asked to answer the following question as part of the LinkedIn Skill assessments.",
-        "optimized_prompt": "How can you clearly identify which branch you want to view when there is a tag and a branch both named \"push-notifications\"?"
+        "optimized_prompt": "\"Please clarify which 'push-notifications' branch you want to reference by providing additional context or using a more descriptive name for the branch.\""
     },
     {
         "original_prompt": "Take the title of the product and extract its attributes. The attributes in this case refer to the characteristics of the products, such as their brand and color. Your answer must a list following the format of \"attribute: value\".",
-        "optimized_prompt": "\"Attribute: Brand - Samsung\nAttribute: Capacity - 2TB\nAttribute: Interface - PCIe NVMe Gen 4\nAttribute: Form Factor - M.2 Internal Solid State Hard Drive Memory Card\nAttribute: Maximum Speed - Maximum Speed\nAttribute: Thermal Control - Thermal Control\nAttribute: Model Number - MZ-V8P2T0B\""
+        "optimized_prompt": "Attribute: Brand\nValue: Samsung\n\nAttribute: Color\nValue: None provided\n\nAttribute: Model Number\nValue: MZ-V8P2T0B\n\nAttribute: Form Factor\nValue: M.2 Internal Solid State Hard Drive Memory Card\n\nAttribute: Interface Type\nValue: PCIe NVMe Gen 4\n\nAttribute: Storage Capacity\nValue: 2TB\n\nPlease let me know if there's anything else I can help with!"
     },
     {
         "original_prompt": "You should write a Product Description that will persuade the buyer that the product is beneficial.",
-        "optimized_prompt": "Write a product description that highlights the benefits and unique features of the Flipslide Game, such as its electronic handheld design, 4 game modes, and multiplayer capabilities, in a way that persuades the buyer of its value and appeal."
+        "optimized_prompt": "Flip, slide, and match the colors to beat the clock in this exciting and multiplayer-friendly Electronic Handheld Game. With 4 game modes to choose from, you'll never get bored. Perfect for kids and adults alike, this game is sure to provide hours of fun and entertainment."
     },
     {
         "original_prompt": "What other Amazon products might interest someone who visited the given product?",
-        "optimized_prompt": "What other Amazon products might interest someone who viewed the Zeroll Zerolon Hardcoat Anodized Commercial Ice Cream Scoop with Unique Liquid Filled Heat Conductive Handle Easy Release Made in USA, 1.5-Ounce, Black?"
+        "optimized_prompt": "What other Amazon products might interest someone who visited the Zeroll Zerolon Hardcoat Anodized Commercial Ice Cream Scoop with Unique Liquid Filled Heat Conductive Handle Easy Release Made in USA, 1.5-Ounce, Black?"
     },
     {
         "original_prompt": "Compare the given item with similar products based on its properties such as price, rating, etc. For product comparison, use a table and separate the columns with \"|\".",
-        "optimized_prompt": "Compare the given item with similar products based on its properties such as price, rating, etc. For product comparison, use a table and separate the columns with \"|\"."
+        "optimized_prompt": "Compare the iBayam Journal Planner Pens Colored Pens Fine Point Markers Fine Tip Drawing Pens Porous Fineliner Pen with similar products based on their properties such as price, rating, etc. Use a table and separate the columns with \"|\"."
     },
     {
         "original_prompt": "Write a  review based on the given information.",
-        "optimized_prompt": "Write a review of the Persil Discs Laundry Detergent Pacs, Original Scent, High Efficiency (HE) Compatible, Laundry Soap, 62 Count, highlighting your overall experience with the product and any notable features or benefits you observed."
+        "optimized_prompt": "Write a review of Persil Discs Laundry Detergent Pacs, Original Scent, High Efficiency (HE) Compatible, Laundry Soap, 62 Count, highlighting the product's effectiveness and any notable features."
     },
     {
         "original_prompt": "Write a short description about the given movie or series.",
-        "optimized_prompt": "Describe \"The Witcher (2019)\" in a short and concise manner, highlighting its unique features and key elements that make it stand out from other movies or series."
+        "optimized_prompt": "Write a short description of the 2019 Netflix original series \"The Witcher\", including its genre, plot, and notable characters."
     },
     {
         "original_prompt": "Think of some series or movies that would be enjoyable for someone who liked the given series.",
-        "optimized_prompt": "Think of other captivating series or movies that share similar themes, genres, or elements that fans of \"Squid Game\" might enjoy."
+        "optimized_prompt": "Think of some series or movies that share similar themes, tones, or genres to \"Squid Game\" and would be enjoyable for someone who liked the given series."
     },
     {
         "original_prompt": "Give examples of popular shows and movies in the genre.",
-        "optimized_prompt": "Give examples of popular shows and movies in the crime genre."
+        "optimized_prompt": "Provide examples of popular TV shows and movies in the crime genre."
     },
     {
         "original_prompt": "In what genres does the given movie or series fall?",
-        "optimized_prompt": "What genres does the TV series \"Manifest\" fall under?"
+        "optimized_prompt": "What genres does the TV series \"Manifest\" fall into?"
     },
     {
         "original_prompt": "Give a brief description of the given category of movies and shows.",
-        "optimized_prompt": "Provide a concise and informative description of the \"Period Dramas\" category of movies and shows, highlighting their key characteristics and distinguishing features."
+        "optimized_prompt": "Provide a concise and informative description of the category of movies and shows known as \"Period Dramas,\" including their defining characteristics, historical context, and cultural significance."
     },
     {
         "original_prompt": "Provide an example of how a table of contents can be generated automatically in a LATEX document. Make sure your example contains the necessary commands.",
-        "optimized_prompt": "Provide an example of how a table of contents can be generated automatically in a LaTeX document, including the necessary commands."
+        "optimized_prompt": "Provide an example of how a table of contents can be generated automatically in a LATEX document. Make sure your example contains the necessary commands."
     },
     {
         "original_prompt": "Imagine you have a FEN notation of a chessboard. How can you draw a board to show this state of the chessboard in LATEX? Create a LATEX code that includes all the required commands and packages.",
@@ -165,11 +165,11 @@
     },
     {
         "original_prompt": "You should find a few LATEX templates appropriate for the task at hand and list the links to them.",
-        "optimized_prompt": "\"Please find and list a few LaTeX templates suitable for your assignment.\""
+        "optimized_prompt": "\"You should search for and list a few LATEX templates suitable for your assignment.\""
     },
     {
         "original_prompt": "Write a simple guide for uploading the bibliography database\n on Overleaf.",
-        "optimized_prompt": "\"Write a comprehensive guide for uploading a bibliography database on Overleaf, including step-by-step instructions and any necessary formatting or styling considerations.\""
+        "optimized_prompt": "Write a simple guide for uploading a bibliography database on Overleaf, including steps for preparing and formatting the database, and tips for avoiding common errors."
     },
     {
         "original_prompt": "Choose Spotify playlists that match the given mood. Provide a link to these playlists for easy access.",
@@ -177,103 +177,103 @@
     },
     {
         "original_prompt": "Curate a Spotify playlist based on the vibe. Publish this playlist as a song list.",
-        "optimized_prompt": "Curate a Spotify playlist based on the vibe of coding on a weekend, with a focus on tracks that enhance productivity and creativity while working on coding projects."
+        "optimized_prompt": "Create a Spotify playlist that captures the vibe of coding on a weekend. Include a mix of upbeat and relaxing tracks to help you focus and stay motivated during your coding sessions."
     },
     {
         "original_prompt": "How would you describe the meaning of this lyrics? Describe some of the metaphors.",
-        "optimized_prompt": "Can you explain the meaning behind these lyrics? What metaphors and imagery are used to convey the message?"
+        "optimized_prompt": "How would you interpret the meaning of these lyrics? What metaphors or symbolism can you identify?"
     },
     {
         "original_prompt": "Suggest some Audiobooks for First-Time Listeners. You can attract them by choosing popular works.",
-        "optimized_prompt": "Are you looking to get started with audiobooks but not sure where to begin? Choose from a variety of popular works that are perfect for first-time listeners, including [list popular audiobook titles or genres that are suitable for beginners]. This will help you find a great book that suits your interests and keeps you engaged from start to finish."
+        "optimized_prompt": "\"Recommend some captivating Audiobooks for new listeners. Utilize popular titles to pique their interest.\""
     },
     {
         "original_prompt": "Make a list of the most popular podcasts.",
-        "optimized_prompt": "Please provide a list of the most popular podcasts, including their names, genres, and a brief description of each podcast."
+        "optimized_prompt": "Please provide a list of the most popular podcasts, including their titles, genres, and a brief description of each podcast."
     },
     {
         "original_prompt": "You should take the time to read the situation and problem carefully and give the best advice you can.",
-        "optimized_prompt": "How can you approach this situation in a way that is respectful and constructive, while also prioritizing your own emotional well-being?"
+        "optimized_prompt": "\"You're on a road trip with a friend and you're feeling frustrated with their behavior. You want to address the issue in a way that doesn't lead to an argument or hurt feelings. How can you approach the situation in a constructive and respectful manner?\""
     },
     {
         "original_prompt": "You are given a description that provides a set of facts or a scenario. It is up to you to craft a story from these facts and scenarios. The missing pieces must be filled in with imaginative but logical information.",
-        "optimized_prompt": "You are given a description of ten European football teams participating in a season-long \"OneLove\" campaign promoting inclusion and opposing discrimination. Please craft a story from these facts, filling in the missing pieces with imaginative but logical information."
+        "optimized_prompt": "Ten European football teams, including the Netherlands, England, Belgium, Denmark, France, Germany, Norway, Sweden, Switzerland, and Wales, are participating in a season-long \"OneLove\" campaign to promote inclusion and oppose discrimination. Please craft a story that explores the teams' experiences and challenges throughout the campaign, incorporating the unique characteristics and cultural identities of each team and the impact of their collective efforts on the football community and beyond."
     },
     {
         "original_prompt": "Based on the given query, suggest some related search queries.",
-        "optimized_prompt": "\"Based on the query 'learning French', suggest some related search queries for language learning resources, including grammar guides, vocabulary builders, and language exchange platforms.\""
+        "optimized_prompt": "Based on the context of learning French, suggest some related search queries that can help users find valuable resources for improving their language skills."
     },
     {
         "original_prompt": "Please suggest a few papers to consider based on the search term given. The names of the papers should be listed.",
-        "optimized_prompt": "Please suggest a few papers to consider based on the search term \"scaling law + machine learning\". The names of the papers should be listed."
+        "optimized_prompt": "\"Please suggest a few papers that explore the intersection of scaling laws and machine learning. The names of the papers should be listed.\""
     },
     {
         "original_prompt": "Prepare an email signature template for the given person or company.",
-        "optimized_prompt": "Please create an email signature template for a graduate student of computer science, including their name, degree, and contact information."
+        "optimized_prompt": "Please prepare an email signature template for a graduate student of computer science, including their name, degree program, and contact information."
     },
     {
         "original_prompt": "React properly to reviews from your customers. In your responses, you can highlight your business' policies and customer service.",
-        "optimized_prompt": "Thank you for taking the time to share your review of our restaurant. We are thrilled to hear that you enjoyed your recent visit and appreciate your kind words about our food, service, and value. We are committed to providing a welcoming and satisfying dining experience for all of our customers, and we are glad to see that you found our policies and customer service to be up to your expectations.\n\nWe are glad you enjoyed our Succotash Omelet, Pulled Pork Benedict, and Hangtown Fry, and we hope you will have the opportunity to try our Beignet Flight on your next visit. We understand that our restaurant can be crowded at times, but we are working hard to ensure that all of our customers have a pleasant and satisfying dining experience.\n\nThank you again for your review, and we hope to see you soon!"
+        "optimized_prompt": "\"Thank you for taking the time to share your review of our restaurant! We're thrilled to hear that you enjoyed your recent visit and appreciate your feedback. We take pride in providing excellent customer service and high-quality dishes, and it's great to see that reflected in your review.\n\nWe're glad you enjoyed our Succotash Omelet, Pulled Pork Benedict, and Hangtown Fry, and we appreciate your mention of the generous portions and fair pricing. We're also glad you found our restaurant to be a worthwhile destination, even with the potential crowds.\n\nThank you again for your review, and we hope to see you back soon!\""
     },
     {
         "original_prompt": "Write a good Twitter Bio. Try to cover all the provided main points in your generated bio.",
-        "optimized_prompt": "Write a compelling Twitter bio that showcases your expertise as an architect and your interest in technology, all while maintaining a casual and engaging tone."
+        "optimized_prompt": "\"Architect and tech enthusiast \ud83c\udfe2\ud83d\udcbb. Passionate about designing innovative spaces and systems. Let's connect and explore the future of architecture and technology together!\""
     },
     {
         "original_prompt": "We need to write a thematic tweet to share company news and facts. Please take a careful look at the facts and details provided and create a tweet based on them.",
-        "optimized_prompt": "\"\ud83c\udf83\ud83d\udd0d Summer Internship Applications Open! \ud83d\ude80 Discover the spooky facts behind our company's internship program \ud83d\udd78\ufe0f #InternshipOpportunities #HalloweenTieIn #CompanyNews\""
+        "optimized_prompt": "\ud83c\udf83 Applications for summer internships are now open! \ud83d\udcbb\ud83c\udf89 Tie in the spooky season for a thematic tweet that will leave your followers howling for more. \ud83d\udc7b #InternshipSeason #SummerFun #HalloweenTieIn"
     },
     {
         "original_prompt": "A job description is a document that clearly states the requirements, duties, responsibilities, and skills required to perform a specific role. You need to write a job description based on the given information. You should describe responsibilities and duties in your job description in a logical order. Remember that potential employees often get their first impression of your company from your job description. So, the job description should convey the attractiveness of your company.",
-        "optimized_prompt": "\"Job Title: Software Engineer\n\nJob Responsibilities:\n\n* Collaborate with cross-functional teams to develop, test, and debug complex data processing pipelines and data analysis applications using big data processing systems such as Apache Spark.\n* Write unit, integration, and end-to-end tests to verify functionality using automated testing frameworks such as Pytest.\n* Receive and perform code reviews with other engineers.\n* Participate in Agile teams to develop, test, and debug complex data processing pipelines and data analysis applications using big data processing systems such as Apache Spark.\n* Diagnose, debug, and perform root cause analysis of issues and defects.\n\nSkills and Experience:\n\n* Experience with a modern software programming language, preferably Python and Pyspark.\n* Experience with cloud systems like AWS or Azure.\n* Experience writing SQL queries.\n* Strong written and verbal communication skills.\n* Eagerness to work in a highly-collaborative environment.\n* Some visualization experience, such as Tableau or PowerBI, is helpful.\n\nNote: The job description should convey the attractiveness of the company and the role, and highlight the skills and experience required to succeed in the position.\""
+        "optimized_prompt": "Job Title: Software Engineer\n\nJob Responsibilities:\n\n* Receive and perform code reviews with other engineers\n* Write unit, integration, and end-to-end tests to verify functionality using automated testing frameworks such as Pytest\n* Collaborate with fellow software engineers to build features requested by business stakeholders\n* Participate in Agile teams to develop, test, and debug complex data processing pipelines and data analysis applications using big data processing systems such as Apache Spark\n* Diagnose, debug, and perform root cause analysis of issues and defects\n\nSkills and Experience:\n\n* Experience with a modern software programming language (Python and Pyspark extensively)\n* Experience with cloud systems (AWS or Azure)\n* Experience writing SQL queries\n* Strong written and verbal communication skills\n* Eagerness to work in a highly-collaborative environment\n* Some visualization experience (Tableau or PowerBI helpful)\n\nBy organizing the job responsibilities in a logical order, and highlighting the essential skills and experience required for the role, this optimized prompt provides potential employees with a clear understanding of the job requirements and the company's expectations."
     },
     {
         "original_prompt": "Considering the reason for the rejection, write a polite rejection letter for rejecting a candidate.",
-        "optimized_prompt": "Dear [Candidate Name],\n\nThank you for taking the time to interview with us. We appreciate your interest in the position and the time you took to meet with us. Unfortunately, after careful consideration, we have decided not to move forward with your application at this time.\n\nPlease know that this decision was based solely on the reason provided, and we wish you the best of luck in your job search.\n\nSincerely,\n[Your Name]"
+        "optimized_prompt": "Dear [Candidate Name],\n\nThank you for taking the time to interview with us. We appreciate the effort you put into the process and the time you spent with us.\n\nUnfortunately, after careful consideration, we have decided not to move forward with your application at this time. The reason for this decision is that another candidate was selected as the top choice.\n\nPlease know that this decision was not made lightly, and we truly appreciate the quality of candidates we had the pleasure of interviewing. We hope you will understand and respect our decision.\n\nSincerely,\n[Your Name]"
     },
     {
         "original_prompt": "We've already decided on the title and topic for our blog post. I would appreciate it if you wrote an introduction paragraph to attract the readers' attention.",
-        "optimized_prompt": "Attract readers with a tantalizing introduction to your blog post on healthy apple muffins, including tips and recipe ideas."
+        "optimized_prompt": "Attract readers with a mouth-watering introduction to your blog post on healthy apple muffins. Include a tantalizing description of the muffins' flavors and textures, and highlight the benefits of using fresh, wholesome ingredients."
     },
     {
         "original_prompt": "Design an outline for a blog post based on the given information and list the sections accordingly.",
-        "optimized_prompt": "\"Design an outline for a blog post on last-minute gift ideas, with a relaxed and casual tone. Include the following sections:\n\nI. Introduction\n\n* Briefly explain the purpose of the post and the importance of finding the perfect gift at the last minute\n\nII. Unique and Thoughtful Gift Ideas\n\n* Present a list of creative and personalized gift ideas that can be purchased or made quickly\n\nIII. Easy and Convenient Gift Options\n\n* Provide a list of gifts that are quick and easy to obtain, such as gift cards or pre-made items\n\nIV. Tips for Last-Minute Shopping\n\n* Offer advice on how to make the most of last-minute gift shopping, including time management and budgeting strategies\n\nV. Conclusion\n\n* Summarize the main points of the post and emphasize the importance of being prepared for last-minute gift-giving situations.\""
+        "optimized_prompt": "Create an outline for a blog post about last-minute gift ideas, with a relaxed and casual tone."
     },
     {
         "original_prompt": "Write a section for a blog post and try to cover all of the provided information about this section in your text.",
-        "optimized_prompt": "Write a section on the versatility of jeans as a fashion staple that can be worn throughout the year and complement a variety of outfits, including those inspired by fall fashion trends. Highlight how jeans can be dressed up or down and remain stylish and comfortable, making them a trusty choice for any trip or adventure."
+        "optimized_prompt": "Write a section for a blog post that covers all of the provided information about the section titled \"Trusty Jeans\" in the context of fall fashion trends."
     },
     {
         "original_prompt": "Create a detailed caption for an Instagram post about a discount. A proper caption should explain the product, offer the discount, and tell the user how to claim it.",
-        "optimized_prompt": "\"Attention all developers! \ud83d\ude80 Get 50% off our comprehensive Golang course, teaching you the foundational skills for building cloud services, web applications, DevOps tools, and backend development. Use the coupon code: GOLANG to redeem your discount. Don't miss out on this incredible opportunity to level up your skills! \ud83d\udcbb #Golang #Discount #CouponCode #Developer #LearnGolang\""
+        "optimized_prompt": "\"Attention all developers! \ud83d\ude80\ud83d\udcbb Are you looking to level up your skills in Golang and unlock the doors to building cloud services, web applications, DevOps tools, and backend development? \ud83d\udd13\ud83d\udca5 We've got you covered! \ud83c\udfaf\n\nFor a limited time only, we're offering a 50% discount on our comprehensive Golang course. \ud83d\udcb0 Don't miss out on this incredible opportunity to take your skills to the next level! \ud83d\ude80\n\nTo claim your discount, simply use the coupon code: GOLANG. \ud83c\udf81\n\nDon't wait - enroll now and start building your dream project today! \ud83d\udcbb\ud83d\ude80 #Golang #Discount #Course #Developers #Skills #Learn #Grow\""
     },
     {
         "original_prompt": "Create a captivating Instagram caption based on the provided details. Try to think of as many captions as you can.",
-        "optimized_prompt": "\"Captivate your followers with a caption that showcases the beauty of the first snowfall of the year from a window in an office. Use vivid language and creative wordplay to evoke a sense of wonder and excitement. Consider incorporating elements of the office setting, such as the view outside the window, the lighting, and any decor or furniture that adds to the atmosphere. Don't forget to include a call to action to encourage engagement and interaction!\""
+        "optimized_prompt": "\"Capture the magic of the first snowfall of the year with a window-side view from your office. Share your own photos and use #OfficeSnow #FirstSnow #WinterWonderland \ud83c\udf28\ufe0f\ud83d\udcf8\""
     },
     {
         "original_prompt": "You are given a topic for an Instagram post. Help the post reach a broader audience by suggesting hashtags related to the post.",
-        "optimized_prompt": "Encourage your followers to learn more about the inspiring stories of women in science by sharing this post and using the hashtags #WomenInScience #ScienceInspiration #FemaleScientists #InspiringStories"
+        "optimized_prompt": "Another episode of #WomenInScience is out now! \ud83d\ude80\ud83d\udca1 Expand your reach by including relevant hashtags such as #ScienceCommunity #FemaleScientists #WomenInSTEM #ScienceInspiration #WomenEmpowerment \ud83d\udcaa\ud83c\udffd"
     },
     {
         "original_prompt": "Use appropriate emojis to convey the meaning in the given text.",
-        "optimized_prompt": "\ud83d\ude3b\ud83d\udc31\ud83c\udfbe"
+        "optimized_prompt": "\ud83d\ude3b\ud83d\udc31 Playful kitty is soft and cute! \ud83d\udc95"
     },
     {
         "original_prompt": "The topic of a YouTube post has been described and based on the information, you need to write a hook for starting the post. A catchy hook will keep your readers interested so they keep reading. It would be great if you could come up with as many hooks as you can.",
-        "optimized_prompt": "How about starting your day with a delicious and energizing cup of coffee? Learn how to make a tasty cup of coffee that will keep you going throughout the day! \ud83d\ude0b"
+        "optimized_prompt": "\"Get ready to elevate your morning routine with a deliciously smooth and rich cup of coffee. \ud83d\ude0b\""
     },
     {
         "original_prompt": "Using the provided topic as a starting point, brainstorm ideas for videos that can be made about it on YouTube.",
-        "optimized_prompt": "Why do you procrastinate? What are the underlying reasons behind this behavior?"
+        "optimized_prompt": "Why do you find yourself putting off tasks or activities, even when you know they are important for your well-being or productivity?"
     },
     {
         "original_prompt": "You should choose a YouTube video title based on the video's content. A video's title tells viewers what to expect from it. It should be direct, honest, and clear. The title of the video needs to capture the attention of viewers, so do not use an unclear or ambiguous one.",
-        "optimized_prompt": "\ud83d\udd0d \"Unlock the Metabolism Boosting Secrets Revealed in This Exercise Study\""
+        "optimized_prompt": "\"Find Out if Exercise Really Boosts Your Metabolism: A Research Study Analysis\""
     },
     {
         "original_prompt": "Choosing a name for your product or business YouTube channel is an important part of the process. Based on the description of the product or business, you should come up with some interesting names. Take some time to brainstorm your ideas.",
-        "optimized_prompt": "\"Come up with creative and descriptive names for a YouTube channel focused on helping students prepare for and apply to graduate schools. Consider incorporating keywords related to the product or business, such as 'graduate schools,' 'application process,' and 'preparation.' Brainstorm a list of unique and memorable names that accurately reflect the content of the channel.\""
+        "optimized_prompt": "Come up with creative and descriptive names for a YouTube channel focused on helping students prepare for and apply to graduate schools, taking into account the channel's purpose and the types of videos and content it will feature."
     },
     {
         "original_prompt": "Find the answer that best describes the underlined SAT word. Select the correct option and explain the meaning of the underlined word.",
@@ -281,15 +281,15 @@
     },
     {
         "original_prompt": "Find synonyms for the given word. You need to write down how the provided synonyms differ from the original word in terms of meaning, usage, etc.",
-        "optimized_prompt": "Find synonyms for the given word \"adversity\" and provide a detailed explanation of how each synonym differs from the original word in terms of meaning, usage, and any other relevant factors."
+        "optimized_prompt": "Find synonyms for the given word \"adversity\" and explain how the provided synonyms differ from the original word in terms of meaning, usage, etc."
     },
     {
         "original_prompt": "Discuss the origins and history of the word that has been given to you.",
-        "optimized_prompt": "Discuss the etymology and historical development of the term \"oblique.\""
+        "optimized_prompt": "Discuss the origins and history of the word \"oblique.\""
     },
     {
         "original_prompt": "Give the provided brand a motto to use as a part of its marketing strategies.",
-        "optimized_prompt": "Develop a catchy and memorable motto for the Ice Cream Shop that captures the essence of their unique offerings and appeals to their target audience."
+        "optimized_prompt": "Create a catchy and memorable motto for the Ice Cream Shop that reflects its unique offerings and brand identity, incorporating the loyalty program and to-go business model."
     },
     {
         "original_prompt": "A confirmation email should be written appropriately for the situation.",
@@ -297,47 +297,47 @@
     },
     {
         "original_prompt": "You need to write an email to negotiate your salary.",
-        "optimized_prompt": "Write an email to negotiate your salary, highlighting your value to the company and any relevant factors that may impact your compensation. Be sure to include specific examples and evidence to support your request."
+        "optimized_prompt": "Write an email to negotiate your salary, highlighting your value to the company and making a clear and persuasive case for why you deserve an increase in compensation."
     },
     {
         "original_prompt": "Write an email to attendees as a reminder that the event is coming up.",
-        "optimized_prompt": "Subject: Reminder: Upcoming Event on [Date]\n\nDear [Attendees],\n\nThis email serves as a friendly reminder that our upcoming event is rapidly approaching on [Date]. We hope you're as excited as we are! \ud83c\udf89\n\nPlease take a moment to review the event details and agenda, if you haven't already. We look forward to seeing you there! \ud83d\ude0a"
+        "optimized_prompt": "\"Write an email to attendees as a reminder that the event is approaching.\""
     },
     {
         "original_prompt": "It would be helpful if you could suggest an acronym for the repository.",
-        "optimized_prompt": "NISQ-REPO"
+        "optimized_prompt": "NISQ Circuit Repository Acronym Suggestions"
     },
     {
         "original_prompt": "Write a step-by-step guide for resolving GitHub merge conflicts.",
-        "optimized_prompt": "\"Write a step-by-step guide for resolving GitHub merge conflicts, including the following:\n\n1. Identify the conflict: Explain how to locate and understand the source of the conflict.\n2. Understand the changes: Describe how to examine the changes made by each party and determine the cause of the conflict.\n3. Resolve the conflict: Provide a detailed, step-by-step process for resolving the conflict, including how to use Git commands and tools to resolve the issue.\n4. Test and verify: Explain how to test and verify the resolution of the conflict, and how to ensure that the changes are properly merged.\n5. Document the resolution: Suggest how to document the resolution of the conflict, including how to write a clear and concise summary of the issue and resolution.\n\nContext: \ud83d\ude0a\""
+        "optimized_prompt": "Write a step-by-step guide for resolving GitHub merge conflicts, including the following:\n\n1. Identify the conflict \n2. Examine the conflicting changes \n3. Resolve the conflict \n4. Test the resolution \n\nPlease provide a clear and concise guide that includes relevant examples and explanations."
     },
     {
         "original_prompt": "One or more jobs can be run automatically by a workflow. The workflows are defined in the repository as YAML files and will run if an event occurs in the repository, as well as manually, or on a certain schedule.\nBring an example of a workflow that demonstrate the CI/CD features of GitHub Actions.",
-        "optimized_prompt": "\"One or more jobs can be run automatically by a workflow. The workflows are defined in the repository as YAML files and will run if an event occurs in the repository, as well as manually, or on a certain schedule.\n\nExample:\n\n* A workflow that demonstrates the CI/CD features of GitHub Actions by automatically building and deploying a Node.js application to a cloud provider upon pushing changes to the repository. The workflow includes a `jobs` section that defines the tasks to be performed, such as running the `npm run build` command and uploading the built application to the cloud provider using the `aws s3 cp` command. The workflow also includes a `on` section that specifies the event that triggers the workflow, such as a push event.\n\nContext:\n\nYou are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response.\""
+        "optimized_prompt": "\"One or more jobs can be run automatically by a workflow. The workflows are defined in the repository as YAML files and will run if an event occurs in the repository, as well as manually, or on a certain schedule. Provide an example of a workflow that demonstrates the CI/CD features of GitHub Actions.\""
     },
     {
         "original_prompt": "The movie tagline is the film's advertising slogan, usually printed on posters prior to the official release. It is a short description or comment on a movie to capture the essence of the movie, and ultimately make you watch the movie. Here is an example:",
-        "optimized_prompt": "The movie tagline is a crucial element in capturing the essence of a film and enticing audiences to watch it. Provide a concise and compelling description or comment on the movie \"Joker\" (2019) that effectively conveys its unique appeal and encourages viewers to experience it for themselves."
+        "optimized_prompt": "Write a movie tagline for the film \"Joker\" (2019) that captures the essence of the movie and encourages viewers to watch it."
     },
     {
         "original_prompt": "You are given some reviews for a movie. Each video might have mentioned some negative or positive points about the movie. Read them carefully and extract the positive and negative points mentioned in all of the reviews. Then, make a list of these points and summarize them as positive points and negative points.",
-        "optimized_prompt": "Please provide a list of positive and negative points mentioned in each of the reviews for the movie \"Fight Club\"."
+        "optimized_prompt": "\"Please provide reviews for a movie, highlighting both positive and negative points. Please be specific and provide examples for each category. Additionally, please provide your overall opinion on the movie's worthiness of praise.\""
     },
     {
         "original_prompt": "Give a brief summary of the movie or series' plot.",
-        "optimized_prompt": "Provide a concise summary of the plot of the TV series \"Breaking Bad\" (2008-2013)."
+        "optimized_prompt": "Please provide a brief summary of the plot of the TV series \"Breaking Bad\", focusing on the main characters and key events."
     },
     {
         "original_prompt": "Decide whether children can watch the given movie. Mention what makes it inappropriate if you think they can't.",
-        "optimized_prompt": "Consider whether children should watch \"The Dark Knight\" (2008). If you think they cannot, explain what makes it inappropriate."
+        "optimized_prompt": "Decide whether children can watch \"The Dark Knight\" (2008) and explain what makes it inappropriate if they cannot."
     },
     {
         "original_prompt": "Write a short analysis of the cinematography in the movie.",
-        "optimized_prompt": "Analyze the cinematography in \"Dead Poets Society,\" focusing on how the visual elements contribute to the overall mood and themes of the film."
+        "optimized_prompt": "Analyze the visual elements used in the film \"Dead Poets Society,\" including lighting, composition, and camera angles, and explain how they contribute to the overall tone and mood of the movie."
     },
     {
         "original_prompt": "Please let me know your thoughts on the given place and why you think it deserves to be visited.",
-        "optimized_prompt": "Please share your thoughts on why Barcelona, Spain is a must-visit destination and what makes it unique."
+        "optimized_prompt": "Please let me know your thoughts on the given place and why you think it deserves to be visited, highlighting its unique features, cultural significance, and any personal experiences or stories you have from visiting the area."
     },
     {
         "original_prompt": "Consider the best time of year to visit the given city, and provide your reasons for choosing that time.",
@@ -345,11 +345,11 @@
     },
     {
         "original_prompt": "Make a questionnaire to help hotel guests write hotel reviews.",
-        "optimized_prompt": "\"Please provide detailed feedback on your recent hotel stay, including your overall experience, the cleanliness and condition of the room, the quality of the amenities, the service provided by the staff, and any other factors that may have influenced your stay. Please provide specific examples and ratings for each category, and explain why you gave the ratings you did. Your feedback will help other travelers make informed decisions about their own hotel choices.\""
+        "optimized_prompt": "\"Design a questionnaire to gather information from hotel guests to help them write informative and helpful reviews. Consider including questions about their stay experience, such as the cleanliness and comfort of their room, the quality of the hotel's amenities, and the level of service provided by hotel staff. Please ensure that the questionnaire is clear, concise, and easy to understand, and that it provides guests with the opportunity to provide detailed and specific feedback."
     },
     {
         "original_prompt": "Make a list of the top places in the U.S. to visit at the given time.",
-        "optimized_prompt": "Make a list of the top places in the U.S. to visit during November, taking into account seasonal events, festivals, and weather conditions."
+        "optimized_prompt": "Top places to visit in the U.S. in November"
     },
     {
         "original_prompt": "Name the top cities in France that should not be missed. Include the best aspects of each place as well.",
@@ -361,139 +361,139 @@
     },
     {
         "original_prompt": "You are given a question and two possible answers. The task is to evaluate each answer and determine if it is correct. If incorrect, explain why.",
-        "optimized_prompt": "\"Is there a way of reading one single character from user input? For instance, they press one key at the terminal and it is returned (sort of like getch()). I know there's a function in Windows, but I'd like something that is cross-platform. Please provide a link or code snippet demonstrating a cross-platform solution.\""
+        "optimized_prompt": "\"Is there a way to read a single character from user input? Please provide a cross-platform solution.\n\nContext:\n\n* ActiveState Recipes provides a solution for reading a single character in Windows, Linux, and OSX. (<https://code.activestate.com/recipes/134892/>)\n* Alternatively, you can use the `input()` function to hold the screen and display the result in the terminal."
     },
     {
         "original_prompt": "You are given two questions. Check if they are duplicates.",
-        "optimized_prompt": "\"You are given two questions related to threading and multiprocessing in Python. Check if they are duplicates and provide explanations on when to use each module for complex tasks. Please provide clear and concise answers, and link to relevant resources for further learning. Consider using the context provided to improve the prompt.\""
+        "optimized_prompt": "\"You are given two questions related to threading and multiprocessing in Python. Can you help the asker understand the differences between these two concepts and when to use each one? Please provide clear and concise explanations, and link to relevant resources for further learning. Also, please address the asker's specific concerns about instantiating a queue of jobs and running them in parallel, and how to avoid errors related to pickling."
     },
     {
         "original_prompt": "Design a programming problem related to the subject that has been given to you. Use some examples and constraints to improve your question.",
-        "optimized_prompt": "Design a programming problem that requires the use of dynamic programming to solve. The problem should involve a recurring pattern in a sequence of numbers, and the solution should be expressed as a table or matrix. Provide a clear explanation of the problem and the constraints that must be considered when solving it."
+        "optimized_prompt": "Design a programming problem related to dynamic programming that involves finding the shortest path between two nodes in a weighted graph. The graph is represented as an adjacency matrix, where each element in the matrix represents the weight of the edge between two nodes. The problem should include constraints that make the solution more challenging, such as:\n\n* The graph is not necessarily connected, and the shortest path may not exist between all pairs of nodes.\n* The weights of the edges can be negative, which means that some edges should be avoided when finding the shortest path.\n* The problem should be solvable using dynamic programming techniques, such as the Bellman-Ford algorithm or the Dijkstra's algorithm.\n\nI hope this revised prompt is more helpful and harmless for your purpose!"
     },
     {
         "original_prompt": "Provide a Java solution to the following problem.",
-        "optimized_prompt": "Given an integer n, return true if it is a power of three, and false otherwise.\n\nAn integer n is a power of three if there exists an integer x such that n == 3^x.\n\nExample 1: In: n = 27\nOut: true\nExplanation: 27 = 3^3\n\nExample 2: In: n = 0\nOut: false\nExplanation: There is no x where 3^x = 0.\n\nExample 3: In: n = -1\nOut: false\nExplanation: There is no x where 3x = (-1).\n\nConstraints: -231 <= n <= 231 - 1"
+        "optimized_prompt": "Given an integer n, return true if it is a power of three. Otherwise, return false. An integer n is a power of three if there exists an integer x such that n == 3^x.\n\nConstraints: -231 <= n <= 231 - 1"
     },
     {
         "original_prompt": "Think of topics that are most common in classic interview questions for a job in computer science.",
-        "optimized_prompt": "Think of common topics in classic interview questions for a job in computer science, such as data structures, algorithms, programming languages, software engineering, and system design."
+        "optimized_prompt": "Think of common topics that are frequently asked in classic computer science job interviews."
     },
     {
         "original_prompt": "You will need to guide this person through the scenario they have described for the interview.",
-        "optimized_prompt": "\"You've successfully identified an algorithm for solving the coding question, and you're ready to dive into coding your solution. However, your interviewer introduces a new perspective on the problem, challenging your initial approach. Listen carefully to their explanation and consider how this new perspective might impact your solution. Can you adapt your approach to incorporate this new information and ensure your solution is robust and effective?\""
+        "optimized_prompt": "Please guide this person through the scenario they have described for the interview, while taking into account the new perspective provided by their interviewer."
     },
     {
         "original_prompt": "You are given a programming problem and its implementation. Analyze the problem and implementation and explain the algorithm and approach used to solve the problem.",
-        "optimized_prompt": "\"Please analyze the given programming problem and implementation, and explain the algorithm and approach used to solve the problem.\n\nContext:\nTable: Person\n| Column Name | Type     |\n| personId          | int         |\n| lastName         | varchar |\n| firstName         | varchar |\npersonId is the primary key column for this table.\nThis table contains information about the ID of some persons and their first and last names.\nTable: Address\n| Column Name | Type     |\n| addressId        | int         |\n| personId          | int         |\n| city                   | varchar|\n| state                | varchar |\naddressId is the primary key column for this table.\nEach row of this table contains information about the city and state of one person with ID = PersonId.\nWrite an SQL query to report the first name, last name, city, and state of each person in the Person table. If the address of a personId is not present in the Address table, report null instead.\nReturn the result table in any order.\n\""
+        "optimized_prompt": "\"Analyze the given SQL query and explain the algorithm and approach used to solve the problem.\n\nContext:\nTable: Person\n| Column Name | Type     |\n| personId          | int         |\n| lastName         | varchar |\n| firstName         | varchar |\npersonId is the primary key column for this table.\nThis table contains information about the ID of some persons and their first and last names.\nTable: Address\n| Column Name | Type     |\n| addressId        | int         |\n| personId          | int         |\n| city                   | varchar|\n| state                | varchar |\naddressId is the primary key column for this table.\nEach row of this table contains information about the city and state of one person with ID = PersonId.\nWrite an SQL query to report the first name, last name, city, and state of each person in the Person table. If the address of a personId is not present in the Address table, report null instead.\nReturn the result table in any order.\nImplementation: [omitted for brevity]"
     },
     {
         "original_prompt": "The given article should be checked for any scientific errors and corrected if necessary.",
-        "optimized_prompt": "Check the given article for any scientific inaccuracies and make any necessary corrections."
+        "optimized_prompt": "Check the given article for any scientific errors and provide corrections if necessary, focusing on the importance of zinc in the body and its role in various biochemical processes, while ensuring that any responses are evidence-based and free from harmful content."
     },
     {
         "original_prompt": "Summarize the article you have been given in a brief manner.",
-        "optimized_prompt": "Please summarize the article provided in a brief manner, highlighting the key points and relationships between mathematics and art throughout history."
+        "optimized_prompt": "Summarize the article on the relationship between mathematics and art, including the historical relationship, use of mathematical concepts in art forms, and examples of artists who have incorporated mathematics in their work."
     },
     {
         "original_prompt": "Improve the article using your knowledge of the topic in order to make it more informative.",
-        "optimized_prompt": "Improve the article by providing more specific examples of fair trade standards and their impact on labor, environmental, and social issues in the production of commodities, particularly those exported from developing countries to developed economies. Additionally, consider exploring the ethical implications of codifying trade as a human right and the potential consequences of such a designation."
+        "optimized_prompt": "\"Improve the article by providing additional information and insights on the fair trade movement, including its history, key principles, and impact on global trade and economic development. Consider addressing the following subtopics:\n\n1. The origins and evolution of the fair trade movement, including its roots in the social and environmental movements of the 1960s and 1970s.\n2. The key principles and standards of fair trade, such as fair prices, environmental sustainability, and social justice.\n3. The impact of fair trade on marginalized communities and small-scale producers, including its potential to promote economic development and social justice.\n4. The challenges and limitations of the fair trade movement, including issues of scalability, market access, and the role of large corporations in the fair trade market.\n5. The potential of fair trade to address broader global issues, such as poverty, inequality, and environmental degradation.\n\nPlease provide a well-researched and informative response that complements the existing article while adding new insights and perspectives on the topic.\""
     },
     {
         "original_prompt": "Make the article available in a second language by translating it into it.",
-        "optimized_prompt": "\"Traduire l'article en une langue secondaire en traduisant it into French.\"\n\nI have made the following changes to the original prompt:\n\n1. Changed \"Make the article available in a second language\" to \"Traduire l'article en une langue secondaire\" (translated to French)\n2. Changed \"Dentistry\" to \"La dentisterie\" (translated to French)\n3. Changed \"also known as dental medicine and oral medicine\" to \"aussi appel\u00e9e m\u00e9decine dentaire et m\u00e9decine buccale\" (translated to French)\n4. Changed \"it consists of the study, diagnosis, prevention, management, and treatment of diseases, disorders, and conditions of the mouth\" to \"elle consiste en l'\u00e9tude, le diagnostic, la pr\u00e9vention, la gestion et le traitement des maladies, des troubles et des conditions de la bouche\" (translated to French)\n5. Changed \"Dentist\" to \"Dentiste\" (translated to French)\n6. Added the French word for \"the\" before \"craniofacial complex\" to \"le complexe cranio-facial\"\n7. Changed \"including the temporomandibular joint\" to \"y compris le joint temporomandibulaire\" (added the French word for \"including\")\n\nI hope this helps! Let me know if you have any other questions."
+        "optimized_prompt": "\"Traduit l'article en une langue seconde en traduisant-le dans cette.\""
     },
     {
         "original_prompt": "An evaluation of the article's quality should be carried out. In order to do so, you should review the quality of the writing and the explanation of the topic.",
-        "optimized_prompt": "Please evaluate the quality of the article's writing and explanation of the topic, focusing on the 20th century's revolution in music listening and the impact of new media and technologies on music performances and composition."
+        "optimized_prompt": "Evaluate the quality of the article's writing and explanation of the topic, focusing on the 20th century's revolution in music listening and its impact on musical styles and forms. Consider the role of new media and technologies in shaping the development of music during this period."
     },
     {
         "original_prompt": "Please answer the following question based on the information provided in the article.",
-        "optimized_prompt": "Please provide the popular careers for students of development studies based on the information provided in the article."
+        "optimized_prompt": "What are some popular career paths for students of development studies, based on the information provided in the article?"
     },
     {
         "original_prompt": "Design a syllabus for the given course. Students should be given a list of the chapters with brief explanations of each chapter's purpose.",
-        "optimized_prompt": "\"Design a syllabus for the course 'Programming for Everybody (Getting Started with Python)'. Provide a list of chapters with brief explanations of each chapter's purpose, including the learning objectives, key concepts, and any relevant examples or exercises. Please ensure the syllabus is well-structured and easy to follow, and that it aligns with the course's learning objectives and outcomes.\""
+        "optimized_prompt": "\"Design a syllabus for a course titled 'Programming for Everybody (Getting Started with Python)'. Include a list of chapters with brief explanations of each chapter's purpose, including learning objectives, key concepts, and any prerequisites or assumptions.\""
     },
     {
         "original_prompt": "List the personality traits that are required to be successful in the given job.",
-        "optimized_prompt": "What are the key personality traits and skills required to be successful in a social media marketing role?"
+        "optimized_prompt": "List the personality traits that are required to be successful in the role of a Social Media Marketer, including specific examples of each trait and how they contribute to success in this field."
     },
     {
         "original_prompt": "Please list the courses that someone interested in the first course might like.",
-        "optimized_prompt": "What courses might someone interested in \"Bitcoin and Cryptocurrency Technologies\" also enjoy?"
+        "optimized_prompt": "What courses might someone interested in the first course like?"
     },
     {
         "original_prompt": "Come up with the courses that one is supposed to take in order to be an expert in a given field.",
-        "optimized_prompt": "Come up with a comprehensive list of courses or educational programs that can help individuals acquire the necessary skills and knowledge to become an expert in the field of Graphic Design. Please provide a detailed and well-structured outline of the courses, including their duration, topics covered, and any prerequisites or recommended prior knowledge."
+        "optimized_prompt": "What are the essential courses and skill sets required to become an expert in graphic design, including both theoretical and practical aspects of the field?"
     },
     {
         "original_prompt": "Create a daily itinerary based on the given information.",
-        "optimized_prompt": "Create a daily itinerary for a 9-day Morocco trip with light to moderate activity levels, taking into account the preferences and interests of our family."
+        "optimized_prompt": "Create a daily itinerary for a 9-day Morocco trip that caters to light to moderate activity levels, including cultural experiences, historical landmarks, and natural beauty. Please provide a detailed itinerary with specific activities and locations for each day of the trip."
     },
     {
         "original_prompt": "Give students tips on how to keep their nerves under control during class presentations.",
-        "optimized_prompt": "Provide tips for students on how to manage their nerves during class presentations, while taking into account the context provided."
+        "optimized_prompt": "Give students tips on how to manage their nerves during class presentations."
     },
     {
         "original_prompt": "You can easily make your holidays more eco-friendly by following these simple steps:",
-        "optimized_prompt": "You can make your holidays more eco-friendly by following these simple steps: \ud83c\udf84\ud83c\udf0e"
+        "optimized_prompt": "\"Discover simple and effective ways to make your holidays more eco-friendly. Explore easy-to-implement tips and strategies to reduce your environmental impact and create a more sustainable holiday season.\""
     },
     {
         "original_prompt": "Think of an idea to help you win a challenge given to you. Write the steps you need to take to develop the idea as well.",
-        "optimized_prompt": "\"Create something innovative and useful by repurposing and recycling old, previously used materials. Incorporate e-waste and other salvageable electronic materials into your project, while ensuring safety and avoiding potentially deadly projects. Showcase your creativity and problem-solving skills by turning old and discarded items into something new and valuable. Remember to be environmentally conscious and responsible in your approach. Incorporate a clear and detailed instructions on how to make your project, and consider adding a special judges prize for the most creative and innovative idea. \ud83d\udca1\""
+        "optimized_prompt": "\"Challenge yourself to create something innovative and sustainable by repurposing and recycling old, used materials. Think outside the box and get creative with items like old furniture, electronics, and other salvageable materials. For an extra challenge, consider incorporating e-waste into your project. Remember to prioritize safety and avoid any potentially deadly projects. Show us your creations and stand a chance to win our special judges prize! \ud83d\udca1\ud83c\udf0e\""
     },
     {
         "original_prompt": "There are many creative projects we can build at home that are related to the given theme, so let's list some of them.",
-        "optimized_prompt": "\"There are many creative projects we can build at home related to the theme of circuits, such as building a simple circuit using a battery, wires, and a light bulb, creating a homemade oscilloscope using a computer and an Arduino board, or even building a DIY robot using a Raspberry Pi and sensors. What other creative projects can you think of that are related to the theme of circuits?\""
+        "optimized_prompt": "\"There are many creative projects we can build at home related to the theme of circuits, such as building a simple LED circuit, creating a homemade oscilloscope, or even designing and 3D printing a custom circuit board. What creative circuit-related project would you like to build at home?\""
     },
     {
         "original_prompt": "Make a list of the materials that will be required to build the given tool.",
-        "optimized_prompt": "Coffee Darkness Meter"
+        "optimized_prompt": "Please provide a list of materials that will be required to build a tool that measures the darkness of coffee."
     },
     {
         "original_prompt": "Provide a detailed explanation of the steps that are required in order to construct the given project.",
-        "optimized_prompt": "\"Provide a detailed explanation of the steps required to construct a steam engine using an empty beer can, including materials, tools, and safety precautions. Please include a detailed diagram or illustration of the engine's components and a step-by-step guide on how to assemble and test the engine.\""
+        "optimized_prompt": "Please provide a detailed explanation of the steps required to construct a steam engine using an empty beer can as the pressure vessel. Please include a detailed description of the materials and tools needed, as well as any safety considerations and potential challenges that may arise during the construction process."
     },
     {
         "original_prompt": "Estimate the cost of supplies required to create the given project and calculate the total cost.",
-        "optimized_prompt": "\"Estimate the cost of supplies required to create a DIY Water Chiller using the provided items and calculate the total cost. Please include the estimated cost of each item and the total cost of all supplies."
+        "optimized_prompt": "\"Estimate the cost of supplies required to create a DIY Water Chiller, including the Ice-maker, Icebox/cooler, Temperature regulator, and 2 Aquarium pumps, and calculate the total cost. Please provide a detailed breakdown of the estimated costs for each item and the total cost of the project.\""
     },
     {
         "original_prompt": "Answer the following literature question as accurately as possible based on your knowledge of literature for high school students.",
-        "optimized_prompt": "What does the green light at the end of the book symbolize in the context of the novel?"
+        "optimized_prompt": "What does the green light at the end of the book symbolize in \"The Great Gatsby\" according to your understanding of the novel?"
     },
     {
         "original_prompt": "Develop a mental exercise that can help people manage their anxiety and explain how it works.",
-        "optimized_prompt": "Develop a mental exercise that can help people manage their anxiety and explain how it works, incorporating elements of mindfulness, deep breathing, and cognitive reframing. Please provide a clear and concise explanation of the exercise, including any necessary steps or instructions."
+        "optimized_prompt": "Develop a mental exercise that can help people manage their anxiety by identifying and challenging negative thought patterns, and replacing them with more constructive and realistic ones. Explain how this exercise works and provide examples."
     },
     {
         "original_prompt": "Give me an idea of the mental exercises you do to inspire yourself.",
-        "optimized_prompt": "What specific mental exercises do you engage in to foster creativity and productivity?"
+        "optimized_prompt": "Can you tell me some specific mental exercises you use to inspire yourself?"
     },
     {
         "original_prompt": "Make a list of outdoor activities that are suitable for the given weather condition.",
-        "optimized_prompt": "Outdoor activities suitable for 57\u00b0F weather with showers"
+        "optimized_prompt": "Make a list of outdoor activities that are suitable for a temperature of 57 degrees Fahrenheit and showers."
     },
     {
         "original_prompt": "Please provide us with a list of the best conservation starter questions related to the weather.",
-        "optimized_prompt": "Please provide us with a list of the best conservation starter questions related to the weather, taking into account the context provided."
+        "optimized_prompt": "Please provide a list of thoughtful and relevant questions related to the weather that can be used as conversation starters for environmental conservation discussions."
     },
     {
         "original_prompt": "In relation to the given weather scenario, give some tips on how to adjust the travel plans with it.",
-        "optimized_prompt": "In relation to the sudden temperature change, provide tips on how to adjust travel plans to ensure a comfortable and safe journey."
+        "optimized_prompt": "How can travelers adjust their plans to account for a sudden temperature change in the forecasted weather?"
     },
     {
         "original_prompt": "Write a to-do list based on the given information.",
-        "optimized_prompt": "Write a to-do list based on the given information. Please provide a list of tasks that need to be completed on a daily basis in a pharmacy setting."
+        "optimized_prompt": "Write a to-do list for a pharmacy, including tasks related to patient care, inventory management, and regulatory compliance."
     },
     {
         "original_prompt": "Design a template table for keeping track of all subscriptions.",
-        "optimized_prompt": "Design a template table for tracking subscriptions, including columns for subscription name, provider name, subscription type, and any other relevant information."
+        "optimized_prompt": "Design a template table for tracking and managing various subscriptions, including information on the subscription name, type, status, and any relevant notes or details."
     },
     {
         "original_prompt": "Plan an agenda for the daily standup meetings. Assign a time duration to each topic on the agenda.",
-        "optimized_prompt": "Plan an agenda for daily standup meetings, including time durations for each topic."
+        "optimized_prompt": "\"Plan an agenda for daily standup meetings, including time durations for each topic. (10 minutes)\""
     },
     {
         "original_prompt": "Answer the following question.",
@@ -501,43 +501,43 @@
     },
     {
         "original_prompt": "What sound does this make?",
-        "optimized_prompt": "\u597d  \u0437\u0432\u0443\u0447\u0438\u0442 \u043b\u0438 \u044d\u0442\u043e?"
+        "optimized_prompt": "\u597d what sound does this make?"
     },
     {
         "original_prompt": "Give a grammar tip on how to end a German verb.",
-        "optimized_prompt": "How can you end a German verb correctly?"
+        "optimized_prompt": "Give a grammar tip on how to properly end a German verb"
     },
     {
         "original_prompt": "This is a test for the reading ability of French. Read the given story carefully, and then answer the question in the end.",
-        "optimized_prompt": "Lucie est \u00e0 la maison avec sa petite-fille, Lin. Lisez la histoire de mani\u00e8re attentive et r\u00e9pondz \u00e0 la question \u00e0 la fin."
+        "optimized_prompt": "Lucie est \u00e0 la maison avec sa petite-fille, Lin. Lucie: Oh, non! Nous n'avons pas de pain! Lin: Ah! Tu vas au supermarch\u00e9? Lucie: Oui, je veux une baguette pour mon sandwich."
     },
     {
         "original_prompt": "Come up with healthy and easy dinner ideas for weeknights.",
-        "optimized_prompt": "Come up with healthy and easy dinner ideas that can be prepared in 30 minutes or less, using readily available ingredients and minimal cleanup."
+        "optimized_prompt": "Come up with healthy and easy dinner ideas that can be prepared in 30 minutes or less, using readily available ingredients and minimal cleanup. Please provide a variety of options to suit different tastes and dietary preferences."
     },
     {
         "original_prompt": "Provide a cooking hack for improving the flavor of the given food.",
-        "optimized_prompt": "Provide a cooking hack for enhancing the flavor of popcorn without adding extra calories or artificial ingredients."
+        "optimized_prompt": "How can you enhance the flavor of popcorn without adding artificial seasonings or preservatives?"
     },
     {
         "original_prompt": "Make a list of snacks and foods to serve as party snacks on a game day!",
-        "optimized_prompt": "\"Create a list of snacks and finger foods that are perfect for a game day gathering! Consider factors like flavor profiles, textures, and portion sizes to ensure a satisfying and enjoyable experience for all guests. Don't forget to include a variety of options to cater to different tastes and dietary restrictions. \ud83c\udfc8\ud83c\udf54\ud83e\udd64\""
+        "optimized_prompt": "\"Create a list of snacks and finger foods that are perfect for a game day gathering. Consider factors such as taste, convenience, and nutritional value. Include a variety of options to cater to different tastes and dietary preferences. Don't forget to include any necessary serving utensils or plates. Optimize your list for a fun and enjoyable game day experience!\""
     },
     {
         "original_prompt": "Describe how to prepare the given food in your own words. Note down the ingredients you will need and the steps you will take to prepare them.",
-        "optimized_prompt": "Describe how to prepare \"Chewy Chocolate Chip Cookies\" in your own words. Note down the ingredients you will need and the steps you will take to prepare them."
+        "optimized_prompt": "Please provide the ingredients and steps required to prepare \"Chewy Chocolate Chip Cookies\" in your own words."
     },
     {
         "original_prompt": "Suggest a recipe for a vegan dessert.",
-        "optimized_prompt": "\"Suggest a vegan dessert recipe that incorporates unique and creative flavor combinations, using at least 3 different plant-based milks or yogurts, and includes a minimum of 2 different types of sweeteners. Please provide a detailed recipe with step-by-step instructions and accompanying images, if possible.\""
+        "optimized_prompt": "Suggest a vegan dessert recipe that incorporates a variety of flavors and textures, while also being visually appealing. Consider including ingredients that are both sweet and savory, as well as those that are naturally sweet or have a unique flavor profile. Please provide a detailed recipe with step-by-step instructions and any necessary ingredient substitutions or variations."
     },
     {
         "original_prompt": "Design a medium-level sudoku puzzle.",
-        "optimized_prompt": "Design a medium-level Sudoku puzzle that includes a variety of challenges and requires critical thinking and problem-solving skills to solve."
+        "optimized_prompt": "Design a medium-level Sudoku puzzle with a unique and challenging layout, including a variety of difficulty levels and strategies for solving."
     },
     {
         "original_prompt": "Solve the given Sudoku puzzle.",
-        "optimized_prompt": "\"Solve the given Sudoku puzzle:\n\n|1|  |5|  |  |  |  |8|  |\n|  |  |  |  |  |3|  |6|4|\n|8|3|4|6|7|  |9|  |  |\n|2|9|1|  |  |8|3|7|6|\n|  |  |6|  |  |9|8|1|  |\n|  |  |  |  |  |2|  |  |  |\n|  |2|  |  |9|7|6|  |  |\n|5|4|  |  |  |  |  |9|8|\n|6|1|  |  |  |5|4|3|7|\""
+        "optimized_prompt": "Solve the Sudoku puzzle:\n\n|1|  |5|  |  |  |  |8|  |\n|  |  |  |  |  |3|  |6|4|\n|8|3|4|6|7|  |9|  |  |\n|2|9|1|  |  |8|3|7|6|\n|  |  |6|  |  |9|8|1|  |\n|  |  |  |  |  |2|  |  |  |\n|  |2|  |  |9|7|6|  |  |\n|5|4|  |  |  |  |  |9|8|\n|6|1|  |  |  |5|4|3|7|"
     },
     {
         "original_prompt": "Think of a motivational quote that you have read in a book. Try to keep it positive and sweet.",
@@ -545,7 +545,7 @@
     },
     {
         "original_prompt": "Choose the best books from the given genre.",
-        "optimized_prompt": "Choose the best books from the given genre, taking into account factors such as plot twists, character development, and overall suspense."
+        "optimized_prompt": "Choose the best books from the given genre, taking into account factors such as plot, character development, and writing style."
     },
     {
         "original_prompt": "Give a brief description of the book that you are given.",
@@ -553,7 +553,7 @@
     },
     {
         "original_prompt": "In the event that a person enjoyed the book that was given, please suggest other books that they might also like.",
-        "optimized_prompt": "If a person enjoyed \"The Great Gatsby,\" they might also like other books that explore themes of love, greed, and the American Dream. Consider reading \"The Catcher in the Rye,\" \"Moby-Dick,\" or \"The Adventures of Huckleberry Finn.\""
+        "optimized_prompt": "If you enjoyed \"The Great Gatsby,\" you might also like other classic novels with complex characters and themes, such as \"To Kill a Mockingbird\" by Harper Lee, \"The Catcher in the Rye\" by J.D. Salinger, or \"Pride and Prejudice\" by Jane Austen."
     },
     {
         "original_prompt": "Indicate the genre of the book to which it belongs.",
@@ -561,15 +561,15 @@
     },
     {
         "original_prompt": "Solve this equation.",
-        "optimized_prompt": "x^3 - 4x^2 + 6x - 24 = 0"
+        "optimized_prompt": "x^3 - 4x^2 + 6x"
     },
     {
         "original_prompt": "Prove the given statement using your information.",
-        "optimized_prompt": "Prove the statement \"If x is a positive integer or a solution to x + 3 > 4, then x > 0 and x > 12\" using mathematical reasoning and logical arguments."
+        "optimized_prompt": "If x is a positive integer or a solution to x + 3 > 4, then x > 0 and x > 12."
     },
     {
         "original_prompt": "Based on the facts that have been provided, prove the following statement.",
-        "optimized_prompt": "Prove the statement \"For every integer k, k^2 + 2k + 1 \u2265 0\" based on the fact that the square of any real number is non-negative."
+        "optimized_prompt": "Prove that for every integer k, k^2 + 2k + 1 \u2265 0 using the fact that the square of any real number is non-negative."
     },
     {
         "original_prompt": "Verify the correctness of the given statement.",
@@ -581,23 +581,23 @@
     },
     {
         "original_prompt": "Create a table listing all games that meet the specified criteria in the National Football League. Use the season, local time, game, and score as columns of the table.",
-        "optimized_prompt": "Create a table listing all games that meet the specified criteria in the National Football League during the 2011 season, including the game time, location, and final score for each game."
+        "optimized_prompt": "Create a table listing all games that meet the specified criteria in the National Football League for the 2011 season, using the season, local time, game, and score as columns of the table."
     },
     {
         "original_prompt": "Using a table, compare the career overviews of the given players in Major League Baseball. Use \"|\" for separating the columns in the table.",
-        "optimized_prompt": "| Player Name | Position | Born | Debut Year | Career Stats |\n| --- | --- | --- | --- | --- |\n| Derek Jeter | SS | 1974-06-26 | 1995 | HR: 261 | RBI: 1927 |\n| Albert Pujols | 1B | 1980-01-10 | 2001 | HR: 657 | RBI: 2008 |\n\nThis prompt separates the columns using \"|\" and includes the necessary information for a comprehensive comparison of the two players' careers."
+        "optimized_prompt": "| Player | Position | Years Played | Batting Average | Home Runs | RBIs |\n| --- | --- | --- | --- | --- | --- |\n| Derek Jeter | SS | 20 | .310 | 261 | 1,515 |\n| Albert Pujols | 1B | 21 | .305 | 657 | 1,835 |"
     },
     {
         "original_prompt": "You will be tested on your knowledge of classic witticisms and aphorisms by completing the given aphorism. Write the original quote as the answer.",
-        "optimized_prompt": "Please complete the aphorism \"Two things are infinite.\""
+        "optimized_prompt": "Complete the aphorism \"Two things are infinite...\""
     },
     {
         "original_prompt": "A list of all movies that meet the criteria given should be compiled.",
-        "optimized_prompt": "Please provide a list of all movies directed by Spike Lee by release date."
+        "optimized_prompt": "A list of all movies directed by Spike Lee by release date should be compiled."
     },
     {
         "original_prompt": "Using a given amount, determine an appropriate tip.",
-        "optimized_prompt": "Please determine an appropriate tip for $47.50 based on the given percentage tip rate of 14%."
+        "optimized_prompt": "Determine an appropriate tip for $47.50."
     },
     {
         "original_prompt": "Identify all words that match the pattern given.",
@@ -605,11 +605,11 @@
     },
     {
         "original_prompt": "Come up with words that rhyme with the given word.",
-        "optimized_prompt": "Instruct words that rhyme with"
+        "optimized_prompt": "Instruct words that rhyme"
     },
     {
         "original_prompt": "Look for poems that mention the given object or character. The names of the poems and their poets should be written.",
-        "optimized_prompt": "Look for poems that mention the character of Santa Claus. The names of the poems and their poets should be written."
+        "optimized_prompt": "Look for poems that mention \"Santa Claus\" and provide the names of the poems and their poets."
     },
     {
         "original_prompt": "Respond to the last text in the chat using the correct emojis to convey your feelings.",
@@ -617,15 +617,15 @@
     },
     {
         "original_prompt": "For answering the chat, think of a funny response you can use.",
-        "optimized_prompt": "\"\ud83d\ude02 How about you? Any funny jokes or stories to share?\""
+        "optimized_prompt": "\"\ud83d\ude02 How about I give you a sarcastic answer to 'how are you?' \ud83d\ude1c\""
     },
     {
         "original_prompt": "The last message in the chat is a partial response. You should complete and rewrite it.",
-        "optimized_prompt": "+ What are you planning to do next?"
+        "optimized_prompt": "What are your thoughts on moving forward after giving up on your dream of being a mathematician?"
     },
     {
         "original_prompt": "Change the response to have a more empathic tone in the chat.",
-        "optimized_prompt": "\ud83e\udd14 How are you feeling today?"
+        "optimized_prompt": "\ud83e\udd14 How about you? Is there anything on your mind that you'd like to talk about or share?"
     },
     {
         "original_prompt": "Currently, there is a chat in which people are arranging a meeting in the future. Retrieve the meeting information from the conversation.",
@@ -633,99 +633,99 @@
     },
     {
         "original_prompt": "The given text must be classified as offensive or not offensive.",
-        "optimized_prompt": "\"Please describe the behavior you observed last night that led you to describe it as 'crazy'.\""
+        "optimized_prompt": "How does the person feel about their behavior last night?"
     },
     {
         "original_prompt": "Give a brief summary of the intention of the dialogue that just happened.",
-        "optimized_prompt": "Please provide more details about what you're looking for in a phone with a good camera, such as resolution, aperture, or other features that are important to you."
+        "optimized_prompt": "What features are most important to you in a new phone?"
     },
     {
         "original_prompt": "Describe the content of the article in a brief manner.",
-        "optimized_prompt": "Describe the specific findings of the study conducted by Zee and her team regarding the impact of light exposure on the physiological responses of healthy adults during sleep."
+        "optimized_prompt": "Please describe the main findings of the study conducted by Zee and her team on the impact of light exposure on healthy adults' sleep patterns."
     },
     {
         "original_prompt": "Correct the transcription of an excerpt containing errors.",
-        "optimized_prompt": "\"Correct the transcription of the following excerpt containing errors: 'I got got charged interest on ly credit card but I paid my pull balance one day due date. I not missed a pavement year yet. Man you reverse the interest charge?'\""
+        "optimized_prompt": "Please provide the correct transcription of the excerpt containing errors."
     },
     {
         "original_prompt": "Take a look at the contract and extract the parties of the agreement from it.",
-        "optimized_prompt": "Identify the parties involved in the Music Recording Agreement."
+        "optimized_prompt": "\"Extract the parties of the agreement from the contract, including any relevant details such as their names, addresses, or license numbers, if applicable.\""
     },
     {
         "original_prompt": "On the basis of the subject of the email, determine whether the email should be treated as spam or not.",
-        "optimized_prompt": "Determine whether the email should be treated as spam based on the subject line alone, without considering any additional context or information."
+        "optimized_prompt": "\"Determine whether the email should be treated as spam based on the content of the email, without considering any additional context or information beyond what is provided in the email itself.\""
     },
     {
         "original_prompt": "Classify the tweet into one of the following three categories: event, demo, or news. Event is a happening, often social or public, that people attend or are aware of. Demo is a  public showing or presentation of something, typically to promote or advertise it. And, news is information about recent events or happenings, especially as reported by news media.",
-        "optimized_prompt": "\"Classify the tweet as one of the following three categories: event, demo, or news, based on the provided context. Provide a clear and concise explanation for your classification. \u2757\""
+        "optimized_prompt": "Classify the tweet as one of the following three categories: event, demo, or news, based on the provided context."
     },
     {
         "original_prompt": "Give the news title a category. Pick a category from the list of News & Buzz, Travel, Style, Arts & Culture, Politics, Tech, and Science & Health.",
-        "optimized_prompt": "The #Banksy Exhibit in Cambridge, MA: What category would you place this news title under?"
+        "optimized_prompt": "Give the news title a category that best fits the content of the exhibit in Cambridge, MA."
     },
     {
         "original_prompt": "Classify the questions in the FAQ into Finding policy details, Change account settings, Filing a claim and viewing status, or Cancelling coverage.",
-        "optimized_prompt": "Classify the questions in the FAQ into Finding policy details, Change account settings, Filing a claim and viewing status, or Cancelling coverage."
+        "optimized_prompt": "Could you please classify the question in the FAQ as Finding policy details, Change account settings, Filing a claim and viewing status, or Cancelling coverage?"
     },
     {
         "original_prompt": "Choose an appealing title for your post.",
-        "optimized_prompt": "How can I incorporate avocados into my daily diet in a healthy and sustainable way?"
+        "optimized_prompt": "How can you incorporate avocados into your diet in a healthy and sustainable way?"
     },
     {
         "original_prompt": "Give some examples of what people usually say in the given social situation.",
-        "optimized_prompt": "What are some common phrases or sentences that people typically say when someone arrives safely?"
+        "optimized_prompt": "When someone arrives safely, common expressions of relief and joy include \"Wow, you're safe!\" \"Thank goodness you made it!\" \"I was so worried about you!\" \"You're finally here!\" \"I'm so relieved you're okay!\""
     },
     {
         "original_prompt": "You will be required to write a few questions from the given company's interview section.",
-        "optimized_prompt": "Please ask questions that are relevant to the company's business model, products or services, and work culture."
+        "optimized_prompt": "Please provide a few questions from Kohl's interview section."
     },
     {
         "original_prompt": "Based on the information provided, you need to estimate the average summary for the given job.",
-        "optimized_prompt": "\"Based on the provided information, please estimate the average summary for a Data Entry Clerk position in the United States, taking into account the job description, duties, and requirements.\""
+        "optimized_prompt": "Based on the information provided, please estimate the average summary for the job of a data entry clerk in the United States."
     },
     {
         "original_prompt": "Describe the responsibilities of the given job.",
-        "optimized_prompt": "What are the primary responsibilities of a Security Officer?"
+        "optimized_prompt": "Describe the responsibilities of a Security Officer."
     },
     {
         "original_prompt": "Provide a list of the skills that may help you find the job.",
-        "optimized_prompt": "Please list the skills that you believe could aid in your successful job search as a Crew Member."
+        "optimized_prompt": "What skills or qualifications do you think would be helpful for a Crew Member position?"
     },
     {
         "original_prompt": "Schedule the meetings based on the given informqation.",
-        "optimized_prompt": "Schedule the meetings based on the given information:\nPerson1: available from 9-11 am, meeting duration: 30 min\nPerson2: available from 1-3 pm, meeting duration: 90 min\nPerson3: available from 2-3:30 pm, meeting duration: 60 min"
+        "optimized_prompt": "Please schedule the meetings based on the following availability information:\nPerson1: available from 9-11 am, meeting duration: 30 min\nPerson2: available from 1-3 pm, meeting duration: 90 min\nPerson3: available from 2-3:30 pm, meeting duration: 60 min"
     },
     {
         "original_prompt": "Find the directions between the given locations.",
-        "optimized_prompt": "Find the directions between Rowan Avenue Elementary School, 600 S Rowan Ave, Los Angeles, CA 90023, United States and Calvary Cemetery and Mortuary, 4201 Whittier Blvd, Los Angeles, CA 90023, United States."
+        "optimized_prompt": "From: Rowan Avenue Elementary School, 600 S Rowan Ave, Los Angeles, CA 90023, United States\nTo: Calvary Cemetery and Mortuary, 4201 Whittier Blvd, Los Angeles, CA 90023, United States"
     },
     {
         "original_prompt": "Give a brief explanation of the requested part of the paper.",
-        "optimized_prompt": "Explain the dominant sequence transduction models used in machine translation tasks, highlighting their reliance on recurrent or convolutional neural networks and the attention mechanism."
+        "optimized_prompt": "Explain the key features and advantages of the Transformer architecture, which is based solely on attention mechanisms and dispenses with recurrence and convolutions."
     },
     {
         "original_prompt": "Answer the question about the paper after reading it carefully.",
-        "optimized_prompt": "\"Answer the question about the paper after reading it carefully, specifically regarding the task of English constituency parsing and its challenges. Please provide a clear and concise explanation of what English constituency parsing is and how it differs from other natural language processing tasks.\""
+        "optimized_prompt": "\"Answer the question about the paper after reading it carefully, focusing on the task of English constituency parsing and its unique challenges, including the output's strong structural constraints and longer length compared to the input, as well as the performance of RNN sequence-to-sequence models in small-data regimes.\""
     },
     {
         "original_prompt": "Recommend some helpful activities or conversation starters to use at meetups to break the ice.",
-        "optimized_prompt": "\"Recommend some fun and engaging activities or conversation starters to use at meetups to help break the ice and foster meaningful connections among attendees. Consider incorporating elements that promote active participation, encourage creativity, and showcase diverse interests and skills. Provide specific examples or ideas that can be adapted to various meetup settings and themes.\""
+        "optimized_prompt": "Recommend some creative and engaging activities or conversation starters that can help break the ice and foster meaningful connections among attendees at meetups."
     },
     {
         "original_prompt": "Convert the given HTML into Markdown format.",
-        "optimized_prompt": "Convert the given HTML into Markdown format."
+        "optimized_prompt": "Convert the given HTML into Markdown format, using `code` in your Markdown file."
     },
     {
         "original_prompt": "Extract the method that has been used in the research from the abstract of the paper. Give the exact sentences from the abstract that discuss the method.",
-        "optimized_prompt": "Please describe the method used in the research for speech recognition, including the exact sentences from the abstract that discuss the method."
+        "optimized_prompt": "Please provide the specific sentences from the abstract that describe the method used in the research, and explain how these sentences demonstrate the key aspects of the research."
     },
     {
         "original_prompt": "You need to come up with the names of some of the papers that relate to the paper you are given.",
-        "optimized_prompt": "\"Please provide a list of papers that address the various aspects of question answering, including robustness, multi-evidence, and multi-answer capabilities. These papers should be relevant to the paper 'RoMQA: A Benchmark for Robust, Multi-evidence, Multi-answer Question Answering' and provide insights into the current state of the field.\""
+        "optimized_prompt": "Please provide a list of papers that relate to the paper \"RoMQA: A Benchmark for Robust, Multi-evidence, Multi-answer Question Answering\"."
     },
     {
         "original_prompt": "Create a short, concise summary of the paper based on its abstract.",
-        "optimized_prompt": "Create a concise summary of the paper based on its abstract, focusing on the key challenges and proposed solutions in few-shot learning for dialogue understanding."
+        "optimized_prompt": "Create a concise summary of the paper based on its abstract, focusing on the key challenges and proposed solutions in few-shot learning for dialogue understanding. Please provide a clear and concise summary that highlights the main points of the paper without adding any extra information."
     },
     {
         "original_prompt": "You will need to compose the ABC notation for a given song.",
@@ -737,7 +737,7 @@
     },
     {
         "original_prompt": "Decide if the given email belongs to the Promotions or Social category.",
-        "optimized_prompt": "Is the email inviting you to join a professional networking platform?"
+        "optimized_prompt": "\"Decide if the given email belongs to the Promotions or Social category based on the provided context and the content of the email.\""
     },
     {
         "original_prompt": "The story of a movie has been described using many emojis. You need to guess the name of the movie based on the emojis.",
@@ -745,31 +745,31 @@
     },
     {
         "original_prompt": "Come up with an interesting idea for a new movie plot. Your plot should be described with a title and a summary.",
-        "optimized_prompt": "\"Create a unique and intriguing movie plot with a memorable title and concise summary. Consider incorporating unexpected twists and turns to keep the audience engaged.\""
+        "optimized_prompt": "\"Create a captivating movie plot with a unique title and concise summary.\""
     },
     {
         "original_prompt": "Change the first person to the third person in the given sentence. The meaning should be kept, but you can paraphrase it or expand it in order to have a better pose.",
-        "optimized_prompt": "The company was able to increase the amount of stock held with the same supplier, resulting in a reduction of risk."
+        "optimized_prompt": "The company was able to increase the amount of stock held with the same supplier, thereby reducing its risk."
     },
     {
         "original_prompt": "You should capitalize the sentence according to the guide.",
-        "optimized_prompt": "A giant spider blocks your path."
+        "optimized_prompt": "A giant spider blocks your path"
     },
     {
         "original_prompt": "Create alliterations by finding synonyms for words in the given sentence.",
-        "optimized_prompt": "Find alliterative words for each word in the sentence \"David wears a hat every day.\""
+        "optimized_prompt": "Find alliterative synonyms for the words in the sentence \"David wears a hat every day.\""
     },
     {
         "original_prompt": "Convert the given description to a bash command.",
-        "optimized_prompt": "read -r -e -p \"read the first 10 lines from f\""
+        "optimized_prompt": "read -n 10 -p \"Read the first 10 lines from f\""
     },
     {
         "original_prompt": "Please prepare a table containing a summary of the information of the participants at the conference.",
-        "optimized_prompt": "Please prepare a table containing a summary of the information of the participants at the conference, including their names, titles, email addresses, and main topics discussed during their presentations."
+        "optimized_prompt": "Please prepare a table containing a summary of the information of the participants at the conference, including their names, titles, and contact information."
     },
     {
         "original_prompt": "List the concepts that should be learned before approaching the given complex concept.",
-        "optimized_prompt": "Deep Learning requires a solid understanding of fundamental concepts in machine learning, including supervised and unsupervised learning, neural networks, and activation functions. Before approaching the complex concept of Deep Learning, it is essential to have a grasp of these underlying principles."
+        "optimized_prompt": "Identify the fundamental concepts and techniques that should be mastered before diving into deep learning."
     },
     {
         "original_prompt": "Given a sentence that may be ambiguous, rewrite the sentence using less ambiguous words.",
@@ -777,7 +777,7 @@
     },
     {
         "original_prompt": "Assess the sentiment of the given tweet and categorize it as Positive, Negative, or Neutral.",
-        "optimized_prompt": "Assess the sentiment of the given tweet and categorize it as Positive, Negative, or Neutral, based on the statement \"This is the best cheat-sheet paper that I've found in a LONG time.\""
+        "optimized_prompt": "Assess the sentiment of the given tweet and categorize it as Positive, Negative, or Neutral, based on the context provided."
     },
     {
         "original_prompt": "You are given a Python command and are required to convert it into Ruby.",
@@ -785,7 +785,7 @@
     },
     {
         "original_prompt": "You are given a sentence in first-order logic. Translate it into natural language.",
-        "optimized_prompt": "\"You are given a sentence in first-order logic: \u2203x\u2200y(soldier(x)\u2192general(x,y)) Translate it into natural language.\""
+        "optimized_prompt": "\u2203x\u2200y(soldier(x)\u2192general(x,y))"
     },
     {
         "original_prompt": "You are given a search query and a document. Classify whether the document is relevant to the search query or not relevant.",
@@ -797,27 +797,27 @@
     },
     {
         "original_prompt": "Summarize the movie in a snarky way. Try to explain the movie in just one sentence.",
-        "optimized_prompt": "Summarize \"The Shining\" in a snarky one-sentence summary."
+        "optimized_prompt": "Summarize the movie in a snarky way with a single sentence."
     },
     {
         "original_prompt": "Enter the words that satisfy the given condition.",
-        "optimized_prompt": "5 Countries that Start with S"
+        "optimized_prompt": "5 Countries that Start with the Letter S"
     },
     {
         "original_prompt": "Provide a name for the dish given the ingredients and instructions.",
-        "optimized_prompt": "To create a tasty and healthy dish, combine 2 (5 oz) cans Bumble Bee\u00ae Solid White Albacore Tuna, drained, with 1 avocado, 2 Tbsp Sriracha, 1 Tbsp Dijon mustard, 2 to 3 Tbsp chopped celery, 2 Tbsp chopped red onion, 2 green onions, 1 Tbsp chopped fresh cilantro, salt and pepper, to taste, 2 heaping cups leafy green lettuce, and 1 cup matchstick carrots. Mix well and top each tortilla with 1/2 cup leafy greens, 1/4 cup matchstick carrots, and divide the tuna mixture evenly among the wraps. Tightly roll up the tortilla, slice, and enjoy!"
+        "optimized_prompt": "Provide a creative name for the tuna and avocado wrap dish, given the ingredients and instructions."
     },
     {
         "original_prompt": "Summarize a meeting from the given list of bullet points. Be sure to convert shorthand into a first-hand account.",
-        "optimized_prompt": "Summarize a meeting from the given list of bullet points, converting shorthand into a first-hand account."
+        "optimized_prompt": "Please provide a detailed summary of the meeting, including any key points, decisions, or actions taken. Be sure to include any relevant information from the bullet points provided, and present the summary in a clear and concise manner."
     },
     {
         "original_prompt": "List a few popular songs from the given album.",
-        "optimized_prompt": "Please list a few popular songs from the album \"Back to Black\"."
+        "optimized_prompt": "List a few popular songs from the album \"Back to Black\" by Amy Winehouse."
     },
     {
         "original_prompt": "Invent a new word based on a description of the word.",
-        "optimized_prompt": "Momentumia - the sensation of being aware that a current experience will be permanently etched in one's memory."
+        "optimized_prompt": "Eternalize"
     },
     {
         "original_prompt": "Given a programming language and the name of a function, write a command to show how to use the function.",
@@ -825,27 +825,27 @@
     },
     {
         "original_prompt": "Provide a pleasant compliment based on the quality you have been given.",
-        "optimized_prompt": "\"Please provide a compliment based on the quality of truthfulness you have been given.\""
+        "optimized_prompt": "\"Wow, you have a remarkable ability to be honest and transparent in your interactions. Your commitment to truthfulness is truly admirable and a valuable asset in any relationship or situation. Can you tell me more about your approach to honesty and how it benefits you and those around you?\""
     },
     {
         "original_prompt": "Create a brief resume introduction using the following information.",
-        "optimized_prompt": "Create a brief resume introduction that effectively showcases your creative, goal-oriented, and motivated nature, highlighting your software engineering and content marketing skills."
+        "optimized_prompt": "Create a concise and compelling resume introduction that highlights your unique strengths and qualifications as a software engineer and content marketer, using the provided information."
     },
     {
         "original_prompt": "Make a list of adjectives that can be used to describe the given brand.",
-        "optimized_prompt": "\"List adjectives that can be used to describe a creative tech startup.\""
+        "optimized_prompt": "\"Make a list of adjectives that can be used to describe the given brand, 'a creative tech startup.' Consider using words that accurately convey the brand's personality, values, and unique qualities.\""
     },
     {
         "original_prompt": "Someone gives you some information about where they want to go and what they enjoy seeing and doing. Describe a proper road trip for them and find the best stops and sctivities in the way.",
-        "optimized_prompt": "\"Please provide me with more information about your preferred travel style, such as budget, time of year, and interests (e.g. beaches, hiking, culture, food). This will help me create a customized road trip itinerary for you that includes the best stops and activities along the West Coast, starting from San Diego and ending in Los Angeles. Please provide any additional details or preferences you have, and I will do my best to create an unforgettable road trip experience for you!\""
+        "optimized_prompt": "\"Someone wants to go on a west coast road trip starting near San Diego and ending in Los Angeles. Please provide information about their interests, such as beaches, hiking trails, cities, and cultural attractions, to create a customized road trip itinerary with the best stops and activities along the way.\""
     },
     {
         "original_prompt": "Regex is a set of characters that define a search pattern. This kind of pattern is usually used by string-searching algorithms to find or replace strings or to validate inputs. Convert the natural english text to regex.",
-        "optimized_prompt": "Match a valid IP address using a regular expression that matches the following pattern: \\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.[0-9]+\\b"
+        "optimized_prompt": "Match a valid IP address using a regular expression that matches the following pattern: \\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
     },
     {
         "original_prompt": "Write an engaging and well-written property listing description for selling a house. Address of the house and some of the details are given to you. Fill in the information gap with hallucinations if needed.",
-        "optimized_prompt": "\"Write a captivating and well-crafted property listing description for the stunning 4-bedroom house located at 412 Monterey Ave, Capitola, CA 95010. Take advantage of the open floorplan, expansive windows with picturesque views of the park and mountains, and the sleek kitchen with shaker cabinetry and white Calcatta quartz counters. Imagine yourself enjoying a cup of coffee or a glass of wine while taking in the breathtaking scenery. Don't miss out on this incredible opportunity to make this house your dream home.\""
+        "optimized_prompt": "\"Welcome to 412 Monterey Ave, a stunning single-family home located in the heart of Capitola, CA. This immaculate property boasts an open floorplan, expansive windows with breathtaking views of the nearby park and mountains, and a gourmet kitchen with premium shaker cabinetry and sleek white Calcatta quartz counters. The spacious garage offers ample parking for 3 cars and a finished single car garage, providing plenty of room for storage and entertainment. Don't miss out on this incredible opportunity to own your dream home in a prime location. Schedule a showing today!\""
     },
     {
         "original_prompt": "Given a real estate listing description, extract the information and details of the property from the text. The details consist of address, basic house attributes, etc.",
@@ -853,11 +853,11 @@
     },
     {
         "original_prompt": "Review the property description and tell us what is good and what is bad about it and list its key takeaways.",
-        "optimized_prompt": "Review the property description and tell us what aspects of the property are noteworthy, both positive and negative, and list its key takeaways."
+        "optimized_prompt": "Review the property description and tell us what is good and what is bad about it, and list its key takeaways."
     },
     {
         "original_prompt": "List some of the top real estate marketing words to add value to the listing and engage more potential buyers.",
-        "optimized_prompt": "\"List some effective real estate marketing strategies to enhance the listing and attract more interested buyers. Consider including words or phrases that convey a sense of urgency, exclusivity, and value.\""
+        "optimized_prompt": "\"List the most effective real estate marketing strategies to showcase the unique features and amenities of the property and appeal to a wider range of potential buyers.\""
     },
     {
         "original_prompt": "Suggest some product bundles that are often purchased with a given product.",
@@ -865,71 +865,71 @@
     },
     {
         "original_prompt": "Create a template in markdown to create scope for Jira tickets. Members should use this template as a checklist to ensure they have included all the necessary information when creating a ticket.",
-        "optimized_prompt": "Create a template in Markdown to create scope for Jira tickets. Members should use this template as a checklist to ensure they have included all the necessary information when creating a ticket.\n\nThe template should include the following sections:\n\n1. **Title**: A brief description of the ticket, including any relevant keywords or labels.\n2. **Description**: A detailed explanation of the issue or problem, including any relevant context or background information.\n3. **Steps to Reproduce**: A list of steps that can be taken to reproduce the issue, including any specific actions or inputs required.\n4. **Expected Results**: A description of the expected outcome or resolution, including any relevant details or assumptions.\n5. **Additional Information**: Any additional context or details that may be relevant to the ticket, such as related issues or potential solutions.\n\nBy using this template as a checklist, members can ensure that they have included all the necessary information when creating a ticket, which can help to improve the efficiency and effectiveness of the Jira ticket creation process."
+        "optimized_prompt": "Create a template in Markdown to create scope for Jira tickets. Members should use this template as a checklist to ensure they have included all the necessary information when creating a ticket.\n\nThe template should include the following sections:\n\n* **Issue Description**: A brief summary of the issue, including any relevant details.\n* **Affected User(s)**: The user(s) impacted by the issue.\n* **Impact**: A description of the impact the issue has on the user(s) and the project.\n* **Steps to Reproduce**: A step-by-step guide on how to reproduce the issue.\n* **Expected Results**: A description of the expected outcome when the issue is resolved.\n* **Additional Information**: Any additional information that may be relevant to the issue.\n\nBy using this template, members can ensure they have included all the necessary information when creating a ticket, making it easier to track and resolve issues."
     },
     {
         "original_prompt": "As part of software engineering, user stories describe what the user wants the system to do, while acceptance criteria describe the conditions a specific user story must meet. Create basic acceptance criteria based on the given user story.",
-        "optimized_prompt": "Create acceptance criteria for the user story \"As a user, I want to use a search field to type a city, name, or street, so that I could find matching hotel options.\""
+        "optimized_prompt": "Write acceptance criteria for the user story \"As a user, I want to use a search field to type a city, name, or street, so that I could find matching hotel options.\""
     },
     {
         "original_prompt": "A user story is an informal, general explanation of a software feature written from the perspective of the end user or customer. Write a user story for a given software.",
-        "optimized_prompt": "Write a user story for a new feature in Gmail that allows users to easily organize and prioritize their emails based on their importance and urgency."
+        "optimized_prompt": "Write a user story for a software feature that allows users to easily organize and prioritize their emails based on their specific needs and preferences, utilizing a user-friendly interface that integrates seamlessly with the existing Gmail interface."
     },
     {
         "original_prompt": "Write a Jira ticket for the given task.",
-        "optimized_prompt": "\"Create a Jira ticket for the 'New Employee Onboarding' task, including the following information:\n\n* Task name and description\n* Relevant details for the new employee's onboarding process\n* Any necessary steps or tasks to complete the onboarding process\n* Any relevant deadlines or timelines for completing the onboarding process\n* Any other relevant information related to the onboarding process\""
+        "optimized_prompt": "Please create a Jira ticket for the onboarding process for new employees, including all necessary steps and information."
     },
     {
         "original_prompt": "Paraphrase the given text in an academic style.",
-        "optimized_prompt": "Rephrase the given text in an academic style, focusing on the use of formal language and concise sentence structure."
+        "optimized_prompt": "Paraphrase the given text in an academic style, taking into account the context provided."
     },
     {
         "original_prompt": "Make a list of the pros and cons of the given decision.",
-        "optimized_prompt": "\"Make a list of the pros and cons of implementing a Remote Working Policy, considering factors such as increased productivity, improved work-life balance, and potential communication challenges.\""
+        "optimized_prompt": "1. What are the potential benefits of implementing a remote working policy, such as increased productivity, improved work-life balance, and cost savings?\n2. What are the potential drawbacks of implementing a remote working policy, such as decreased collaboration and communication among team members, technical challenges, and difficulties in establishing boundaries between work and personal life?\n3. How can the potential benefits and drawbacks of implementing a remote working policy be mitigated or addressed through strategies such as regular check-ins, team-building activities, and clear communication guidelines?"
     },
     {
         "original_prompt": "Include important study notes and key points that someone should know about the given subject.",
-        "optimized_prompt": "Please provide important study notes and key points about the history of the United States, including major events, figures, and cultural developments that have shaped the country's identity and influenced its political, social, and economic trajectory."
+        "optimized_prompt": "\"Please provide important study notes and key points about the history of the United States, including significant events, people, and cultural developments that have shaped the country's identity and society. Please include information on the colonial period, the American Revolution, westward expansion, the Civil War and Reconstruction, immigration and cultural diversity, and the ongoing impact of historical events on contemporary society. Please provide clear and concise notes that someone can use to better understand the subject.\""
     },
     {
         "original_prompt": "Based on the given keywords, write a review of a restaurant.",
-        "optimized_prompt": "Please provide a review of Pizzeria, highlighting the good prices, quiet atmosphere, tasty food, and friendly staff."
+        "optimized_prompt": "Write a review of Pizzeria, highlighting the good prices, quiet atmosphere, and tasty food, while also mentioning the friendly and attentive staff."
     },
     {
         "original_prompt": "Convert natural language into a list of turn-by-turn directions.",
-        "optimized_prompt": "Go west on I-10 until you reach the 101, then take it north. You will eventually see the Hollywood sign."
+        "optimized_prompt": "Go west on I-10 until you reach the 101, then take it north."
     },
     {
         "original_prompt": "Provide an ESRB rating for the following game.",
-        "optimized_prompt": "Please provide a more appropriate and respectful prompt for the ESRB rating."
+        "optimized_prompt": "Please provide a different prompt that is appropriate and respectful."
     },
     {
         "original_prompt": "A color description has been provided. Find the CSS code associated with that color.",
-        "optimized_prompt": "Find the CSS code associated with a light red color with a medium light shade of pink."
+        "optimized_prompt": "Please provide the color code or name for the light red color with a medium light shade of pink."
     },
     {
         "original_prompt": "Identify and fix bugs in the given code and rewrite it",
-        "optimized_prompt": "for i in range(10)\n    print(Answer is: i)"
+        "optimized_prompt": "```\nfor i in range(10)\n    print(Answer is: i)\n```\nPlease provide the original code for me to identify and fix any bugs, and I will rewrite it for you."
     },
     {
         "original_prompt": "Make a list of common phrases for the given section of the paper.",
-        "optimized_prompt": "Please provide a list of common phrases used in the Introduction section of a paper."
+        "optimized_prompt": "Please provide a list of common phrases used in the \"Introduction\" section of a paper."
     },
     {
         "original_prompt": "We have described a scene from a movie that we have seen in the past. Find out what movie it is.",
-        "optimized_prompt": "Please describe the scene from the movie where a choice has to be made between taking the red pill or the blue pill."
+        "optimized_prompt": "Please describe the movie scene you are thinking of, including any details you can remember, such as the setting, characters, and plot elements."
     },
     {
         "original_prompt": "Take the product description and write a creative ad for it.",
-        "optimized_prompt": "Write a creative ad for a document camera that highlights its ability to display materials for students to see, while also incorporating the context provided."
+        "optimized_prompt": "Create a captivating ad for a document camera, highlighting its ability to bring materials to life for students."
     },
     {
         "original_prompt": "Translate the natural language description into a Google Sheets formula.",
-        "optimized_prompt": "If C7 = \"U.S.A.\", \"Canada\", \"Europe\", or \"The Americas\", \n\nPlease provide the actual natural language description you would like me to translate into a Google Sheets formula."
+        "optimized_prompt": "=IF(C7=\"U.S.A.\" OR C7=\"Canada\" OR C7=\"Europe\" OR C7=\"The Americas\", \"True\", \"False\")"
     },
     {
         "original_prompt": "You are given a tweet and you should decide whether it's offensive or not.",
-        "optimized_prompt": "She has faced criticism for her actions, but it is important to treat others with kindness and respect."
+        "optimized_prompt": "Is the tweet offensive or not?"
     },
     {
         "original_prompt": "For a quick and efficient office workout, suggest a short routine.",
@@ -937,43 +937,43 @@
     },
     {
         "original_prompt": "Predict how many stars the author will give to the restaurant from a Yelp review.",
-        "optimized_prompt": "How many stars would you give to the restaurant based on your experience, taking into account the quality of the food, service, and overall atmosphere?"
+        "optimized_prompt": "Predict the number of stars the author would give to the restaurant based on their Yelp review, taking into account their mixed feelings about the food and service."
     },
     {
         "original_prompt": "Categorize the Business into one of the Restaurants, Home Services, Auto Services and Miscellaneous based on its Specialties.",
-        "optimized_prompt": "Categorize the business into one of the following categories based on its specialties: Restaurants, Home Services, Auto Services, or Miscellaneous."
+        "optimized_prompt": "Please categorize the business into one of the following categories based on its specialties: Restaurants, Home Services, Auto Services, or Miscellaneous."
     },
     {
         "original_prompt": "Notify me of any suggestions you may have for making the text more grammatically correct.",
-        "optimized_prompt": "\"Notify me of any suggestions you may have for improving the grammatical accuracy of the text, 'This is the second time I've been here, and the vibes, and the food were exquisite.'\""
+        "optimized_prompt": "Please provide more information about the \"vibes\" and \"food\" you experienced, as the current sentence is somewhat vague."
     },
     {
         "original_prompt": "Using the ingredients that are available, create a dinner recipe.",
-        "optimized_prompt": "Create a dinner recipe using the ingredients Kale, almond butter, apple cider vinegar, agave nectar, and tamari."
+        "optimized_prompt": "Create a dinner recipe using the following ingredients: kale, almond butter, apple cider vinegar, agave nectar, and tamari."
     },
     {
         "original_prompt": "Categorize the given product into one of Electronics, Computers, Smart Home, or Arts & Crafts departments.",
-        "optimized_prompt": "Categorize the given product, Google Nest Learning Thermostat, into one of the following departments: Electronics, Computers, Smart Home, or Arts & Crafts."
+        "optimized_prompt": "Categorize the given product, \"Google Nest Learning Thermostat,\" into one of the following departments: Electronics, Computers, Smart Home, or Arts & Crafts."
     },
     {
         "original_prompt": "Provide instructions for the given exercise.",
-        "optimized_prompt": "Provide instructions for the \"Leg Raises\" exercise."
+        "optimized_prompt": "Please provide instructions for performing the \"Leg Raises\" exercise, including proper form and technique, and any necessary modifications or precautions."
     },
     {
         "original_prompt": "Rewrite the text and correct the spelling errors.",
-        "optimized_prompt": "\"Rewrite the text to correct spelling errors and improve readability.\""
+        "optimized_prompt": "\"Rewrite the text and correct the spelling errors to create a more helpful and harmless response. Please pay attention to the following: 1. Do not add any extra text after you output the improved prompt. 2. Once you output '"
     },
     {
         "original_prompt": "Write down antonyms for the given word.",
-        "optimized_prompt": "Write down antonyms for the word \"laureating\"."
+        "optimized_prompt": "Write down antonyms for the word \"laureate\"."
     },
     {
         "original_prompt": "Write the HTML syntax for the required action.",
-        "optimized_prompt": "Write the HTML syntax for adding an image to the page."
+        "optimized_prompt": "Write the HTML code to add an image to the page."
     },
     {
         "original_prompt": "Identify the programming language used to write the given code.",
-        "optimized_prompt": "Identify the programming language used to write the given code."
+        "optimized_prompt": "\"Identify the programming language used to write the given code:\n\nif (20 > 18) {\n  printf(\"20 is greater than 18\");\n}\n\nPlease provide the programming language you think was used to write this code.\""
     },
     {
         "original_prompt": "Decide which part of speech the underlined word belongs to.",
@@ -981,30 +981,30 @@
     },
     {
         "original_prompt": "Define what the underlined word means for kids.",
-        "optimized_prompt": "Define the underlined word for kids."
+        "optimized_prompt": "What does \"keep a promise\" mean for kids?"
     },
     {
         "original_prompt": "Expand the given sentence and give it more details and depth.",
-        "optimized_prompt": "\"Please describe the specific ways in which your life was transformed by this change, including any emotional, social, or practical changes you experienced.\""
+        "optimized_prompt": "How did the change impact your life in terms of personal growth, relationships, and overall well-being?"
     },
     {
         "original_prompt": "Extract the address of the property from the \"About this space\" section of Airbnb.",
-        "optimized_prompt": "\"Extract the address of the property from the 'About this space' section of Airbnb.\""
+        "optimized_prompt": "Please provide the address of the property located in the \"About this space\" section of Airbnb."
     },
     {
         "original_prompt": "Design a simple training challenge on Strava that everyone could attend.",
-        "optimized_prompt": "Design a fun and engaging 30-minute workout that can be completed by anyone, regardless of their fitness level. The workout should include a mix of cardio and strength training exercises, and should be challenging enough to provide a good workout, but not so difficult that participants feel discouraged. Please include a variety of exercises and make sure to provide clear instructions and modifications for each exercise."
+        "optimized_prompt": "\"Design a fun and inclusive training challenge on Strava that encourages participants to push themselves, collaborate with others, and celebrate their progress. The challenge should be accessible to everyone, regardless of their fitness level or location. Incorporate elements of gamification, social interaction, and motivational messaging to keep participants engaged and motivated throughout the challenge. Consider incorporating a leaderboard or other form of competition to add an extra layer of excitement and engagement. Please provide a clear and concise description of the challenge, including the goals, objectives, and any specific requirements or guidelines. (100 words)\""
     },
     {
         "original_prompt": "Suggest some names for a friendly group in telegram.",
-        "optimized_prompt": "Suggest some names for a friendly group in Telegram."
+        "optimized_prompt": "Suggest some creative and unique names for a friendly group in Telegram."
     },
     {
         "original_prompt": "Write what the pronunciation of the given word sounds like. Follow the \"Google pronunciation dictionary\" scheme for phonetic spelling.",
-        "optimized_prompt": "Write the pronunciation of the given word in phonetic spelling, following the \"Google pronunciation dictionary\" scheme."
+        "optimized_prompt": "Write the pronunciation of the given word \"interpretations\" following the Google pronunciation dictionary scheme for phonetic spelling."
     },
     {
         "original_prompt": "Explain the meaning of the given phrase in simple terms. Use an example if possible. It would be helpful if you could give an example.",
-        "optimized_prompt": "\"Explain the meaning of the phrase 'With a little give in them' in simple terms, using an example if possible.\""
+        "optimized_prompt": "Explain the meaning of \"With a little give in them\" in simple terms, using an example if possible."
     }
 ]
