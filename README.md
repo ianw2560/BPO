@@ -71,3 +71,15 @@ module load python/python-3.11.4-gcc-12.2.0
 python3 install -r requirements.txt
 srun -N 1 --gres=gpu:1 --gres-flags=enforce-binding --time=2:00:00 --mem=70G --constraint="gpu32|gpu80" python3 evaluation/generate_responses.py opt -d dolly vicuna self_instruct bpo_test
 ```
+
+## Results
+
+The follow section contains our results
+
+**Model: GPT-4o**
+Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
+|:-------------- | --------:| ---:| ---:| ------------:| -------:| -------:|
+bpo_test       | 90.0  | 19.0  | 91.0  |   45.0  |  9.5  |  45.5
+dolly          | 69.0  | 36.0  | 95.0  |   34.5  |  18.0 |  47.5
+vicuna         | 33.0  | 6.0   | 41.0  |  41.25  |  7.5  | 51.25
+self_instruct  | 57.0  | 82.0  | 113.0 |  22.62  | 32.54 | 44.84

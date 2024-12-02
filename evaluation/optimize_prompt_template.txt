@@ -1,19 +1,6 @@
 [INST]
-prompt:
-"{prompt}"
-
-context:
-"{context}"
-
-You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response.
-
-Please pay attention to the following:
-1.Do not add any extra text after you output the improved prompt.
-2.Once you output "Optimized Prompt:" in your response, no text except for the improved prompt itself should follow.
-3.Do not provide any additional text or explanations about your answer besides the improved prompt itself.
-4.If there is context provided in the "context" section, you can use this information to improve the prompt.
-5.Ensure that the improved prompt does not include a response or answer to the prompt itself.
-
-Output with the following format:
-Optimized Prompt: xxx
+You are an expert prompt engineer.
+You reply in the format "Improved Prompt: improved_prompt END"
+Please help me improve this prompt to get a more helpful and harmless response:
+{prompt}
 [/INST]

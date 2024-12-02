@@ -52,7 +52,7 @@ class Evaluation():
         # Perform evaluation with GPT-4o
         client = OpenAI()
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             temperature=0.0,
             messages=[
                 {
@@ -68,21 +68,30 @@ class Evaluation():
 
         llm_response = response.choices[0].message.content
 
-        print("LLM Response:")
-        print(llm_response)
+        # print("LLM Response:")
+        # print(llm_response)
 
         if "[[A]]" in llm_response:
+            print("LLM Response: [[A]]")
             method = resp_A[1]
             self.scores[base_llm][dataset][method] += 1
         elif "[[B]]" in llm_response:
+            print("LLM Response: [[B]]")
             method = resp_B[1]
             self.scores[base_llm][dataset][method] += 1
         elif "[[C]]" in llm_response:
+            print("LLM Response: [[C]]")
             method = "tie"
             self.scores[base_llm][dataset][method] += 1
         else:
             print("Unknown response!")
             self.errors += 1
+
+        # Print current results
+        ori = self.scores[model][dataset]["ori"]
+        tie = self.scores[model][dataset]["tie"]
+        bpo = self.scores[model][dataset]["bpo"]
+        print(f"Current Score: Original = {ori}, Tie = {tie}, BPO = {bpo}")
 
     def evaluate(self, dataset: str, model: str):
         """
@@ -99,7 +108,7 @@ class Evaluation():
             original_response = resp["original_response"]
             bpo_response = resp["optimized_response"]
 
-            print(f"Evaluating Response {i+1}") 
+            print(f"EVALUATING {model.upper()} RESPONSES FOR {dataset.upper()} DATASET - PROMPT {i+1}")
             self.evaluate_response(dataset, model, instruction, original_response, bpo_response)
 
     def print_scores(self):
@@ -108,14 +117,26 @@ class Evaluation():
             print("Model:", model)
             print("===================")
 
-            df = pd.DataFrame(columns=["Orig.", "Tie", "BPO"])
+            df = pd.DataFrame(columns=["Orig.", "Tie", "BPO", "Orig.(%)", "Tie(%)", "BPO(%)"])
 
             for ds in self.dataset_options:
                 original = self.scores[model][ds]["ori"]
                 tie = self.scores[model][ds]["tie"]
                 bpo = self.scores[model][ds]["bpo"]
 
-                df.loc[ds] = [original, tie, bpo]
+                # Calculate percentages
+                total = (original + tie + bpo)
+
+                if total > 0:
+                    original_per = float(original / total) * 100
+                    tie_per = float(tie / total) * 100
+                    bpo_per = float(bpo / total) * 100
+                else:
+                    original_per = "N/A"
+                    tie_per = "N/A"
+                    bpo_per = "N/A"
+
+                df.loc[ds] = [original, tie, bpo, original_per, tie_per, bpo_per]
 
             print(df)
 
@@ -129,11 +150,10 @@ if __name__ == "__main__":
     parser.add_argument('-m', '--models', choices=e.model_options, nargs="*", default="gpt_4o", dest="models")
     args = parser.parse_args()
 
-    print(args.datasets)
-    print(args.models)
-
+    # Loop through all specified datasets and models
     for ds in args.datasets:
         for model in args.models:
             e.evaluate(ds, model)
 
+    print(e.scores)
     e.print_scores()

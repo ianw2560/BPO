@@ -28,7 +28,7 @@ def generate_response_gpt3_5_turbo(prompt: str):
 
 def generate_response_gpt4o(prompt: str):
 
-    model = "gpt-4o-mini"
+    model = "gpt-4o"
 
     client = OpenAI()
     response = client.chat.completions.create(
@@ -61,18 +61,34 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     optimize_prompt_template = open("evaluation/optimize_prompt_template.txt")
     optimize_prompt_template = optimize_prompt_template.read()
 
-    prompt = optimize_prompt_template.replace("{prompt}", prompt).replace("{context}", context)
+    prompt = optimize_prompt_template.replace("{prompt}", prompt) #.replace("{context}", context)
     # prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt by surround it with [BEGIN] and [END] tags.\n\n Here is the prompt to improve:\n{prompt} [/INST]"
 
-    model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
-    optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
+    num_attempts = 5
+    for i in range(num_attempts):
 
-    print("Raw Model Output:")
-    print(optimized_prompt)
-    print()
+        model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
+        output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
+        optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
 
-    optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip()
+        print("Raw Model Output:")
+        print(optimized_prompt)
+        print()
+
+        if ("Improved Prompt:" not in optimized_prompt) or ("END" not in optimized_prompt):
+            if i == num_attempts - 1:
+                optimized_prompt = prompt
+            else:
+                continue
+
+        try:
+            # optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
+            # optimized_prompt = optimized_prompt.strip().split("\n")[1:-1].strip().strip("\"")
+            optimized_prompt = optimized_prompt.strip().split("Improved Prompt:")[1].strip().split("END")[0].strip().strip("\"")
+            break
+        except Exception as ex:
+            print("Regenerate and try again...")
+
 
     return optimized_prompt
 
@@ -91,11 +107,13 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
     for i, data in enumerate(eval_prompts):
 
         if dataset == "dolly":
-            prompt = data['instruction'] # + "\n" + data['context']
-            context = data['context']
+            prompt = data['instruction'] #+ "\n" + data['context']
+            #context = data['context']
+            context = ""
         elif dataset == "self_instruct":
             prompt = data['instruction'] #+ "\n" + data['context']
-            context = data['context']
+            # context = data['context']
+            context = ""
         elif dataset == "vicuna":
             prompt = data['text']
             context = ""
@@ -109,18 +127,21 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         # Remove leading whitespace
         original_prompt = prompt.strip()
 
+        print(f"GENERATING OPTIMIZED PROMPT - {dataset.upper()} DATASET - PROMPT {i+1}")
         print("Original Prompt:")
         print(original_prompt)
         print()
 
+        optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
+
         # print(f"Generating optimized prompt for prompt {i}...")
-        num_attempts = 5
-        for i in range(num_attempts):
-            try:
-                optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
-                break
-            except:
-                print("Regenerate and try again...")
+        # num_attempts = 5
+        # for i in range(num_attempts):
+        #     try:
+        #         optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
+        #         break
+        #     except Exception as ex:
+        #         print("Regenerate and try again...")
 
         print("Optimized Prompt:")
         print(optimized_prompt)
@@ -134,7 +155,7 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
 
         bpo_opt_prompts.append(current_output)
 
-        # if i == 50:
+        # if i == 20:
         #     break
 
     with open(f"data/evaluation/bpo_optimized_prompts_{dataset}.json", "w") as json_file:
@@ -154,13 +175,13 @@ def generate_responses(dataset: str, model: str):
         original_prompt = data["original_prompt"]
         optimized_prompt = data["optimized_prompt"]
 
+        print(f"GENERATING RESPONSES - {dataset.upper()} DATASET - PROMPT {i+1}")
         print("Original Prompt:")
         print(original_prompt)
         print()
         print("Optimized Prompt:")
         print(optimized_prompt)
 
-        print(f"Generating original and optimized responses for prompt {i}...")
         if model == "gpt_4o":
             original_response = generate_response_gpt4o(original_prompt)
             optimized_response = generate_response_gpt4o(optimized_prompt)
@@ -185,7 +206,7 @@ def generate_responses(dataset: str, model: str):
         print()
         print("Optimized Response:")
         print(optimized_response[:70] + "...")
-        print("======================================================================")
+        print("=========================================================================")
 
         current_output = {}
 
@@ -196,6 +217,9 @@ def generate_responses(dataset: str, model: str):
         current_output["optimized_response"] = optimized_response
 
         optimized_responses.append(current_output)
+
+        # if i == 20:
+        #     break
 
     with open(f"data/evaluation/{dataset}_{model}_opt_responses.json", "w") as json_file:
         json.dump(optimized_responses, json_file, indent=4)
@@ -212,9 +236,6 @@ def main():
     parser.add_argument('-d', '--datasets', choices=dataset_options, nargs="*", default="dolly", dest="datasets")
     parser.add_argument('-m', '--models', choices=model_options, nargs="*", default="gpt_4o", dest="models")
     args = parser.parse_args()
-
-    print(args.datasets)
-    print(args.models)
 
     if args.mode == "opt":
 
