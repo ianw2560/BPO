@@ -77,7 +77,7 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
 
     # optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
 
-    optimized_prompt = optimized_prompt.strip()
+    optimized_prompt = optimized_prompt.strip().split("\n")[1].strip()
 
     return optimized_prompt
 
