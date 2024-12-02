@@ -2,5 +2,5 @@
 {prompt}
 
 Output with the following format:
-Optimized Prompt: xxx
+Optimized Prompt: xxx [END]
 [/INST]
