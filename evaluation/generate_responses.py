@@ -216,9 +216,6 @@ def main():
     parser.add_argument('-m', '--models', choices=model_options, nargs="*", default="gpt_4o", dest="models")
     args = parser.parse_args()
 
-    print(args.datasets)
-    print(args.models)
-
     if args.mode == "opt":
 
         # Check for GPU
