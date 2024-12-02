@@ -62,6 +62,8 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     optimize_prompt_template = optimize_prompt_template.read()
 
     prompt = optimize_prompt_template.replace("{prompt}", prompt) #.replace("{context}", context)
+
+    print(prompt)
     # prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt by surround it with [BEGIN] and [END] tags.\n\n Here is the prompt to improve:\n{prompt} [/INST]"
 
     model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
@@ -93,15 +95,17 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         if dataset == "dolly":
             prompt = data['instruction'] + "\n" + data['context']
             #context = data['context']
+            context = ""
         elif dataset == "self_instruct":
             prompt = data['instruction'] + "\n" + data['context']
-            context = data['context']
+            # context = data['context']
+            context = ""
         elif dataset == "vicuna":
             prompt = data['text']
-            #context = ""
+            context = ""
         elif dataset == "bpo_test":
             prompt = data['prompt']
-            #context = ""
+            context = ""
         else:
             print("Invalid dataset specified!")
             exit(1)
@@ -119,7 +123,7 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
             try:
                 optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
                 break
-            except:
+            except Exception as ex:
                 print("Regenerate and try again...")
 
         print("Optimized Prompt:")
