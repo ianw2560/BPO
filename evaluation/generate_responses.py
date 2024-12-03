@@ -76,7 +76,7 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     #     raise Exception
 
     # optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
-
+    # optimized_prompt = optimized_prompt.strip().split("\n")[1:-1].strip().strip("\"")
     optimized_prompt = optimized_prompt.strip().split("\n")[1:-1].strip().strip("\"")
 
     return optimized_prompt
@@ -96,11 +96,11 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
     for i, data in enumerate(eval_prompts):
 
         if dataset == "dolly":
-            prompt = data['instruction'] + "\n" + data['context']
+            prompt = data['instruction'] #+ "\n" + data['context']
             #context = data['context']
             context = ""
         elif dataset == "self_instruct":
-            prompt = data['instruction'] + "\n" + data['context']
+            prompt = data['instruction'] #+ "\n" + data['context']
             # context = data['context']
             context = ""
         elif dataset == "vicuna":
