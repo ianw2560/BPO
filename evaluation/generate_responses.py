@@ -64,20 +64,31 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     prompt = optimize_prompt_template.replace("{prompt}", prompt) #.replace("{context}", context)
     # prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt by surround it with [BEGIN] and [END] tags.\n\n Here is the prompt to improve:\n{prompt} [/INST]"
 
-    model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
-    optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
+    num_attempts = 5
+    for i in range(num_attempts):
 
-    print("Raw Model Output:")
-    print(optimized_prompt)
-    print()
+        model_inputs = tokenizer(prompt, return_tensors="pt").to(device)
+        output = model.generate(**model_inputs, max_new_tokens=1024, do_sample=True, top_p=0.9, temperature=0.6, num_beams=1)
+        optimized_prompt = tokenizer.decode(output[0], skip_special_tokens=True).split('[/INST]')[1].strip()
 
-    if ("Improved Prompt:" not in optimized_prompt) or ("END" not in optimized_prompt):
-        raise Exception
+        print("Raw Model Output:")
+        print(optimized_prompt)
+        print()
 
-    # optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
-    # optimized_prompt = optimized_prompt.strip().split("\n")[1:-1].strip().strip("\"")
-    optimized_prompt = optimized_prompt.strip().split("Improved Prompt:")[1].strip().split("END")[0].strip().strip("\"")
+        if ("Improved Prompt:" not in optimized_prompt) or ("END" not in optimized_prompt):
+            if i == num_attempts - 1:
+                optimized_prompt = prompt
+            else:
+                continue
+
+        try:
+            # optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
+            # optimized_prompt = optimized_prompt.strip().split("\n")[1:-1].strip().strip("\"")
+            optimized_prompt = optimized_prompt.strip().split("Improved Prompt:")[1].strip().split("END")[0].strip().strip("\"")
+            break
+        except Exception as ex:
+            print("Regenerate and try again...")
+
 
     return optimized_prompt
 
@@ -121,14 +132,16 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         print(original_prompt)
         print()
 
+        optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
+
         # print(f"Generating optimized prompt for prompt {i}...")
-        num_attempts = 5
-        for i in range(num_attempts):
-            try:
-                optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
-                break
-            except Exception as ex:
-                print("Regenerate and try again...")
+        # num_attempts = 5
+        # for i in range(num_attempts):
+        #     try:
+        #         optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
+        #         break
+        #     except Exception as ex:
+        #         print("Regenerate and try again...")
 
         print("Optimized Prompt:")
         print(optimized_prompt)
