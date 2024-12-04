@@ -14,11 +14,12 @@ from vertexai.generative_models import GenerativeModel
 
 def generate_response_gpt3_5_turbo(prompt: str):
 
-    model = "gpt-3.5-turbo"
+    model = "gpt-3.5-turbo-0125"
 
     client = OpenAI()
     response = client.chat.completions.create(
         model=model,
+        temperature=0.0,
         messages=[
             {
                 "role": "user",
@@ -248,12 +249,12 @@ def generate_responses(dataset: str, model: str):
         original_prompt = data["original_prompt"]
         optimized_prompt = data["optimized_prompt"]
 
-        print(f"GENERATING RESPONSES - {dataset.upper()} DATASET - PROMPT {i+1}")
+        print(f"GENERATING RESPONSES USING {model.upper()} - {dataset.upper()} DATASET - PROMPT {i+1}")
         print("Original Prompt:")
-        print(original_prompt)
+        print(original_prompt[:200])
         print()
         print("Optimized Prompt:")
-        print(optimized_prompt)
+        print(optimized_prompt[:200])
 
         if model == "gpt_4o":
             original_response = generate_response_gpt4o(original_prompt)
@@ -275,10 +276,10 @@ def generate_responses(dataset: str, model: str):
             exit(1)
 
         print("Original Response:")
-        print(original_response[:70] + "...")
+        print(original_response[:200] + "...")
         print()
         print("Optimized Response:")
-        print(optimized_response[:70] + "...")
+        print(optimized_response[:200] + "...")
         print("=========================================================================")
 
         current_output = {}
@@ -301,7 +302,7 @@ def main():
 
     # Specify datasets
     dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    model_options = ["gpt_4o", "claude3_haiku", "claude3.5_haiku", "gemini"]
+    model_options = ["gpt_4o", "gpt_3.5_turbo", "claude3_haiku", "claude3.5_haiku", "gemini"]
 
     parser = argparse.ArgumentParser()
 
