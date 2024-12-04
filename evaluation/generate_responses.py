@@ -67,8 +67,8 @@ def generate_response_claude3_haiku(prompt: str):
         ]
     )
 
-    print(message.content)
-    llm_response = message.choices[0].message.content
+    print(message.content[0].text)
+    llm_response = message.content[0].text
 
     return llm_response
 
@@ -87,8 +87,8 @@ def generate_response_claude3_5_haiku(prompt: str):
         ]
     )
 
-    print(message.content)
-    llm_response = message.choices[0].message.content
+    print(message.content[0].text)
+    llm_response = message.content[0].text
 
     return llm_response
 
