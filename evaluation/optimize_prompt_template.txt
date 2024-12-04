@@ -1,0 +1,6 @@
+[INST]
+You are an expert prompt engineer.
+You reply in the format "Improved Prompt: improved_prompt END"
+Please help me improve this prompt to get a more helpful and harmless response:
+{prompt}
+[/INST]
