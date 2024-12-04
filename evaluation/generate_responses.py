@@ -8,7 +8,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 import anthropic
 import vertexai
 
-from openai import OpenAI
+import time
+from google.api_core.exceptions import ResourceExhausted, GoogleAPIError
 from vertexai.generative_models import GenerativeModel
 
 def generate_response_gpt3_5_turbo(prompt: str):
@@ -91,17 +92,41 @@ def generate_response_claude3_5_haiku(prompt: str):
 
     return llm_response
 
-def generate_response_gemini(prompt: str):
-    vertexai.init(project='bpo111', location="us-central1")
+def generate_response_gemini(prompt: str, max_retries: int = 5, backoff_factor: int = 2) -> str:
 
-    model = GenerativeModel("gemini-1.5-flash-002")
+    try:
+        vertexai.init(project='bpo111', location="us-central1")
+    except Exception as e:
+        print(f"Error initializing Vertex AI: {e}")
+        return "Initialization Error"
 
-    response = model.generate_content(prompt)
+    try:
+        model = GenerativeModel("gemini-1.5-flash-002")
+    except Exception as e:
+        print(f"Error loading model: {e}")
+        return "Model Loading Error"
 
-    print(response.text)
-    llm_response = response.text
+    retries = 0
+    while retries < max_retries:
+        try:
+            response = model.generate_content(prompt)
+            print(response.text)
+            return response.text
+        except ResourceExhausted as e:
+            wait_time = backoff_factor ** retries
+            print(f"Quota exceeded. Retrying in {wait_time} seconds... (Attempt {retries + 1}/{max_retries})")
+            time.sleep(wait_time)
+            retries += 1
+        except GoogleAPIError as e:
+            print(f"An API error occurred: {e}")
+            return "API Error"
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            return "Unexpected Error"
 
-    return llm_response
+    print("Maximum retries reached. Please try again later.")
+    return "Retry Limit Exceeded"
+
 
 def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
