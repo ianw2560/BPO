@@ -51,7 +51,7 @@ def generate_response_gpt4o(prompt: str):
 
     return response
 
-def generate_response_claude_haiku(prompt: str):
+def generate_response_claude3_haiku(prompt: str):
     client = anthropic.Anthropic()
 
     message = client.messages.create(
@@ -71,7 +71,7 @@ def generate_response_claude_haiku(prompt: str):
 
     return llm_response
 
-def generate_response_claude2(prompt: str):
+def generate_response_claude3_5_haiku(prompt: str):
     client = anthropic.Anthropic()
 
     message = client.messages.create(
@@ -91,7 +91,7 @@ def generate_response_claude2(prompt: str):
 
     return llm_response
 
-def generate_response_textbison(prompt: str):
+def generate_response_gemini(prompt: str):
     vertexai.init(project='bpo111', location="us-central1")
 
     model = GenerativeModel("gemini-1.5-flash-002")
@@ -236,15 +236,15 @@ def generate_responses(dataset: str, model: str):
         elif model == "gpt_3.5_turbo":
             original_response = generate_response_gpt3_5_turbo(original_prompt)
             optimized_response = generate_response_gpt3_5_turbo(optimized_prompt)
-        elif model == "claude_haiku":
-            original_response = generate_response_claude_haiku(original_prompt)
-            optimized_response = generate_response_claude_haiku(optimized_prompt)
-        elif model == "claude2":
-            original_response = generate_response_claude2(original_prompt)
-            optimized_response = generate_response_claude2(optimized_prompt)
-        elif model == "text_bison":
-            original_response = generate_response_textbison(original_prompt)
-            optimized_response = generate_response_textbison(optimized_prompt)
+        elif model == "claude3_haiku":
+            original_response = generate_response_claude3_haiku(original_prompt)
+            optimized_response = generate_response_claude3_haiku(optimized_prompt)
+        elif model == "claude3.5_haiku":
+            original_response = generate_response_claude3_5_haiku(original_prompt)
+            optimized_response = generate_response_claude3_5_haiku(optimized_prompt)
+        elif model == "gemini":
+            original_response = generate_response_gemini(original_prompt)
+            optimized_response = generate_response_gemini(optimized_prompt)
         else:
             print("Invalid LLM model specified!")
             exit(1)
@@ -276,7 +276,7 @@ def main():
 
     # Specify datasets
     dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    model_options = ["gpt_4o", "claude_haiku"]
+    model_options = ["gpt_4o", "claude3_haiku", "claude3.5_haiku", "gemini"]
 
     parser = argparse.ArgumentParser()
 
