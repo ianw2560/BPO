@@ -10,7 +10,7 @@ from openai import OpenAI
 class Evaluation():
 
     dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    model_options = ["gpt_4o"]
+    model_options = ["gpt_4o", "claude3_haiku", "claude3.5_haiku", "gemini"]
 
     def __init__(self):
 
