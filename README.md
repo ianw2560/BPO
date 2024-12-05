@@ -16,6 +16,16 @@ This project also requires API keys for the GPT and Claude models. You must set 
 | Model | Variable |
 | ----- | -------- |
 | GPT | `OPENAI_API_KEY` |
+| Claude| `ANTHROPIC_API_KEY` |
+
+To utlize Google cloud models like Text-Bison and Gemini, it requires getting set up with Google CLI. Start by downloading the SDK found here: https://cloud.google.com/sdk/docs/install
+
+After following all steps in that guide, including initializing Google CLI with ``` gcloud init    ```, a user must log in and choose their unique project ID.
+
+Additionally, a user must specify their project name in the ```generate_response_textbison()``` function in generate_responses.py.
+
+Example:
+```vertexai.init(project='bpo111', location="us-central1")```
 
 ## Training
 
@@ -64,7 +74,8 @@ A set of tables with the evaluation data will be printed.
 
 ### Newton
 
-If you are running on Newton, you will need to run the job using SLURM. This command has 
+If you are running on Newton, you will need to run the job using SLURM.
+This `srun` command has arguments specified to ensure the node you are allocated has the correct amount of resources to load the model.
 
 ```bash
 module load python/python-3.11.4-gcc-12.2.0
@@ -74,7 +85,7 @@ srun -N 1 --gres=gpu:1 --gres-flags=enforce-binding --time=2:00:00 --mem=70G --c
 
 ## Results
 
-The follow section contains our results
+The following section contains our results.
 
 **Model: GPT-4o**
 Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
@@ -83,3 +94,27 @@ bpo_test       | 90.0  | 19.0  | 91.0  |   45.0  |  9.5  |  45.5
 dolly          | 69.0  | 36.0  | 95.0  |   34.5  |  18.0 |  47.5
 vicuna         | 33.0  | 6.0   | 41.0  |  41.25  |  7.5  | 51.25
 self_instruct  | 57.0  | 82.0  | 113.0 |  22.62  | 32.54 | 44.84
+
+**Model: GPT-3.5-Turbo**
+Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
+|:-------------- | --------:| ---:| ---:| ------------:| -------:| -------:|
+bpo_test       | 98.0  | 23.0  | 79.0  | 49.0 | 11.5 | 39.5
+dolly          | 84.0  | 28.0  | 88.0  | 42.0 | 14.0 | 44.0
+vicuna         | 30.0  |  3.0  | 47.0  | 37.5 | 3.75 | 58.75
+self_instruct  | 101.0 | 27.0  | 124.0 | 40.08| 10.71| 49.21
+
+**Model: gemini**
+Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
+|:-------------- | --------:| ---:| ---:| ------------:| -------:| -------:|
+bpo_test       | 92.0 | 12.0 | 96.0 | 46.0  | 6.0   | 48.0
+dolly          | 87.0 | 20.0 | 93.0 | 43.5  | 10.0  | 46.5 
+vicuna         | 37.0 | 5.0  | 38.0 | 46.25 | 6.25  | 47.5
+self_instruct  | 69.0 | 66.0 | 117.0| 27.38 | 26.19 | 46.43
+
+**Model: Claude-3.5-haiku**
+Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
+|:-------------- | --------:| ---:| ---:| ------------:| -------:| -------:|
+bpo_test       | 114.0 | 12.0 | 74.0 | 57.0 | 6.0 | 37.0
+dolly          | 88.0 | 18.0 | 94.0 | 44.0 | 9.0 | 47.0
+vicuna         | 38.0 |  2.0 | 40.0 | 47.5 | 2.5 | 50.0
+self_instruct  | 92.0  34.0  126.0  36.507937  13.492063   50.0

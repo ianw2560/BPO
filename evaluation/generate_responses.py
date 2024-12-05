@@ -5,14 +5,21 @@ import pandas
 
 from openai import OpenAI
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+import anthropic
+import vertexai
+
+import time
+from google.api_core.exceptions import ResourceExhausted, GoogleAPIError
+from vertexai.generative_models import GenerativeModel
 
 def generate_response_gpt3_5_turbo(prompt: str):
 
-    model = "gpt-3.5-turbo"
+    model = "gpt-3.5-turbo-0125"
 
     client = OpenAI()
     response = client.chat.completions.create(
         model=model,
+        temperature=0.0,
         messages=[
             {
                 "role": "user",
@@ -46,14 +53,81 @@ def generate_response_gpt4o(prompt: str):
 
     return response
 
-def generate_response_claude_instant(prompt: str):
-    pass
+def generate_response_claude3_haiku(prompt: str):
+    client = anthropic.Anthropic()
 
-def generate_response_claude2(prompt: str):
-    pass
+    message = client.messages.create(
+        model="claude-3-haiku-20240307",
+        max_tokens=1000,
+        temperature=0,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
 
-def generate_response_textbison(prompt: str):
-    pass
+    print(message.content[0].text)
+    llm_response = message.content[0].text
+
+    return llm_response
+
+def generate_response_claude3_5_haiku(prompt: str):
+    client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-3-5-haiku-20241022",
+        max_tokens=1000,
+        temperature=0,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+
+    print(message.content[0].text)
+    llm_response = message.content[0].text
+
+    return llm_response
+
+def generate_response_gemini(prompt: str, max_retries: int = 5, backoff_factor: int = 2) -> str:
+
+    try:
+        vertexai.init(project='bpo111', location="us-central1")
+    except Exception as e:
+        print(f"Error initializing Vertex AI: {e}")
+        return "Initialization Error"
+
+    try:
+        model = GenerativeModel("gemini-1.5-flash-002")
+    except Exception as e:
+        print(f"Error loading model: {e}")
+        return "Model Loading Error"
+
+    retries = 0
+    while retries < max_retries:
+        try:
+            response = model.generate_content(prompt)
+            print(response.text)
+            return response.text
+        except ResourceExhausted as e:
+            wait_time = backoff_factor ** retries
+            print(f"Quota exceeded. Retrying in {wait_time} seconds... (Attempt {retries + 1}/{max_retries})")
+            time.sleep(wait_time)
+            retries += 1
+        except GoogleAPIError as e:
+            print(f"An API error occurred: {e}")
+            return "API Error"
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            return "Unexpected Error"
+
+    print("Maximum retries reached. Please try again later.")
+    return "Retry Limit Exceeded"
+
 
 def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, model):
     """Calls our Seq2Seq model and returns an optimized version of the input prompt."""
@@ -175,12 +249,12 @@ def generate_responses(dataset: str, model: str):
         original_prompt = data["original_prompt"]
         optimized_prompt = data["optimized_prompt"]
 
-        print(f"GENERATING RESPONSES - {dataset.upper()} DATASET - PROMPT {i+1}")
+        print(f"GENERATING RESPONSES USING {model.upper()} - {dataset.upper()} DATASET - PROMPT {i+1}")
         print("Original Prompt:")
-        print(original_prompt)
+        print(original_prompt[:200])
         print()
         print("Optimized Prompt:")
-        print(optimized_prompt)
+        print(optimized_prompt[:200])
 
         if model == "gpt_4o":
             original_response = generate_response_gpt4o(original_prompt)
@@ -188,24 +262,24 @@ def generate_responses(dataset: str, model: str):
         elif model == "gpt_3.5_turbo":
             original_response = generate_response_gpt3_5_turbo(original_prompt)
             optimized_response = generate_response_gpt3_5_turbo(optimized_prompt)
-        elif model == "claude_instant":
-            original_response = generate_response_claude_instant(original_prompt)
-            optimized_response = generate_response_claude_instant(optimized_prompt)
-        elif model == "claude2":
-            original_response = generate_response_claude2(original_prompt)
-            optimized_response = generate_response_claude2(optimized_prompt)
-        elif model == "text_bison":
-            original_response = generate_response_textbison(original_prompt)
-            optimized_response = generate_response_textbison(optimized_prompt)
+        elif model == "claude3_haiku":
+            original_response = generate_response_claude3_haiku(original_prompt)
+            optimized_response = generate_response_claude3_haiku(optimized_prompt)
+        elif model == "claude3.5_haiku":
+            original_response = generate_response_claude3_5_haiku(original_prompt)
+            optimized_response = generate_response_claude3_5_haiku(optimized_prompt)
+        elif model == "gemini":
+            original_response = generate_response_gemini(original_prompt)
+            optimized_response = generate_response_gemini(optimized_prompt)
         else:
             print("Invalid LLM model specified!")
             exit(1)
 
         print("Original Response:")
-        print(original_response[:70] + "...")
+        print(original_response[:200] + "...")
         print()
         print("Optimized Response:")
-        print(optimized_response[:70] + "...")
+        print(optimized_response[:200] + "...")
         print("=========================================================================")
 
         current_output = {}
@@ -228,7 +302,7 @@ def main():
 
     # Specify datasets
     dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    model_options = ["gpt_4o"]
+    model_options = ["gpt_4o", "gpt_3.5_turbo", "claude3_haiku", "claude3.5_haiku", "gemini"]
 
     parser = argparse.ArgumentParser()
 

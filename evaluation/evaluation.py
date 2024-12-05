@@ -10,7 +10,7 @@ from openai import OpenAI
 class Evaluation():
 
     dataset_options = ["bpo_test", "dolly", "vicuna", "self_instruct"]
-    model_options = ["gpt_4o"]
+    model_options = ["gpt_4o", "gpt_3.5_turbo", "claude3_haiku", "claude3.5_haiku", "gemini"]
 
     def __init__(self):
 
@@ -88,9 +88,10 @@ class Evaluation():
             self.errors += 1
 
         # Print current results
-        ori = self.scores[model][dataset]["ori"]
-        tie = self.scores[model][dataset]["tie"]
-        bpo = self.scores[model][dataset]["bpo"]
+        ori = self.scores[base_llm][dataset]["ori"]
+        tie = self.scores[base_llm][dataset]["tie"]
+        bpo = self.scores[base_llm][dataset]["bpo"]
+
         print(f"Current Score: Original = {ori}, Tie = {tie}, BPO = {bpo}")
 
     def evaluate(self, dataset: str, model: str):
@@ -139,6 +140,7 @@ class Evaluation():
                 df.loc[ds] = [original, tie, bpo, original_per, tie_per, bpo_per]
 
             print(df)
+            print()
 
 if __name__ == "__main__":
 

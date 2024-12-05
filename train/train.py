@@ -77,7 +77,7 @@ def main():
     # Load pretrained Llama2 model and Training arguments
     ######################################################
     modelCheckpoint = "meta-llama/Llama-2-7b-chat-hf"
-    output_path = "/home/cap6614.student1/Rafeeq/test_trainer"
+    output_path = "./test_trainer"
     model = AutoModelForCausalLM.from_pretrained(modelCheckpoint,
                                                 quantization_config=bnb_config,
                                                 # load_in_4bit=True,
