@@ -74,7 +74,8 @@ A set of tables with the evaluation data will be printed.
 
 ### Newton
 
-If you are running on Newton, you will need to run the job using SLURM. This command has 
+If you are running on Newton, you will need to run the job using SLURM.
+This `srun` command has arguments specified to ensure the node you are allocated has the correct amount of resources to load the model.
 
 ```bash
 module load python/python-3.11.4-gcc-12.2.0
@@ -84,7 +85,7 @@ srun -N 1 --gres=gpu:1 --gres-flags=enforce-binding --time=2:00:00 --mem=70G --c
 
 ## Results
 
-The follow section contains our results
+The following section contains our results.
 
 **Model: GPT-4o**
 Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
@@ -110,3 +111,10 @@ dolly          | 87.0 | 20.0 | 93.0 | 43.5  | 10.0  | 46.5
 vicuna         | 37.0 | 5.0  | 38.0 | 46.25 | 6.25  | 47.5
 self_instruct  | 69.0 | 66.0 | 117.0| 27.38 | 26.19 | 46.43
 
+**Model: Claude-3.5-haiku**
+Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
+|:-------------- | --------:| ---:| ---:| ------------:| -------:| -------:|
+bpo_test       | 114.0 | 12.0 | 74.0 | 57.0 | 6.0 | 37.0
+dolly          | 88.0 | 18.0 | 94.0 | 44.0 | 9.0 | 47.0
+vicuna         | 38.0 |  2.0 | 40.0 | 47.5 | 2.5 | 50.0
+self_instruct  | 92.0  34.0  126.0  36.507937  13.492063   50.0
