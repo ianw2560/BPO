@@ -4,7 +4,11 @@ import torch
 from tqdm import tqdm
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
-"""Creating dataset by loading the json data containing the training information. Currently it is a list of dictionary entries with the annotation keys being: good_res, bad_res    """
+
+"""
+Creating dataset by loading the json data containing the training information.
+Currently it is a list of dictionary entries with the annotation keys being: good_res, bad_res
+"""
 
 class OptimizedDataset(Dataset):
     def __init__(self, prompt_json_file):

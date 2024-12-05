@@ -12,7 +12,7 @@ else:
 print(f"Device:         {device}")
 print("")
 
-modelCheckpoint = ".infer/bpo_model/"
+modelCheckpoint = "./infer/bpo_model/"
 
 BPOmodel = AutoModelForCausalLM.from_pretrained(modelCheckpoint).half().eval().to(device)
 print("parameters for model is::", BPOmodel.num_parameters())
