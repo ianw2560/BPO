@@ -11,21 +11,23 @@ pip install poetry
 poetry install
 ```
 
-This project also requires API keys for the GPT and Claude models. You must set the following variables with appropriate API key:
+This project also requires API keys for the GPT and Claude models.
+You must set the following variables with appropriate API key:
 
 | Model | Variable |
 | ----- | -------- |
 | GPT | `OPENAI_API_KEY` |
 | Claude| `ANTHROPIC_API_KEY` |
 
-To utlize Google cloud models like Text-Bison and Gemini, it requires getting set up with Google CLI. Start by downloading the SDK found here: https://cloud.google.com/sdk/docs/install
+To utilize Google cloud models like Text-Bison and Gemini, it requires getting set up with Google CLI. Start by downloading [the SDK found here](https://cloud.google.com/sdk/docs/install)
 
-After following all steps in that guide, including initializing Google CLI with ``` gcloud init    ```, a user must log in and choose their unique project ID.
+After following all steps in that guide, including initializing Google CLI with `gcloud init`, a user must log in and choose their unique project ID.
 
-Additionally, a user must specify their project name in the ```generate_response_textbison()``` function in generate_responses.py.
+Additionally, a user must specify their project name in the `generate_response_textbison()` function in generate_responses.py. For example:
 
-Example:
-```vertexai.init(project='bpo111', location="us-central1")```
+```
+vertexai.init(project='bpo111', location="us-central1")
+```
 
 ## Training
 
@@ -34,6 +36,14 @@ To access this model, you will first need to login to Hugging Face.
 
 ```
 huggingface-cli login --token <hugging-face-access-token>
+```
+
+To run the training on Newton you will need to run:
+
+```
+module load python/python-3.11.4-gcc-12.2.0
+python3 install -r requirements.txt
+srun -N 1 --gres=gpu:1 --gres-flags=enforce-binding --time=2:00:00 --mem=70G --constraint="gpu32|gpu80" python3 train/train.py
 ```
 
 ## Evaluation
@@ -117,4 +127,4 @@ Dataset        | Original | Tie | BPO | Original (%) | Tie (%) | BPO (%) |
 bpo_test       | 114.0 | 12.0 | 74.0 | 57.0 | 6.0 | 37.0
 dolly          | 88.0 | 18.0 | 94.0 | 44.0 | 9.0 | 47.0
 vicuna         | 38.0 |  2.0 | 40.0 | 47.5 | 2.5 | 50.0
-self_instruct  | 92.0  34.0  126.0  36.507937  13.492063   50.0
+self_instruct  | 92.0 | 34.0 | 126.0 | 36.51 | 13.49 | 50.0

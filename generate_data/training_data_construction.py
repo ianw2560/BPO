@@ -5,7 +5,7 @@ import re
 import os
 from datasets import load_dataset
 
-PATH = "data"
+PATH = "data/train"
 
 def get_response_pair(instruction, good_res, bad_res, context=""):
     return {"instruction": instruction, "context": context, "good_res": good_res, "bad_res": bad_res}

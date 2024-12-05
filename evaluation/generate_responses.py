@@ -32,7 +32,6 @@ def generate_response_gpt3_5_turbo(prompt: str):
 
     return response
 
-
 def generate_response_gpt4o(prompt: str):
 
     model = "gpt-4o"
@@ -68,7 +67,6 @@ def generate_response_claude3_haiku(prompt: str):
         ]
     )
 
-    print(message.content[0].text)
     llm_response = message.content[0].text
 
     return llm_response
@@ -88,7 +86,6 @@ def generate_response_claude3_5_haiku(prompt: str):
         ]
     )
 
-    print(message.content[0].text)
     llm_response = message.content[0].text
 
     return llm_response
@@ -135,8 +132,7 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
     optimize_prompt_template = open("evaluation/optimize_prompt_template.txt")
     optimize_prompt_template = optimize_prompt_template.read()
 
-    prompt = optimize_prompt_template.replace("{prompt}", prompt) #.replace("{context}", context)
-    # prompt = f"[INST] You are an expert prompt engineer. Please help me improve this prompt to get a more helpful and harmless response. Output the improved prompt by surround it with [BEGIN] and [END] tags.\n\n Here is the prompt to improve:\n{prompt} [/INST]"
+    prompt = optimize_prompt_template.replace("{prompt}", prompt)
 
     num_attempts = 5
     for i in range(num_attempts):
@@ -156,8 +152,6 @@ def generate_optimized_prompt_bpo(prompt: str, context: str, device, tokenizer, 
                 continue
 
         try:
-            # optimized_prompt = optimized_prompt.split("Optimized Prompt:")[1].strip().split("[END]")[0].strip().strip("\"")
-            # optimized_prompt = optimized_prompt.strip().split("\n")[1:-1].strip().strip("\"")
             optimized_prompt = optimized_prompt.strip().split("Improved Prompt:")[1].strip().split("END")[0].strip().strip("\"")
             break
         except Exception as ex:
@@ -181,12 +175,10 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
     for i, data in enumerate(eval_prompts):
 
         if dataset == "dolly":
-            prompt = data['instruction'] #+ "\n" + data['context']
-            #context = data['context']
+            prompt = data['instruction']
             context = ""
         elif dataset == "self_instruct":
-            prompt = data['instruction'] #+ "\n" + data['context']
-            # context = data['context']
+            prompt = data['instruction']
             context = ""
         elif dataset == "vicuna":
             prompt = data['text']
@@ -207,15 +199,6 @@ def generate_bpo_optimized_prompts(dataset: str, device, tokenizer, bpo_model):
         print()
 
         optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
-
-        # print(f"Generating optimized prompt for prompt {i}...")
-        # num_attempts = 5
-        # for i in range(num_attempts):
-        #     try:
-        #         optimized_prompt = generate_optimized_prompt_bpo(original_prompt, context, device, tokenizer, bpo_model)
-        #         break
-        #     except Exception as ex:
-        #         print("Regenerate and try again...")
 
         print("Optimized Prompt:")
         print(optimized_prompt)
@@ -291,9 +274,6 @@ def generate_responses(dataset: str, model: str):
         current_output["optimized_response"] = optimized_response
 
         optimized_responses.append(current_output)
-
-        # if i == 20:
-        #     break
 
     with open(f"data/evaluation/{dataset}_{model}_opt_responses.json", "w") as json_file:
         json.dump(optimized_responses, json_file, indent=4)
